@@ -1,61 +1,113 @@
-<div class="col-lg-6 offset-lg-3">
-  <h2>Condo - Saint-Henri Montreal</h2>
-
-  <div class="card">
-    <div class="card-body d-flex flex-column">
-      <div class="input-group">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">Superficie</span>
-        </div>
-        <input
-          type="number"
-          class="form-control"
-          placeholder=""
-          aria-label="Username"
-          aria-describedby="basic-addon1"
-        />
-        <div class="input-group-append">
-          <span class="input-group-text" id="basic-addon1">m2</span>
-        </div>
+<div class="">
+  <div class="card my-3">
+    <div class="card-header">
+      <h2>Montreal / Saint-Henri</h2>
+    </div>
+    <!-- area -->
+    <div class="input-group card-body">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Living area</span>
       </div>
+      <input
+        type="number"
+        class="form-control"
+        placeholder=""
+        aria-label="Username"
+        aria-describedby="basic-addon1"
+      />
+      <div class="input-group-append">
+        <span class="input-group-text" id="basic-addon1">m2</span>
+      </div>
+    </div>
 
+    <ul class="list-group list-group-flush">
+      <!-- type -->
+      <li class="list-group-item">
+        <div class="row">
+          <div class="col-sm "><label>Type</label></div>
+          <div class="col-sm pl-5 pl-sm-1">
+            <mat-radio-group
+              class="d-flex flex-column flex-md-row justify-content-md-start"
+            >
+              <mat-radio-button value="1" selected>
+                Condo
+              </mat-radio-button>
+              <mat-radio-button value="2" disabled>
+                Apt
+              </mat-radio-button>
+              <mat-radio-button value="3" disabled>
+                Row-House
+              </mat-radio-button>
+            </mat-radio-group>
+          </div>
+        </div>
+      </li>
+      <!-- quality -->
+      <li class="list-group-item">
+        <div class="row">
+          <div class="col-sm mt-1">Indoor finish quality</div>
+          <div class="col-sm py-0">
+            <mat-slider
+              thumbLabel="true"
+              class="w-100"
+              min="1"
+              max="10"
+              step="1"
+              value="5"
+            ></mat-slider>
+          </div>
+        </div>
+      </li>
+      <!-- toilets -->
+      <li class="list-group-item">
+        <div class="row">
+          <div class="col-sm"><label>Number of washrooms</label></div>
+          <div class="col-sm pl-5 pl-sm-1">
+            <mat-radio-group
+              class="d-flex flex-column flex-md-row justify-content-md-start "
+            >
+              <mat-radio-button value="1">
+                1
+              </mat-radio-button>
+              <mat-radio-button value="2">
+                2
+              </mat-radio-button>
+              <mat-radio-button value="3">
+                3
+              </mat-radio-button>
+            </mat-radio-group>
+          </div>
+        </div>
+      </li>
+      <!-- checkboxes -->
+      <li class="list-group-item">
+        <div class="row">
+          <div class="col-sm">
+            <label for="">Check all applicable: </label>
+          </div>
+          <div class="col-sm col-sm pl-5 pl-sm-1 d-flex flex-column">
+            <mat-checkbox [(ngModel)]="basement">Basement</mat-checkbox>
+            <mat-checkbox [(ngModel)]="waterView">Vue Eau</mat-checkbox>
+            <mat-checkbox>Indivise</mat-checkbox>
+            <mat-checkbox>Garage</mat-checkbox>
+            <mat-checkbox>Rue passante/bruillante</mat-checkbox>
+            <mat-checkbox>2e stationnement</mat-checkbox>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <!-- submit -->
+    <div class="card-body d-flex justify-content-between">
+      <button mat-raised-button accent (click)="clearForm()">Clear</button>
+      <button mat-raised-button (click)="getTotal()">
+        Submit
+      </button>
+    </div>
+
+    <div class="card-footer collapse" id="collapseExample">
       <div class="d-flex justify-content-between mt-3">
-        <label class="mt-2">Qualite du fini</label>
-        <mat-slider
-          thumbLabel="true"
-          class="w-50 mr-0"
-          style="width: 100;"
-          min="1"
-          max="10"
-          step="1"
-          value="5"
-        ></mat-slider>
-      </div>
-
-      <mat-checkbox>Basement</mat-checkbox>
-      <mat-checkbox>Vue Eau</mat-checkbox>
-      <mat-checkbox>Indivise</mat-checkbox>
-      <mat-checkbox>Garage</mat-checkbox>
-      <mat-checkbox>Rue passante/bruillante</mat-checkbox>
-      <mat-checkbox>2e stationnement</mat-checkbox>
-      <mat-checkbox>Nombre de salles de bain</mat-checkbox>
-      <mat-checkbox>Basement</mat-checkbox>
-      <mat-checkbox>Basement</mat-checkbox>
-
-      <mat-radio-group class="d-flex justify-content-between">
-        Nombre de salles de bain
-        <mat-radio-button value="1">
-          1
-        </mat-radio-button>
-        <mat-radio-button value="2">
-          2
-        </mat-radio-button>
-        <mat-radio-button value="3">
-          3
-        </mat-radio-button>
-      </mat-radio-group>
-      <div class="d-flex flex-row">
-        <mat-radio-group>option1 </mat-radio-group>
+        <h3 class="">estimate</h3>
+        <h3>$price</h3>
       </div>
     </div>
   </div>
