@@ -89,6 +89,8 @@ THE SOFTWARE.
 
 @angular/material/checkbox
 
+@angular/material/dialog
+
 @angular/material/radio
 
 @angular/material/slider
