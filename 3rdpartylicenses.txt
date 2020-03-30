@@ -93,6 +93,8 @@ THE SOFTWARE.
 
 @angular/material/radio
 
+@angular/material/slide-toggle
+
 @angular/material/slider
 
 @angular/platform-browser
