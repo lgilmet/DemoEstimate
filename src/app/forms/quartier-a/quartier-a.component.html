@@ -1,4 +1,4 @@
-<div class="">
+<div class="container">
   <div class="card my-3">
     <div class="card-header">
       <h2>Montreal / Saint-Henri</h2>
@@ -6,17 +6,18 @@
     <!-- area -->
     <div class="input-group card-body">
       <div class="input-group-prepend">
-        <span class="input-group-text" id="basic-addon1">Living area</span>
+        <span class="input-group-text" id="area-label">Living area</span>
       </div>
       <input
+        id="areaInput"
+        [(ngModel)]="livingArea"
         type="number"
-        class="form-control"
-        placeholder=""
-        aria-label="Username"
-        aria-describedby="basic-addon1"
+        placeholder="Area in square meters"
+        class="form-control border"
+        aria-describedby="area-label"
       />
       <div class="input-group-append">
-        <span class="input-group-text" id="basic-addon1">m2</span>
+        <span class="input-group-text" id="area-label">m2</span>
       </div>
     </div>
 
@@ -28,14 +29,15 @@
           <div class="col-sm pl-5 pl-sm-1">
             <mat-radio-group
               class="d-flex flex-column flex-md-row justify-content-md-start"
+              [(ngModel)]="type"
             >
-              <mat-radio-button value="1" selected>
+              <mat-radio-button value="condo">
                 Condo
               </mat-radio-button>
-              <mat-radio-button value="2" disabled>
+              <mat-radio-button value="apt" disabled>
                 Apt
               </mat-radio-button>
-              <mat-radio-button value="3" disabled>
+              <mat-radio-button value="rowHouse" disabled>
                 Row-House
               </mat-radio-button>
             </mat-radio-group>
@@ -48,12 +50,12 @@
           <div class="col-sm mt-1">Indoor finish quality</div>
           <div class="col-sm py-0">
             <mat-slider
+              [(ngModel)]="finishQuality"
               thumbLabel="true"
               class="w-100"
               min="1"
               max="10"
               step="1"
-              value="5"
             ></mat-slider>
           </div>
         </div>
@@ -65,6 +67,7 @@
           <div class="col-sm pl-5 pl-sm-1">
             <mat-radio-group
               class="d-flex flex-column flex-md-row justify-content-md-start "
+              [(ngModel)]="nbWashrooms"
             >
               <mat-radio-button value="1">
                 1
@@ -86,28 +89,28 @@
             <label for="">Check all applicable: </label>
           </div>
           <div class="col-sm col-sm pl-5 pl-sm-1 d-flex flex-column">
+            <mat-checkbox [(ngModel)]="waterView">Waterfront view</mat-checkbox>
             <mat-checkbox [(ngModel)]="basement">Basement</mat-checkbox>
-            <mat-checkbox [(ngModel)]="waterView">Vue Eau</mat-checkbox>
-            <mat-checkbox>Indivise</mat-checkbox>
-            <mat-checkbox>Garage</mat-checkbox>
-            <mat-checkbox>Rue passante/bruillante</mat-checkbox>
-            <mat-checkbox>2e stationnement</mat-checkbox>
+            <mat-checkbox [(ngModel)]="indivise">Indivise</mat-checkbox>
+            <mat-checkbox [(ngModel)]="noisySt">Passing street</mat-checkbox>
+            <mat-checkbox [(ngModel)]="garage">Garage</mat-checkbox>
+            <mat-checkbox [(ngModel)]="secondPrkg">Second Parking</mat-checkbox>
           </div>
         </div>
       </li>
     </ul>
     <!-- submit -->
     <div class="card-body d-flex justify-content-between">
-      <button mat-raised-button accent (click)="clearForm()">Clear</button>
-      <button mat-raised-button (click)="getTotal()">
-        Submit
+      <button mat-raised-button (click)="clearForm()">Clear</button>
+      <button mat-raised-button [color]="color" (click)="getTotal()">
+        Get an estimate
       </button>
     </div>
 
     <div class="card-footer collapse" id="collapseExample">
       <div class="d-flex justify-content-between mt-3">
-        <h3 class="">estimate</h3>
-        <h3>$price</h3>
+        <p class="">Your estimate:</p>
+        <h3>CAD {{ estimate }}</h3>
       </div>
     </div>
   </div>

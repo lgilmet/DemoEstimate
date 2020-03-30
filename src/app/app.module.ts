@@ -13,13 +13,17 @@ import { MatSliderModule } from "@angular/material/slider";
 import { MatCheckboxModule } from "@angular/material/checkbox";
 import { MatRadioModule } from "@angular/material/radio";
 import { MatButtonModule } from "@angular/material/button";
+import { MatDialogModule } from "@angular/material/dialog";
+import { MatSlideToggleModule } from "@angular/material/slide-toggle";
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     QuartierAComponent,
     QuartierBComponent,
-    QuartierCComponent
+    QuartierCComponent,
+    HomeComponent
   ],
   imports: [
     FormsModule,
@@ -29,7 +33,9 @@ import { MatButtonModule } from "@angular/material/button";
     MatSliderModule,
     MatCheckboxModule,
     MatRadioModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDialogModule,
+    MatSlideToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

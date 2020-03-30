@@ -1,0 +1,50 @@
+{
+  "forms": [
+    {
+      "region": "Montreal",
+      "neighborhood": "Saint-Henri",
+      "type": "Condo",
+      "params": [
+        {
+          "type": "area",
+          "name": "Area",
+          "price": "222",
+          "unit": "m2"
+        },
+        {
+          "type": "range",
+          "name": "Number of washrooms",
+          "range": [1, 2, 3],
+          "price": 222
+        },
+        {
+          "type": "range",
+          "name": "Indoor finish quality",
+          "range": [0, 10],
+          "price": 222
+        },
+        {
+          "type": "boolean",
+          "name": "Garage",
+          "price": 444
+        },
+        {
+          "type": "boolean",
+          "name": "Private yard",
+          "price": 444
+        },
+        {
+          "type": "boolean",
+          "name": "Undivided",
+          "price": 444
+        },
+        {
+          "type": "boolean",
+          "name": "Garage",
+          "price": 444
+        }
+      ]
+    },
+    {}
+  ]
+}
