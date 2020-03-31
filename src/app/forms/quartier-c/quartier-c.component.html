@@ -45,17 +45,9 @@
         <div class="row">
           <div class="col-sm ">
             <label>Construction year</label>
-            <mat-slide-toggle
-              class="ml-2"
-              [(ngModel)]="yearKnown"
-            ></mat-slide-toggle>
           </div>
           <div class="col-sm  pl-5 pl-sm-1">
-            <select
-              class="form-control"
-              [(ngModel)]="ConstructionYear"
-              [disabled]="!yearKnown"
-            >
+            <select class="form-control" [(ngModel)]="ConstructionYear">
               <option *ngFor="let year of years" value="{{ year }}">
                 {{ year }}
               </option>
