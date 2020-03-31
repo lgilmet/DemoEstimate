@@ -20,7 +20,7 @@
         {
           "type": "range",
           "name": "Indoor finish quality",
-          "range": [0, 10],
+          "midmax": [0, 10],
           "price": 222
         },
         {

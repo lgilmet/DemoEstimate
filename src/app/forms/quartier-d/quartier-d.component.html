@@ -1,0 +1,109 @@
+<div class="container">
+  <div class="card my-3">
+    <div class="card-header">
+      <h2>Montreal / <span style="white-space:nowrap">Bois Franc</span></h2>
+    </div>
+    <div class="card-body">
+      <!-- living area -->
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Living area</span>
+        </div>
+        <input
+          id="areaInput"
+          type="number"
+          [(ngModel)]="livingArea"
+          class="form-control border"
+          placeholder="Area in square meters"
+        />
+        <div class="input-group-append">
+          <span class="input-group-text">m2</span>
+        </div>
+      </div>
+
+      <!-- lot area -->
+      <div class="input-group mt-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Lot area</span>
+        </div>
+        <input
+          type="number"
+          [(ngModel)]="lotArea"
+          class="form-control border"
+          placeholder="Area in square meters"
+        />
+        <div class="input-group-append">
+          <span class="input-group-text">m2</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Year -->
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <div class="row">
+          <div class="col-sm">Year Built</div>
+          <div class="col-sm">
+            <select class="form-control" [(ngModel)]="constructionYear">
+              <option *ngFor="let year of years" value="{{ year }}">{{
+                year
+              }}</option>
+            </select>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-sm">Type</div>
+          <div class="col-sm">
+            <mat-radio-group [(ngModel)]="type"
+              ><mat-radio-button value="condo" disabled>Condo</mat-radio-button>
+              <mat-radio-button value="house"
+                >House</mat-radio-button
+              ></mat-radio-group
+            >
+          </div>
+        </div>
+      </li>
+      <!-- quality -->
+      <li class="list-group-item">
+        <div class="row">
+          <div class="col-sm">Indoor Finish quality</div>
+          <div class="col-sm">
+            <mat-slider
+              [(ngModel)]="quality"
+              min="1"
+              max="10"
+              thumbLabel="true"
+              class="w-100"
+            >
+            </mat-slider>
+          </div>
+        </div>
+      </li>
+      <!-- features -->
+      <li class="list-group-item">
+        <div class="row">
+          <div class="col-sm">Features</div>
+          <div class="col-sm pl-5 pl-sm-1 d-flex flex-column">
+            <mat-checkbox [(ngModel)]="detached">Detached</mat-checkbox>
+            <mat-checkbox [(ngModel)]="facePark">Facing Park</mat-checkbox>
+            <mat-checkbox [(ngModel)]="busyStreet">Busy Street</mat-checkbox>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+    <div class="card-body d-flex justify-content-between">
+      <button mat-raised-button (click)="clearForm()">Clear</button>
+      <button mat-raised-button [color]="color" (click)="getTotal()">
+        Get Estimate
+      </button>
+    </div>
+
+    <div class="card-footer collapse" id="collapseResult">
+      <div class="d-flex justify-content-between mt-3">
+        <p class="">Your estimate:</p>
+        <h3>CAD {{ estimate }}</h3>
+      </div>
+    </div>
+  </div>
+</div>
