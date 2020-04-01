@@ -61,6 +61,17 @@ export class QuartierGComponent implements OnInit {
         break;
     }
   }
+  getType(option: string) {
+    switch (option) {
+      case "condo":
+        return 0;
+      case "apt":
+        return 105322;
+
+      default:
+        break;
+    }
+  }
   getQuality(option: number) {
     switch (option) {
       case 1:
@@ -109,6 +120,7 @@ export class QuartierGComponent implements OnInit {
           this.getQuality(Number(this.quality)) +
           this.getBedrooms(Number(this.nbBedrooms)) +
           this.getLevel(this.level) +
+          this.getType(this.type) +
           Number(this.terrasse) * 33633 +
           Number(this.powder) * 36342.36 +
           Number(this.garage) * 50505
