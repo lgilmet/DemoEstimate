@@ -1,33 +1,47 @@
 import { Component, OnInit } from "@angular/core";
-
 import { ThemePalette } from "@angular/material/core";
 declare var $: any;
 @Component({
-  selector: "app-quartier-e",
-  templateUrl: "./quartier-e.component.html",
-  styleUrls: ["./quartier-e.component.css"]
+  selector: "app-quartier-f",
+  templateUrl: "./quartier-f.component.html",
+  styleUrls: ["./quartier-f.component.css"]
 })
-export class QuartierEComponent implements OnInit {
+export class QuartierFComponent implements OnInit {
   // variables
-  // Sup.habitable	 $3,547.66
-  //Chambres	 $20,636.70
-  //Salles de bains	 $59,754.69
-  //Stationement	 $63,093.31
-  //Année	 $(45.81)
-  //Vue ( Dégagée )Eau	 $95,082.42
-  //Qualitée Calcul	 $32,511.92
-  //Vue Centreville	 $94,886.72
+  //Habitable 	 $1,977.44
+  //SDB 	 $43,077.18
+  //2 bed 	 $16,562.87
+  //3 Bed 	 $39,848.30
+  //Indivise 	 $(39,962.50)
+  //Garage  	 $34,708.66
+  //Sous-Sol 	 $(28,403.76)
+  //Qualitée 	 $27,288.70
+  //Rooftop 	 $76,231.57
+  //Terrasse 	 $28,288.91
+  //Industrial loft 	 $31,621.57
+  //Boulevard 	 $(19,815.48)
+  //Allée 	 $13,267.94
+  //0 Chambres 	 $(15,834.70)
+  //Orientation (1 vers sud 0 vers nord) 	 $13,555.71
 
   type: string;
   livingArea: number;
   finishQuality: number;
   nbWashrooms: string;
   nbBedrooms: string;
+  level: string;
 
+  alley: boolean;
+  orientation: boolean;
+  indivise: boolean;
   garage: boolean;
-  waterview: boolean;
-  dtownview: boolean;
+  rooftop: boolean;
+  terrasse: boolean;
+  industrial: boolean;
+  noisySt: boolean;
+  nobed: boolean;
 
+  secondGarage: boolean;
   estimate: string;
 
   formatter;
@@ -49,11 +63,11 @@ export class QuartierEComponent implements OnInit {
   getBedrooms(option: number) {
     switch (option) {
       case 1:
-        return 20636.7;
+        return 0;
       case 2:
-        return 41273.39;
+        return 16562.17;
       case 3:
-        return 61910.09;
+        return 39848.3;
 
       default:
         break;
@@ -64,9 +78,9 @@ export class QuartierEComponent implements OnInit {
       case "above":
         return 0;
       case "half":
-        return 0.5 * -54514.2;
+        return 0.5 * -28403.76;
       case "basement":
-        return 1 * -54514.2;
+        return 1 * -28403.76;
 
       default:
         break;
@@ -76,13 +90,19 @@ export class QuartierEComponent implements OnInit {
   computeEstimate() {
     this.estimate = this.formatter.format(
       Math.round(
-        this.livingArea * 3547.56 +
-          this.finishQuality * 32511 +
-          Number(this.nbWashrooms) * 20636.8 +
+        this.livingArea * 1977.44 +
+          this.finishQuality * 27288.66 +
+          Number(this.nbWashrooms) * 43077.18 +
           this.getBedrooms(Number(this.nbBedrooms)) +
-          Number(this.waterview) * 95082.8 +
-          Number(this.dtownview) * 948686 +
-          Number(this.garage) * 63093
+          this.getLevel(this.level) +
+          Number(this.orientation) * 13555.71 +
+          Number(this.rooftop) * 76231.77 +
+          Number(this.terrasse) * 28288.91 +
+          Number(this.industrial) * 31621.57 +
+          Number(this.alley) * 13267.54 +
+          Number(this.noisySt) * -19815.8 +
+          Number(this.indivise) * -39962.5 +
+          Number(this.garage) * 34708.32
       )
     );
   }
@@ -113,12 +133,16 @@ export class QuartierEComponent implements OnInit {
     this.finishQuality = 5;
     this.nbBedrooms = "1";
     this.nbWashrooms = "1";
-    this.waterview = false;
-    this.dtownview = false;
-
+    this.level = "above";
+    this.orientation = false;
+    this.rooftop = false;
+    this.terrasse = false;
+    this.industrial = false;
+    this.alley = false;
+    this.indivise = false;
     this.garage = false;
+    this.noisySt = false;
   }
-
   getTotal() {
     if (this.checkForm()) this.showResult();
     else window.scrollTo(0, 0);

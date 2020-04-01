@@ -1,7 +1,9 @@
 <div class="container">
   <div class="card my-3">
     <div class="card-header">
-      <h2>Montreal / <span style="white-space:nowrap">Vieux-Montreal</span></h2>
+      <h2>
+        Montreal / <span style="white-space:nowrap">Hochelaga-Maisoneuve</span>
+      </h2>
     </div>
     <!-- area -->
     <div class="input-group card-body">
@@ -35,6 +37,9 @@
               <mat-radio-button value="condo">
                 Condo
               </mat-radio-button>
+              <mat-radio-button value="apt" disabled>
+                Detached House
+              </mat-radio-button>
             </mat-radio-group>
           </div>
         </div>
@@ -45,8 +50,6 @@
           <div class="col-sm mt-1">Indoor finish quality</div>
           <div class="col-sm py-0">
             <mat-slider
-              step="10"
-              tickInterval="1"
               [(ngModel)]="finishQuality"
               thumbLabel="true"
               class="w-100"
@@ -60,12 +63,7 @@
       <!-- bedrooms -->
       <li class="list-group-item">
         <div class="row">
-          <div class="col-sm">
-            <label>Number of bedrooms</label
-            ><label for=""
-              >Bedroom = Above Ground - With a window - Minimum 7 foot wide
-            </label>
-          </div>
+          <div class="col-sm"><label>Number of bedrooms</label></div>
           <div class="col-sm pl-5 pl-sm-1">
             <mat-radio-group
               class="d-flex flex-column flex-md-row justify-content-md-start "
@@ -103,24 +101,67 @@
           </div>
         </div>
       </li>
-
+      <!-- basement -->
+      <li class="list-group-item">
+        <div class="row">
+          <div class="col-sm"><label>What floor is it on?</label></div>
+          <div class="col-sm pl-5 pl-sm-1">
+            <mat-radio-group class="d-flex flex-column" [(ngModel)]="level">
+              <mat-radio-button value="above">
+                Above ground
+              </mat-radio-button>
+              <mat-radio-button value="half">
+                Part of it in the basement
+              </mat-radio-button>
+              <mat-radio-button value="basement">
+                Most of it in the basement
+              </mat-radio-button>
+            </mat-radio-group>
+          </div>
+        </div>
+      </li>
       <!-- checkboxes -->
       <li class="list-group-item">
         <div class="row">
           <div class="col-sm">
             <label for="">Unique Features: </label>
           </div>
+        </div>
+        <div class="row">
+          <div class="col-sm"></div>
           <div class="col-sm col-sm pl-5 pl-sm-1 d-flex flex-column">
-            <mat-checkbox [(ngModel)]="garage"
-              >Has an Indoor Garage</mat-checkbox
-            >
-            <mat-checkbox [(ngModel)]="waterview"
-              >Has unobstructed view of the water</mat-checkbox
+            <mat-checkbox [(ngModel)]="orientation"
+              >Main living space facing South</mat-checkbox
             >
 
-            <mat-checkbox [(ngModel)]="dtownview"
-              >Has panoramic view of Downtown</mat-checkbox
+            <mat-checkbox [(ngModel)]="rooftop"
+              >Has a private Rooftop terrasse</mat-checkbox
             >
+
+            <mat-checkbox [(ngModel)]="terrasse"
+              >Has a private terrase</mat-checkbox
+            >
+            <mat-checkbox [(ngModel)]="industrial"
+              >is an Industrial Loft</mat-checkbox
+            >
+            <mat-checkbox [(ngModel)]="indivise"
+              >Undivided Co-Ownership</mat-checkbox
+            >
+            <mat-checkbox [(ngModel)]="noisySt">On a busy street</mat-checkbox>
+            <mat-checkbox [(ngModel)]="alley">Has Outdoor Parking</mat-checkbox>
+            <mat-checkbox [(ngModel)]="garage">Has Indoor Garage</mat-checkbox>
+          </div>
+          <div class="col-sm col-sm pl-5 pl-sm-1 d-flex flex-column">
+            <label for="">+ 13 555$ </label>
+
+            <label for="">+ 73 231$ </label>
+
+            <label for="">+ 28 288$</label>
+            <label for="">+ 31 621$ </label>
+            <label for="">- 39 962$</label>
+            <label for="">- 19 815$</label>
+            <label for="">+ 13 267$ </label>
+            <label for="">+ 34 708$ </label>
           </div>
         </div>
       </li>
