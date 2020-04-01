@@ -20,9 +20,12 @@ export class QuartierEComponent implements OnInit {
 
   type: string;
   livingArea: number;
-  finishQuality: number;
+  quality: string;
   nbWashrooms: string;
   nbBedrooms: string;
+  years: number[];
+  currentYear: number;
+  constructionYear: number;
 
   garage: boolean;
   waterview: boolean;
@@ -42,7 +45,10 @@ export class QuartierEComponent implements OnInit {
       style: "currency",
       currency: "CAD"
     });
-
+    this.years = [];
+    this.currentYear = new Date().getFullYear();
+    this.constructionYear = this.currentYear;
+    for (let i = 0; i < 120; i++) this.years.push(this.currentYear - i);
     this.clearForm();
   }
 
@@ -54,6 +60,33 @@ export class QuartierEComponent implements OnInit {
         return 41273.39;
       case 3:
         return 61910.09;
+
+      default:
+        break;
+    }
+  }
+  getQuality(option: number) {
+    switch (option) {
+      case 1:
+        return 32511;
+      case 2:
+        return 2 * 32511;
+      case 3:
+        return 3 * 32511;
+      case 4:
+        return 4 * 32511;
+      case 5:
+        return 5 * 32511;
+      case 6:
+        return 6 * 32511;
+      case 7:
+        return 7 * 32511;
+      case 8:
+        return 8 * 32511;
+      case 9:
+        return 9 * 32511;
+      case 10:
+        return 10 * 32511;
 
       default:
         break;
@@ -77,7 +110,8 @@ export class QuartierEComponent implements OnInit {
     this.estimate = this.formatter.format(
       Math.round(
         this.livingArea * 3547.56 +
-          this.finishQuality * 32511 +
+          this.getQuality(Number(this.quality)) +
+          this.constructionYear * -45.81 +
           Number(this.nbWashrooms) * 20636.8 +
           this.getBedrooms(Number(this.nbBedrooms)) +
           Number(this.waterview) * 95082.8 +
@@ -110,7 +144,7 @@ export class QuartierEComponent implements OnInit {
     // reset all itputs
     this.type = "condo";
     this.livingArea = null;
-    this.finishQuality = 5;
+    this.quality = "1";
     this.nbBedrooms = "1";
     this.nbWashrooms = "1";
     this.waterview = false;

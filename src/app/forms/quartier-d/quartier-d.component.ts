@@ -10,7 +10,7 @@ declare var $: any;
 export class QuartierDComponent implements OnInit {
   livingArea: number;
   lotArea: number;
-  quality: number;
+  quality: string;
   years: number[];
   currentYear: number;
   constructionYear: number;
@@ -43,13 +43,41 @@ export class QuartierDComponent implements OnInit {
   // Detached	$185,424.30 boolean
   // Face Parc	$66,507.37 boolean
   // Bad Street	-$121,472.00 boolean
+  getQuality(option: number) {
+    switch (option) {
+      case 1:
+        return 38557;
+      case 2:
+        return 2 * 38557;
+      case 3:
+        return 3 * 38557;
+      case 4:
+        return 4 * 38557;
+      case 5:
+        return 5 * 38557;
+      case 6:
+        return 6 * 38557;
+      case 7:
+        return 7 * 38557;
+      case 8:
+        return 8 * 38557;
+      case 9:
+        return 9 * 38557;
+      case 10:
+        return 10 * 38557;
+
+      default:
+        break;
+    }
+  }
+
   computeEstimate() {
     this.estimate = this.formatter.format(
       Math.round(
         this.livingArea * 1488.46 +
           this.lotArea * 583.36 +
           this.constructionYear * 72.04 +
-          this.quality * 38557.15 +
+          this.getQuality(Number(this.quality)) +
           Number(this.detached) * 185424.3 +
           Number(this.facePark) * 66507.37 +
           Number(this.busyStreet) * -121472.0
@@ -78,7 +106,7 @@ export class QuartierDComponent implements OnInit {
   clearForm() {
     this.livingArea = null;
     this.lotArea = null;
-    this.quality = 5;
+    this.quality = "1";
     this.type = "house";
     this.detached = false;
     this.facePark = false;
