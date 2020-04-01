@@ -7,6 +7,7 @@ import { HomeComponent } from "./pages/home/home.component";
 import { QuartierDComponent } from "./forms/quartier-d/quartier-d.component";
 import { QuartierEComponent } from "./forms/quartier-e/quartier-e.component";
 import { QuartierFComponent } from "./forms/quartier-f/quartier-f.component";
+import { QuartierGComponent } from "./forms/quartier-g/quartier-g.component";
 
 const routes: Routes = [
   { path: "", pathMatch: "full", redirectTo: "saint-henri-condo" },
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: "ville-mont-royal-house", component: QuartierCComponent },
   { path: "bois-franc-house", component: QuartierDComponent },
   { path: "vieux-montreal", component: QuartierEComponent },
-  { path: "HoMa", component: QuartierFComponent }
+  { path: "HoMa", component: QuartierFComponent },
+  { path: "rosemont", component: QuartierGComponent }
 ];
 
 @NgModule({

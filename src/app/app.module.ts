@@ -19,6 +19,7 @@ import { HomeComponent } from "./pages/home/home.component";
 import { QuartierDComponent } from "./forms/quartier-d/quartier-d.component";
 import { QuartierEComponent } from "./forms/quartier-e/quartier-e.component";
 import { QuartierFComponent } from "./forms/quartier-f/quartier-f.component";
+import { QuartierGComponent } from './forms/quartier-g/quartier-g.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { QuartierFComponent } from "./forms/quartier-f/quartier-f.component";
     HomeComponent,
     QuartierDComponent,
     QuartierEComponent,
-    QuartierFComponent
+    QuartierFComponent,
+    QuartierGComponent
   ],
   imports: [
     FormsModule,
