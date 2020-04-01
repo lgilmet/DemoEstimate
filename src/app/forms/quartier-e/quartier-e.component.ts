@@ -9,25 +9,25 @@ declare var $: any;
 })
 export class QuartierEComponent implements OnInit {
   // variables
+  // Sup.habitable	 $3,547.66
+  //Chambres	 $20,636.70
+  //Salles de bains	 $59,754.69
+  //Stationement	 $63,093.31
+  //Année	 $(45.81)
+  //Vue ( Dégagée )Eau	 $95,082.42
+  //Qualitée Calcul	 $32,511.92
+  //Vue Centreville	 $94,886.72
+
   type: string;
   livingArea: number;
   finishQuality: number;
   nbWashrooms: string;
   nbBedrooms: string;
-  level: string;
 
-  alley: boolean;
-  eastPapineau: boolean;
-  indivise: boolean;
   garage: boolean;
-  rooftop: boolean;
-  terrasse: boolean;
-  railway: boolean;
-  noisySt: boolean;
-  secondPrkg: boolean;
+  waterview: boolean;
+  dtownview: boolean;
 
-  heritageBldg: boolean;
-  luxuryBldg: boolean;
   estimate: string;
 
   formatter;
@@ -49,11 +49,11 @@ export class QuartierEComponent implements OnInit {
   getBedrooms(option: number) {
     switch (option) {
       case 1:
-        return 0;
+        return 20636.7;
       case 2:
-        return 29424.64;
+        return 41273.39;
       case 3:
-        return 91869.05;
+        return 61910.09;
 
       default:
         break;
@@ -76,20 +76,13 @@ export class QuartierEComponent implements OnInit {
   computeEstimate() {
     this.estimate = this.formatter.format(
       Math.round(
-        this.livingArea * 2442.839 +
-          this.finishQuality * 35762.6 +
-          Number(this.nbWashrooms) * 28310.99 +
+        this.livingArea * 3547.56 +
+          this.finishQuality * 32511 +
+          Number(this.nbWashrooms) * 20636.8 +
           this.getBedrooms(Number(this.nbBedrooms)) +
-          this.getLevel(this.level) +
-          Number(this.eastPapineau) * -60745.8 +
-          Number(this.rooftop) * 70224.33 +
-          Number(this.terrasse) * 40733.43 +
-          Number(this.railway) * -97407.3 +
-          Number(this.alley) * 20484.77 +
-          Number(this.heritageBldg) * 80020.64 +
-          Number(this.luxuryBldg) * 61656.98 +
-          Number(this.indivise) * -32567.97 +
-          Number(this.garage) * 17690.52
+          Number(this.waterview) * 95082.8 +
+          Number(this.dtownview) * 948686 +
+          Number(this.garage) * 63093
       )
     );
   }
@@ -116,21 +109,14 @@ export class QuartierEComponent implements OnInit {
     $("#collapseExample").collapse("hide");
     // reset all itputs
     this.type = "condo";
-    this.livingArea = 50;
+    this.livingArea = null;
     this.finishQuality = 5;
     this.nbBedrooms = "1";
     this.nbWashrooms = "1";
-    this.level = "above";
-    this.eastPapineau = false;
-    this.rooftop = false;
-    this.terrasse = false;
-    this.railway = false;
-    this.alley = false;
-    this.indivise = false;
+    this.waterview = false;
+    this.dtownview = false;
+
     this.garage = false;
-    this.noisySt = false;
-    this.heritageBldg = false;
-    this.luxuryBldg = false;
   }
   getTotal() {
     if (this.checkForm()) this.showResult();

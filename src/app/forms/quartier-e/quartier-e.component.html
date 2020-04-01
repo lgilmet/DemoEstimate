@@ -35,12 +35,6 @@
               <mat-radio-button value="condo">
                 Condo
               </mat-radio-button>
-              <mat-radio-button value="apt" disabled>
-                Apt
-              </mat-radio-button>
-              <mat-radio-button value="rowHouse" disabled>
-                Row-House
-              </mat-radio-button>
             </mat-radio-group>
           </div>
         </div>
@@ -86,7 +80,7 @@
       <!-- toilets -->
       <li class="list-group-item">
         <div class="row">
-          <div class="col-sm"><label>Number of washrooms</label></div>
+          <div class="col-sm"><label>Number of full bathrooms</label></div>
           <div class="col-sm pl-5 pl-sm-1">
             <mat-radio-group
               class="d-flex flex-column flex-md-row justify-content-md-start "
@@ -102,50 +96,24 @@
           </div>
         </div>
       </li>
-      <!-- basement -->
-      <li class="list-group-item">
-        <div class="row">
-          <div class="col-sm"><label>Level</label></div>
-          <div class="col-sm pl-5 pl-sm-1">
-            <mat-radio-group class="d-flex flex-column" [(ngModel)]="level">
-              <mat-radio-button value="above">
-                Above ground
-              </mat-radio-button>
-              <mat-radio-button value="half">
-                Has a basement
-              </mat-radio-button>
-              <mat-radio-button value="basement">
-                Is a basement
-              </mat-radio-button>
-            </mat-radio-group>
-          </div>
-        </div>
-      </li>
+
       <!-- checkboxes -->
       <li class="list-group-item">
         <div class="row">
           <div class="col-sm">
-            <label for="">Options: </label>
+            <label for="">Unique Features: </label>
           </div>
           <div class="col-sm col-sm pl-5 pl-sm-1 d-flex flex-column">
-            <mat-checkbox [(ngModel)]="heritageBldg"
-              >Heritage building</mat-checkbox
+            <mat-checkbox [(ngModel)]="garage"
+              >Has an Indoor Garage</mat-checkbox
             >
-            <mat-checkbox [(ngModel)]="luxuryBldg"
-              >Luxury building</mat-checkbox
+            <mat-checkbox [(ngModel)]="waterview"
+              >Has unobstructed view of the water</mat-checkbox
             >
 
-            <mat-checkbox [(ngModel)]="eastPapineau"
-              >East of Papineau St</mat-checkbox
+            <mat-checkbox [(ngModel)]="dtownview"
+              >Has panoramic view of Downtown</mat-checkbox
             >
-            <mat-checkbox [(ngModel)]="rooftop">Has rooftop</mat-checkbox>
-            <mat-checkbox [(ngModel)]="terrasse">Has terrase</mat-checkbox>
-            <mat-checkbox [(ngModel)]="railway">Close to railway</mat-checkbox>
-            <mat-checkbox [(ngModel)]="alley">Has alley</mat-checkbox>
-            <mat-checkbox [(ngModel)]="indivise">Undevided</mat-checkbox>
-            <mat-checkbox [(ngModel)]="noisySt">Passing street</mat-checkbox>
-            <mat-checkbox [(ngModel)]="garage">With Garage</mat-checkbox>
-            <mat-checkbox [(ngModel)]="secondPrkg">Second Parking</mat-checkbox>
           </div>
         </div>
       </li>
