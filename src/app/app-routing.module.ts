@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: "", pathMatch: "full", redirectTo: "saint-henri-condo" },
   { path: "home", component: HomeComponent },
   { path: "saint-henri-condo", component: QuartierAComponent },
-  { path: "vieux-montreal-condo", component: QuartierBComponent },
+  { path: "plateau", component: QuartierBComponent },
   { path: "ville-mont-royal-house", component: QuartierCComponent },
   { path: "bois-franc-house", component: QuartierDComponent },
   { path: "vieux-montreal", component: QuartierEComponent }

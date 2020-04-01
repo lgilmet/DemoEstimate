@@ -1,7 +1,9 @@
 <div class="container">
   <div class="card my-3">
     <div class="card-header">
-      <h2>Montreal / <span style="white-space:nowrap">Vieux-Montreal</span></h2>
+      <h2>
+        Montreal / <span style="white-space:nowrap">Plateau Mont-Royal</span>
+      </h2>
     </div>
     <!-- area -->
     <div class="input-group card-body">
@@ -36,10 +38,10 @@
                 Condo
               </mat-radio-button>
               <mat-radio-button value="apt" disabled>
-                Apt
+                Detached House
               </mat-radio-button>
               <mat-radio-button value="rowHouse" disabled>
-                Row-House
+                Row House
               </mat-radio-button>
             </mat-radio-group>
           </div>
@@ -86,7 +88,7 @@
       <!-- toilets -->
       <li class="list-group-item">
         <div class="row">
-          <div class="col-sm"><label>Number of washrooms</label></div>
+          <div class="col-sm"><label>Number of full bathrooms</label></div>
           <div class="col-sm pl-5 pl-sm-1">
             <mat-radio-group
               class="d-flex flex-column flex-md-row justify-content-md-start "
@@ -105,17 +107,17 @@
       <!-- basement -->
       <li class="list-group-item">
         <div class="row">
-          <div class="col-sm"><label>Level</label></div>
+          <div class="col-sm"><label>What floor is it on?</label></div>
           <div class="col-sm pl-5 pl-sm-1">
             <mat-radio-group class="d-flex flex-column" [(ngModel)]="level">
               <mat-radio-button value="above">
                 Above ground
               </mat-radio-button>
               <mat-radio-button value="half">
-                Has a basement
+                Part of it in the basement
               </mat-radio-button>
               <mat-radio-button value="basement">
-                Is a basement
+                Most of it in the basement
               </mat-radio-button>
             </mat-radio-group>
           </div>
@@ -125,7 +127,7 @@
       <li class="list-group-item">
         <div class="row">
           <div class="col-sm">
-            <label for="">Options: </label>
+            <label for="">Features: </label>
           </div>
           <div class="col-sm col-sm pl-5 pl-sm-1 d-flex flex-column">
             <mat-checkbox [(ngModel)]="heritageBldg"
@@ -138,14 +140,22 @@
             <mat-checkbox [(ngModel)]="eastPapineau"
               >East of Papineau St</mat-checkbox
             >
-            <mat-checkbox [(ngModel)]="rooftop">Has rooftop</mat-checkbox>
-            <mat-checkbox [(ngModel)]="terrasse">Has terrase</mat-checkbox>
-            <mat-checkbox [(ngModel)]="railway">Close to railway</mat-checkbox>
-            <mat-checkbox [(ngModel)]="alley">Has alley</mat-checkbox>
-            <mat-checkbox [(ngModel)]="indivise">Undevided</mat-checkbox>
-            <mat-checkbox [(ngModel)]="noisySt">Passing street</mat-checkbox>
-            <mat-checkbox [(ngModel)]="garage">With Garage</mat-checkbox>
-            <mat-checkbox [(ngModel)]="secondPrkg">Second Parking</mat-checkbox>
+            <mat-checkbox [(ngModel)]="rooftop"
+              >Has a private rooftop terrasse</mat-checkbox
+            >
+            <mat-checkbox [(ngModel)]="terrasse"
+              >Has a private terrase</mat-checkbox
+            >
+            <mat-checkbox [(ngModel)]="railway">By a train track</mat-checkbox>
+            <mat-checkbox [(ngModel)]="indivise"
+              >Undivided Co-Ownership</mat-checkbox
+            >
+            <mat-checkbox [(ngModel)]="noisySt">On a busy street</mat-checkbox>
+            <mat-checkbox [(ngModel)]="alley">Has Outdoor Parking</mat-checkbox>
+            <mat-checkbox [(ngModel)]="garage">Has Indoor Garage</mat-checkbox>
+            <mat-checkbox [(ngModel)]="secondPrkg"
+              >Has 2 Indoor Garage</mat-checkbox
+            >
           </div>
         </div>
       </li>

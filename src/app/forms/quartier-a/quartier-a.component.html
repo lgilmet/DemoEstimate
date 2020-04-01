@@ -35,10 +35,28 @@
                 Condo
               </mat-radio-button>
               <mat-radio-button value="apt" disabled>
-                Apt
+                Detached House
               </mat-radio-button>
               <mat-radio-button value="rowHouse" disabled>
-                Row-House
+                Row House
+              </mat-radio-button>
+            </mat-radio-group>
+          </div>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="row">
+          <div class="col-sm"><label>What floor is it on?</label></div>
+          <div class="col-sm pl-5 pl-sm-1">
+            <mat-radio-group class="d-flex flex-column" [(ngModel)]="level">
+              <mat-radio-button value="above">
+                Above ground
+              </mat-radio-button>
+              <mat-radio-button value="half">
+                Part of it in the basement
+              </mat-radio-button>
+              <mat-radio-button value="basement">
+                Most of it in the basement
               </mat-radio-button>
             </mat-radio-group>
           </div>
@@ -63,7 +81,7 @@
       <!-- toilets -->
       <li class="list-group-item">
         <div class="row">
-          <div class="col-sm"><label>Number of washrooms</label></div>
+          <div class="col-sm"><label>Number of full bathrooms</label></div>
           <div class="col-sm pl-5 pl-sm-1">
             <mat-radio-group
               class="d-flex flex-column flex-md-row justify-content-md-start "
@@ -86,15 +104,16 @@
       <li class="list-group-item">
         <div class="row">
           <div class="col-sm">
-            <label for="">Check all applicable: </label>
+            <label for="">Unique Features: </label>
           </div>
           <div class="col-sm col-sm pl-5 pl-sm-1 d-flex flex-column">
             <mat-checkbox [(ngModel)]="waterView">Waterfront view</mat-checkbox>
-            <mat-checkbox [(ngModel)]="basement">Basement</mat-checkbox>
             <mat-checkbox [(ngModel)]="indivise">Indivise</mat-checkbox>
-            <mat-checkbox [(ngModel)]="noisySt">Passing street</mat-checkbox>
-            <mat-checkbox [(ngModel)]="garage">Garage</mat-checkbox>
-            <mat-checkbox [(ngModel)]="secondPrkg">Second Parking</mat-checkbox>
+            <mat-checkbox [(ngModel)]="noisySt">Busy street</mat-checkbox>
+            <mat-checkbox [(ngModel)]="garage">Has Indoor Parking</mat-checkbox>
+            <mat-checkbox [(ngModel)]="secondPrkg"
+              >Has 2 Indoor Parking</mat-checkbox
+            >
           </div>
         </div>
       </li>
