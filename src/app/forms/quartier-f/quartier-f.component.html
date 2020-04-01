@@ -45,18 +45,48 @@
         </div>
       </li>
       <!-- quality -->
+
       <li class="list-group-item">
         <div class="row">
-          <div class="col-sm mt-1">Indoor finish quality</div>
-          <div class="col-sm py-0">
-            <mat-slider
-              [(ngModel)]="finishQuality"
-              thumbLabel="true"
-              class="w-100"
-              min="1"
-              max="10"
-              step="1"
-            ></mat-slider>
+          <div class="col-sm">
+            <label>Indoor Finish Quality</label>
+          </div>
+          <div class="col-sm pl-5 pl-sm-1">
+            <mat-radio-group
+              class="d-flex flex-column flex-md-row justify-content-md-start "
+              [(ngModel)]="quality"
+            >
+              <mat-radio-button value="1">
+                1
+              </mat-radio-button>
+              <mat-radio-button value="2">
+                2
+              </mat-radio-button>
+              <mat-radio-button value="3">
+                3
+              </mat-radio-button>
+              <mat-radio-button value="4">
+                4
+              </mat-radio-button>
+              <mat-radio-button value="5">
+                5
+              </mat-radio-button>
+              <mat-radio-button value="6">
+                6
+              </mat-radio-button>
+              <mat-radio-button value="7">
+                7
+              </mat-radio-button>
+              <mat-radio-button value="8">
+                8
+              </mat-radio-button>
+              <mat-radio-button value="9">
+                9
+              </mat-radio-button>
+              <mat-radio-button value="10">
+                10
+              </mat-radio-button>
+            </mat-radio-group>
           </div>
         </div>
       </li>
@@ -150,18 +180,6 @@
             <mat-checkbox [(ngModel)]="noisySt">On a busy street</mat-checkbox>
             <mat-checkbox [(ngModel)]="alley">Has Outdoor Parking</mat-checkbox>
             <mat-checkbox [(ngModel)]="garage">Has Indoor Garage</mat-checkbox>
-          </div>
-          <div class="col-sm col-sm pl-5 pl-sm-1 d-flex flex-column">
-            <label for="">+ 13 555$ </label>
-
-            <label for="">+ 73 231$ </label>
-
-            <label for="">+ 28 288$</label>
-            <label for="">+ 31 621$ </label>
-            <label for="">- 39 962$</label>
-            <label for="">- 19 815$</label>
-            <label for="">+ 13 267$ </label>
-            <label for="">+ 34 708$ </label>
           </div>
         </div>
       </li>

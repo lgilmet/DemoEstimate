@@ -29,6 +29,7 @@ export class QuartierFComponent implements OnInit {
   finishQuality: number;
   nbWashrooms: string;
   nbBedrooms: string;
+  quality: string;
   level: string;
 
   alley: boolean;
@@ -73,6 +74,33 @@ export class QuartierFComponent implements OnInit {
         break;
     }
   }
+  getQuality(option: number) {
+    switch (option) {
+      case 1:
+        return 27288;
+      case 2:
+        return 54577.4;
+      case 3:
+        return 81866;
+      case 4:
+        return 109152;
+      case 5:
+        return 136440;
+      case 6:
+        return 163728;
+      case 7:
+        return 191016;
+      case 8:
+        return 218304;
+      case 9:
+        return 245592;
+      case 10:
+        return 272880;
+
+      default:
+        break;
+    }
+  }
   getLevel(option: string) {
     switch (option) {
       case "above":
@@ -91,7 +119,7 @@ export class QuartierFComponent implements OnInit {
     this.estimate = this.formatter.format(
       Math.round(
         this.livingArea * 1977.44 +
-          this.finishQuality * 27288.66 +
+          this.getQuality(Number(this.quality)) +
           Number(this.nbWashrooms) * 43077.18 +
           this.getBedrooms(Number(this.nbBedrooms)) +
           this.getLevel(this.level) +
@@ -130,7 +158,7 @@ export class QuartierFComponent implements OnInit {
     // reset all itputs
     this.type = "condo";
     this.livingArea = null;
-    this.finishQuality = 5;
+    this.quality = "1";
     this.nbBedrooms = "1";
     this.nbWashrooms = "1";
     this.level = "above";
