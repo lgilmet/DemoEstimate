@@ -20,6 +20,10 @@ import { QuartierDComponent } from "./forms/quartier-d/quartier-d.component";
 import { QuartierEComponent } from "./forms/quartier-e/quartier-e.component";
 import { QuartierFComponent } from "./forms/quartier-f/quartier-f.component";
 import { QuartierGComponent } from './forms/quartier-g/quartier-g.component';
+import { QuartierHComponent } from './forms/quartier-h/quartier-h.component';
+import { QuartierIComponent } from './forms/quartier-i/quartier-i.component';
+import { QuartierJComponent } from './forms/quartier-j/quartier-j.component';
+import { QuartierKComponent } from './forms/quartier-k/quartier-k.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +35,11 @@ import { QuartierGComponent } from './forms/quartier-g/quartier-g.component';
     QuartierDComponent,
     QuartierEComponent,
     QuartierFComponent,
-    QuartierGComponent
+    QuartierGComponent,
+    QuartierHComponent,
+    QuartierIComponent,
+    QuartierJComponent,
+    QuartierKComponent
   ],
   imports: [
     FormsModule,
