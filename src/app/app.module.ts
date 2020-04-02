@@ -24,6 +24,7 @@ import { QuartierHComponent } from './forms/quartier-h/quartier-h.component';
 import { QuartierIComponent } from './forms/quartier-i/quartier-i.component';
 import { QuartierJComponent } from './forms/quartier-j/quartier-j.component';
 import { QuartierKComponent } from './forms/quartier-k/quartier-k.component';
+import { PaymentComponent } from './forms/payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { QuartierKComponent } from './forms/quartier-k/quartier-k.component';
     QuartierHComponent,
     QuartierIComponent,
     QuartierJComponent,
-    QuartierKComponent
+    QuartierKComponent,
+    PaymentComponent
   ],
   imports: [
     FormsModule,
