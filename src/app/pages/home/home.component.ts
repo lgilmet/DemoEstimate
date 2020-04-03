@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+declare var $: any;
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: "app-home",
+  templateUrl: "./home.component.html",
+  styleUrls: ["./home.component.scss"]
 })
 export class HomeComponent implements OnInit {
+  popoverContent: string = "Content of the popover";
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
+    $(function() {
+      $('[data-toggle="popover"]').popover();
+    });
   }
-
 }

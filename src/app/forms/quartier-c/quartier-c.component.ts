@@ -5,9 +5,10 @@ declare var $: any;
 @Component({
   selector: "app-quartier-c",
   templateUrl: "./quartier-c.component.html",
-  styleUrls: ["./quartier-c.component.css"]
+  styleUrls: ["./quartier-c.component.scss"]
 })
 export class QuartierCComponent implements OnInit {
+  popoverContent: string = "whats in that popover";
   // variables
   type: string;
   livingArea: number;

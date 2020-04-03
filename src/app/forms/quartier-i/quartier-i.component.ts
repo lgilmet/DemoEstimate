@@ -5,7 +5,7 @@ declare var $: any;
 @Component({
   selector: "app-quartier-i",
   templateUrl: "./quartier-i.component.html",
-  styleUrls: ["./quartier-i.component.css"]
+  styleUrls: ["./quartier-i.component.scss"]
 })
 export class QuartierIComponent implements OnInit {
   livingArea: number;
