@@ -91,9 +91,13 @@ THE SOFTWARE.
 
 @angular/material/dialog
 
+@angular/material/icon
+
 @angular/material/radio
 
 @angular/material/slider
+
+@angular/material/tooltip
 
 @angular/platform-browser
 MIT
