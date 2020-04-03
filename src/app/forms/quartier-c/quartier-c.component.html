@@ -2,12 +2,12 @@
   <div class="card my-3">
     <div class="card-header">
       <h2>
-        Montreal / <span style="white-space:nowrap">Ville Mont-Royal</span>
+        Montreal / <span style="white-space: nowrap;">Ville Mont-Royal</span>
       </h2>
     </div>
     <div class="card-body">
       <!--living  area -->
-      <div class="input-group ">
+      <div class="input-group">
         <div class="input-group-prepend">
           <span class="input-group-text" id="area-label">Living area </span>
         </div>
@@ -43,10 +43,10 @@
       <!-- construction year -->
       <div class="form-group mt-3">
         <div class="row">
-          <div class="col-sm ">
+          <div class="col-sm">
             <label>Construction year</label>
           </div>
-          <div class="col-sm  pl-5 pl-sm-1">
+          <div class="col-sm pl-5 pl-sm-1">
             <select class="form-control" [(ngModel)]="ConstructionYear">
               <option *ngFor="let year of years" value="{{ year }}">
                 {{ year }}
@@ -61,11 +61,11 @@
       <!-- type -->
       <li class="list-group-item">
         <div class="row">
-          <div class="col-sm ">
+          <div class="col-sm">
             <label>Type</label
             ><mat-icon
               class="info-text ml-2"
-              style="font-size:1.2em"
+              style="font-size: 1.2em;"
               matTooltip="{{ popoverContent }}"
               >info</mat-icon
             >
@@ -89,10 +89,18 @@
       <!-- toilets -->
       <li class="list-group-item">
         <div class="row">
-          <div class="col-sm"><label>Number of full bathrooms</label></div>
+          <div class="col-sm">
+            <label>Number of full bathrooms</label>
+            <mat-icon
+              class="info-text ml-2"
+              style="font-size: 1.2em;"
+              matTooltip="{{ popoverContent2 }}"
+              >info</mat-icon
+            >
+          </div>
           <div class="col-sm pl-5 pl-sm-1">
             <mat-radio-group
-              class="d-flex flex-column flex-md-row justify-content-md-start "
+              class="d-flex flex-column flex-md-row justify-content-md-start"
               [(ngModel)]="nbWashrooms"
             >
               <mat-radio-button value="1">

@@ -5,10 +5,11 @@ declare var $: any;
 @Component({
   selector: "app-quartier-c",
   templateUrl: "./quartier-c.component.html",
-  styleUrls: ["./quartier-c.component.scss"]
+  styleUrls: ["./quartier-c.component.scss"],
 })
 export class QuartierCComponent implements OnInit {
-  popoverContent: string = "whats in that popover";
+  popoverContent: string = "What kind of dwelling is it?";
+  popoverContent2: string = "What kind of dwelling is it?";
   // variables
   type: string;
   livingArea: number;
@@ -42,7 +43,7 @@ export class QuartierCComponent implements OnInit {
   ngOnInit() {
     this.formatter = new Intl.NumberFormat("en-CA", {
       style: "currency",
-      currency: "CAD"
+      currency: "CAD",
     });
     this.years = [];
     this.currentYear = new Date().getFullYear();
