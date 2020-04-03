@@ -15,9 +15,16 @@ import { MatRadioModule } from "@angular/material/radio";
 import { MatButtonModule } from "@angular/material/button";
 import { MatDialogModule } from "@angular/material/dialog";
 import { MatSlideToggleModule } from "@angular/material/slide-toggle";
-import { HomeComponent } from './pages/home/home.component';
-import { QuartierDComponent } from './forms/quartier-d/quartier-d.component';
-import { QuartierEComponent } from './forms/quartier-e/quartier-e.component';
+import { HomeComponent } from "./pages/home/home.component";
+import { QuartierDComponent } from "./forms/quartier-d/quartier-d.component";
+import { QuartierEComponent } from "./forms/quartier-e/quartier-e.component";
+import { QuartierFComponent } from "./forms/quartier-f/quartier-f.component";
+import { QuartierGComponent } from './forms/quartier-g/quartier-g.component';
+import { QuartierHComponent } from './forms/quartier-h/quartier-h.component';
+import { QuartierIComponent } from './forms/quartier-i/quartier-i.component';
+import { QuartierJComponent } from './forms/quartier-j/quartier-j.component';
+import { QuartierKComponent } from './forms/quartier-k/quartier-k.component';
+import { PaymentComponent } from './forms/payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +34,14 @@ import { QuartierEComponent } from './forms/quartier-e/quartier-e.component';
     QuartierCComponent,
     HomeComponent,
     QuartierDComponent,
-    QuartierEComponent
+    QuartierEComponent,
+    QuartierFComponent,
+    QuartierGComponent,
+    QuartierHComponent,
+    QuartierIComponent,
+    QuartierJComponent,
+    QuartierKComponent,
+    PaymentComponent
   ],
   imports: [
     FormsModule,

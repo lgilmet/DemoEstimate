@@ -12,13 +12,13 @@ export class QuartierCComponent implements OnInit {
   type: string;
   livingArea: number;
   lotArea: number;
+  finishQuality: number;
   avgQuality: boolean;
   nbWashrooms: string;
   detached: boolean;
   level: string;
   years: number[];
   ConstructionYear: number;
-  yearKnown: boolean;
 
   CDN: boolean;
   eastPapineau: boolean;
@@ -39,7 +39,6 @@ export class QuartierCComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    this.yearKnown = false;
     this.formatter = new Intl.NumberFormat("en-CA", {
       style: "currency",
       currency: "CAD"
@@ -47,7 +46,7 @@ export class QuartierCComponent implements OnInit {
     this.years = [];
     this.currentYear = new Date().getFullYear();
     this.ConstructionYear = this.currentYear;
-    for (let i = 0; i < 200; i++) {
+    for (let i = 0; i < 100; i++) {
       this.years.push(this.currentYear - i);
     }
 
@@ -81,11 +80,8 @@ export class QuartierCComponent implements OnInit {
     }
   }
 
-  getYear(choice: number) {
-    if (this.yearKnown) {
-      let age = this.currentYear - this.ConstructionYear;
-      return age * -250.409;
-    } else return 0;
+  getYear() {
+    return this.ConstructionYear * -250.409;
   }
 
   // -Année de construction	(2020 - 1924) * 	-250.409
@@ -106,8 +102,8 @@ export class QuartierCComponent implements OnInit {
       Math.round(
         this.livingArea * 3285.882 +
           this.lotArea * 561.9173 +
-          this.getYear(this.ConstructionYear) +
-          Number(this.avgQuality) * 35762.6 +
+          this.finishQuality * 119162.7 +
+          this.getYear() +
           this.getBathroooms(Number(this.nbWashrooms)) +
           Number(this.detached) * 104862.4 +
           Number(this.CDN) * -191459 +
@@ -145,7 +141,7 @@ export class QuartierCComponent implements OnInit {
     this.ConstructionYear = this.currentYear;
     this.livingArea = null;
     this.lotArea = null;
-    this.avgQuality = false;
+    this.finishQuality = 5;
     this.nbWashrooms = "1";
     this.detached = false;
     this.CDN = false;

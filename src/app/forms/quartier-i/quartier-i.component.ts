@@ -3,21 +3,19 @@ import { ThemePalette } from "@angular/material/core";
 
 declare var $: any;
 @Component({
-  selector: "app-quartier-d",
-  templateUrl: "./quartier-d.component.html",
-  styleUrls: ["./quartier-d.component.css"]
+  selector: "app-quartier-i",
+  templateUrl: "./quartier-i.component.html",
+  styleUrls: ["./quartier-i.component.css"]
 })
-export class QuartierDComponent implements OnInit {
+export class QuartierIComponent implements OnInit {
   livingArea: number;
   lotArea: number;
   quality: string;
-  years: number[];
-  currentYear: number;
-  constructionYear: number;
+  nbWashrooms: string;
   type: string;
   detached: boolean;
-  facePark: boolean;
-  busyStreet: boolean;
+  highway: boolean;
+  waterfront: boolean;
   estimate: number;
 
   formatter;
@@ -30,41 +28,53 @@ export class QuartierDComponent implements OnInit {
       style: "currency",
       currency: "CAD"
     });
-    this.years = [];
-    this.currentYear = new Date().getFullYear();
-    this.constructionYear = this.currentYear;
-    for (let i = 0; i < 25; i++) this.years.push(this.currentYear - i);
   }
-  // LivingArea	$1,488.46 input
-  // LotArea	$583.36 input
-  // Age	$72.04 select
-  // Type House radio
-  // Quality 	$38,557.15 slider
-  // Detached	$185,424.30 boolean
-  // Face Parc	$66,507.37 boolean
-  // Bad Street	-$121,472.00 boolean
+
+  // LivingArea	 $1,683.87
+  //  Lot Area	 $206.01
+  //  3 bath	 $61,740.04
+  //  Highway	 $(69,084.67)
+  // Waterfront	 $591,890.78
+  //  Quality	 $49,216.07
+  //  Dorval	 $(55,010.90)
+  //  Saint-Pierre	 $(82,916.52)
+  //  Detached	 $35,672.35
+
   getQuality(option: number) {
     switch (option) {
       case 1:
-        return 38557;
+        return 49216.07;
       case 2:
-        return 2 * 38557;
+        return 2 * 49216.07;
       case 3:
-        return 3 * 38557;
+        return 3 * 49216.07;
       case 4:
-        return 4 * 38557;
+        return 4 * 49216.07;
       case 5:
-        return 5 * 38557;
+        return 5 * 49216.07;
       case 6:
-        return 6 * 38557;
+        return 6 * 49216.07;
       case 7:
-        return 7 * 38557;
+        return 7 * 49216.07;
       case 8:
-        return 8 * 38557;
+        return 8 * 49216.07;
       case 9:
-        return 9 * 38557;
+        return 9 * 49216.07;
       case 10:
-        return 10 * 38557;
+        return 10 * 49216.07;
+
+      default:
+        break;
+    }
+  }
+  getBathroooms(option: number) {
+    switch (option) {
+      case 1:
+        return 0;
+      case 2:
+        return 0;
+      case 3:
+        return 61740;
 
       default:
         break;
@@ -74,13 +84,13 @@ export class QuartierDComponent implements OnInit {
   computeEstimate() {
     this.estimate = this.formatter.format(
       Math.round(
-        this.livingArea * 1488.46 +
-          this.lotArea * 583.36 +
-          this.constructionYear * 72.04 +
+        this.livingArea * 1683.57 +
+          this.lotArea * 206.1 +
+          this.getBathroooms(Number(this.nbWashrooms)) +
           this.getQuality(Number(this.quality)) +
-          Number(this.detached) * 185424.3 +
-          Number(this.facePark) * 66507.37 +
-          Number(this.busyStreet) * -121472.0
+          Number(this.detached) * 35672 +
+          Number(this.highway) * -69084 +
+          Number(this.waterfront) * 591890
       )
     );
   }
@@ -109,8 +119,9 @@ export class QuartierDComponent implements OnInit {
     this.quality = "1";
     this.type = "house";
     this.detached = false;
-    this.facePark = false;
-    this.busyStreet = false;
+    this.highway = false;
+    this.nbWashrooms = "1";
+    this.waterfront = false;
   }
   getTotal() {
     if (this.checkForm()) this.showResult();

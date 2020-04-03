@@ -1,7 +1,7 @@
 <div class="container">
   <div class="card my-3">
     <div class="card-header">
-      <h2>Montreal / <span style="white-space:nowrap">Bois Franc</span></h2>
+      <h2>Montreal / <span style="white-space:nowrap">Lachine</span></h2>
     </div>
     <div class="card-body">
       <!-- living area -->
@@ -41,26 +41,25 @@
 
     <!-- Year -->
     <ul class="list-group list-group-flush">
+      <!-- toilets -->
       <li class="list-group-item">
         <div class="row">
-          <div class="col-sm">Year Built</div>
-          <div class="col-sm">
-            <select class="form-control" [(ngModel)]="constructionYear">
-              <option *ngFor="let year of years" value="{{ year }}">{{
-                year
-              }}</option>
-            </select>
-          </div>
-        </div>
-        <div class="row mt-3">
-          <div class="col-sm">Type</div>
-          <div class="col-sm">
-            <mat-radio-group [(ngModel)]="type"
-              ><mat-radio-button value="condo" disabled>Condo</mat-radio-button>
-              <mat-radio-button value="house"
-                >House</mat-radio-button
-              ></mat-radio-group
+          <div class="col-sm"><label>Number of full bathrooms</label></div>
+          <div class="col-sm pl-5 pl-sm-1">
+            <mat-radio-group
+              class="d-flex flex-column flex-md-row justify-content-md-start "
+              [(ngModel)]="nbWashrooms"
             >
+              <mat-radio-button value="1">
+                1
+              </mat-radio-button>
+              <mat-radio-button value="2">
+                2
+              </mat-radio-button>
+              <mat-radio-button value="3">
+                3
+              </mat-radio-button>
+            </mat-radio-group>
           </div>
         </div>
       </li>
@@ -113,8 +112,10 @@
           <div class="col-sm">Features</div>
           <div class="col-sm pl-5 pl-sm-1 d-flex flex-column">
             <mat-checkbox [(ngModel)]="detached">Detached</mat-checkbox>
-            <mat-checkbox [(ngModel)]="facePark">Facing Park</mat-checkbox>
-            <mat-checkbox [(ngModel)]="busyStreet">Busy Street</mat-checkbox>
+            <mat-checkbox [(ngModel)]="highway">By the Highway</mat-checkbox>
+            <mat-checkbox [(ngModel)]="waterfront"
+              >On the Waterfront</mat-checkbox
+            >
           </div>
         </div>
       </li>

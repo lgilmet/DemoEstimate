@@ -14,6 +14,7 @@ export class QuartierAComponent implements OnInit {
   livingArea: number;
   finishQuality: number;
   nbWashrooms: string;
+  level: string;
 
   basement: boolean;
   waterView: boolean;
@@ -39,14 +40,27 @@ export class QuartierAComponent implements OnInit {
 
     this.clearForm();
   }
+  getLevel(option: string) {
+    switch (option) {
+      case "above":
+        return 0;
+      case "half":
+        return 0.5 * -82823.4;
+      case "basement":
+        return 1 * -82823.4;
+
+      default:
+        break;
+    }
+  }
 
   computeEstimate() {
     this.estimate = this.formatter.format(
       Math.round(
         this.livingArea * 3280.776 +
           this.finishQuality * 35762.6 +
+          this.getLevel(this.level) +
           (Number(this.nbWashrooms) - 1) * 77042.11 +
-          Number(this.basement) * -82823.4 +
           Number(this.waterView) * 123594 +
           Number(this.indivise) * -47426.5 +
           Number(this.garage) * 32524.31 +
@@ -91,8 +105,7 @@ export class QuartierAComponent implements OnInit {
     this.livingArea = null;
     this.finishQuality = 5;
     this.nbWashrooms = "1";
-
-    this.basement = false;
+    this.level = "above";
     this.privateOutdoor = false;
     this.waterView = false;
     this.indivise = false;

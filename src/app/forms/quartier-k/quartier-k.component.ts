@@ -3,21 +3,23 @@ import { ThemePalette } from "@angular/material/core";
 
 declare var $: any;
 @Component({
-  selector: "app-quartier-d",
-  templateUrl: "./quartier-d.component.html",
-  styleUrls: ["./quartier-d.component.css"]
+  selector: "app-quartier-k",
+  templateUrl: "./quartier-k.component.html",
+  styleUrls: ["./quartier-k.component.css"]
 })
-export class QuartierDComponent implements OnInit {
+export class QuartierKComponent implements OnInit {
   livingArea: number;
   lotArea: number;
   quality: string;
-  years: number[];
-  currentYear: number;
-  constructionYear: number;
+
   type: string;
-  detached: boolean;
-  facePark: boolean;
-  busyStreet: boolean;
+  pool: boolean;
+  noyard: boolean;
+  east15: boolean;
+  powder: boolean;
+  nsherbrooke: boolean;
+  wcavendish: boolean;
+  monkland: boolean;
   estimate: number;
 
   formatter;
@@ -30,10 +32,6 @@ export class QuartierDComponent implements OnInit {
       style: "currency",
       currency: "CAD"
     });
-    this.years = [];
-    this.currentYear = new Date().getFullYear();
-    this.constructionYear = this.currentYear;
-    for (let i = 0; i < 25; i++) this.years.push(this.currentYear - i);
   }
   // LivingArea	$1,488.46 input
   // LotArea	$583.36 input
@@ -46,25 +44,25 @@ export class QuartierDComponent implements OnInit {
   getQuality(option: number) {
     switch (option) {
       case 1:
-        return 38557;
+        return 89562;
       case 2:
-        return 2 * 38557;
+        return 2 * 89562;
       case 3:
-        return 3 * 38557;
+        return 3 * 89562;
       case 4:
-        return 4 * 38557;
+        return 4 * 89562;
       case 5:
-        return 5 * 38557;
+        return 5 * 89562;
       case 6:
-        return 6 * 38557;
+        return 6 * 89562;
       case 7:
-        return 7 * 38557;
+        return 7 * 89562;
       case 8:
-        return 8 * 38557;
+        return 8 * 89562;
       case 9:
-        return 9 * 38557;
+        return 9 * 89562;
       case 10:
-        return 10 * 38557;
+        return 10 * 89562;
 
       default:
         break;
@@ -74,13 +72,16 @@ export class QuartierDComponent implements OnInit {
   computeEstimate() {
     this.estimate = this.formatter.format(
       Math.round(
-        this.livingArea * 1488.46 +
-          this.lotArea * 583.36 +
-          this.constructionYear * 72.04 +
+        this.livingArea * 3214.78 +
+          this.lotArea * 87.34 +
           this.getQuality(Number(this.quality)) +
-          Number(this.detached) * 185424.3 +
-          Number(this.facePark) * 66507.37 +
-          Number(this.busyStreet) * -121472.0
+          Number(this.pool) * 177649 +
+          Number(this.noyard) * -177146 +
+          Number(this.powder) * 21615 +
+          Number(this.east15) * 231647 +
+          Number(this.nsherbrooke) * -174680 +
+          Number(this.wcavendish) * -109931 +
+          Number(this.monkland) * 141436
       )
     );
   }
@@ -108,9 +109,13 @@ export class QuartierDComponent implements OnInit {
     this.lotArea = null;
     this.quality = "1";
     this.type = "house";
-    this.detached = false;
-    this.facePark = false;
-    this.busyStreet = false;
+    this.pool = false;
+    this.noyard = false;
+    this.powder = false;
+    this.east15 = false;
+    this.nsherbrooke = false;
+    this.wcavendish = false;
+    this.monkland = false;
   }
   getTotal() {
     if (this.checkForm()) this.showResult();

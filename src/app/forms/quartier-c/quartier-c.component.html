@@ -45,17 +45,9 @@
         <div class="row">
           <div class="col-sm ">
             <label>Construction year</label>
-            <mat-slide-toggle
-              class="ml-2"
-              [(ngModel)]="yearKnown"
-            ></mat-slide-toggle>
           </div>
           <div class="col-sm  pl-5 pl-sm-1">
-            <select
-              class="form-control"
-              [(ngModel)]="ConstructionYear"
-              [disabled]="!yearKnown"
-            >
+            <select class="form-control" [(ngModel)]="ConstructionYear">
               <option *ngFor="let year of years" value="{{ year }}">
                 {{ year }}
               </option>
@@ -89,7 +81,7 @@
       <!-- toilets -->
       <li class="list-group-item">
         <div class="row">
-          <div class="col-sm"><label>Number of washrooms</label></div>
+          <div class="col-sm"><label>Number of full bathrooms</label></div>
           <div class="col-sm pl-5 pl-sm-1">
             <mat-radio-group
               class="d-flex flex-column flex-md-row justify-content-md-start "
@@ -108,26 +100,42 @@
           </div>
         </div>
       </li>
-
+      <!-- quality -->
+      <li class="list-group-item">
+        <div class="row">
+          <div class="col-sm mt-1">Indoor finish quality</div>
+          <div class="col-sm py-0">
+            <mat-slider
+              [(ngModel)]="finishQuality"
+              thumbLabel="true"
+              class="w-100"
+              min="1"
+              max="10"
+              step="1"
+            ></mat-slider>
+          </div>
+        </div>
+      </li>
       <!-- checkboxes -->
       <li class="list-group-item">
         <div class="row">
           <div class="col-sm">
-            <label for="">Options: </label>
+            <label for="">Unique Features: </label>
           </div>
           <div class="col-sm col-sm pl-5 pl-sm-1 d-flex flex-column">
-            <mat-checkbox [(ngModel)]="CDN">In Côte-des-Neiges</mat-checkbox>
-            <mat-checkbox [(ngModel)]="eastOfRockland"
-              >East of Rockland</mat-checkbox
+            <mat-checkbox [(ngModel)]="CDN"
+              >Located in Côte-des-Neiges</mat-checkbox
             >
-            <mat-checkbox [(ngModel)]="avgQuality"
-              >Standard quality</mat-checkbox
+            <mat-checkbox [(ngModel)]="eastOfRockland"
+              >Located east of Rockland boul.</mat-checkbox
             >
             <mat-checkbox [(ngModel)]="detached">Detached</mat-checkbox>
-            <mat-checkbox [(ngModel)]="sgl">SGL</mat-checkbox>
-            <mat-checkbox [(ngModel)]="yard">Has yard</mat-checkbox>
-            <mat-checkbox [(ngModel)]="pool">Has pool</mat-checkbox>
-            <mat-checkbox [(ngModel)]="noisySt">Passing street</mat-checkbox>
+            <mat-checkbox [(ngModel)]="sgl"
+              >Sold witouth Legal Warranty</mat-checkbox
+            >
+            <mat-checkbox [(ngModel)]="yard">Has a backyard</mat-checkbox>
+            <mat-checkbox [(ngModel)]="pool">Has an inground pool</mat-checkbox>
+            <mat-checkbox [(ngModel)]="noisySt">On a busy street</mat-checkbox>
           </div>
         </div>
       </li>

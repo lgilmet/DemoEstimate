@@ -88,6 +88,7 @@ export class QuartierBComponent implements OnInit {
           Number(this.railway) * -97407.3 +
           Number(this.alley) * 20484.77 +
           Number(this.heritageBldg) * 80020.64 +
+          Number(this.noisySt) * -30164.7 +
           Number(this.luxuryBldg) * 61656.98 +
           Number(this.indivise) * -32567.97 +
           Number(this.garage) * 17690.52
@@ -117,7 +118,7 @@ export class QuartierBComponent implements OnInit {
     $("#collapseExample").collapse("hide");
     // reset all itputs
     this.type = "condo";
-    this.livingArea = 50;
+    this.livingArea = null;
     this.finishQuality = 5;
     this.nbBedrooms = "1";
     this.nbWashrooms = "1";
