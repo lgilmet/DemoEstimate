@@ -27,6 +27,8 @@ export class QuartierAComponent implements OnInit {
     "Designer's kitchen, luxury appliances, very high quality flooring and tiles";
   popoverContent10: string = "Incredible layout with incredible products";
   popoverContent11: string = "Full bathrom has toilet, shower/bath and sink";
+  popoverContent12: string =
+    "A terrace is a balcony that is over 5 foot wide, and at least 35 sq/foot";
 
   type: string;
   livingArea: number;
@@ -58,6 +60,7 @@ export class QuartierAComponent implements OnInit {
 
     this.clearForm();
   }
+
   getLevel(option: string) {
     switch (option) {
       case "above":
@@ -108,6 +111,7 @@ export class QuartierAComponent implements OnInit {
           (Number(this.nbWashrooms) - 1) * 77042.11 +
           Number(this.waterView) * 123594 +
           Number(this.indivise) * -47426.5 +
+          Number(this.privateOutdoor) * 59266 +
           Number(this.garage) * 32524.31 +
           Number(this.noisySt) * -39936.4 +
           Number(this.secondPrkg) * 60206.06

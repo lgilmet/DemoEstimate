@@ -5,9 +5,25 @@ declare var $: any;
 @Component({
   selector: "app-quartier-d",
   templateUrl: "./quartier-d.component.html",
-  styleUrls: ["./quartier-d.component.scss"]
+  styleUrls: ["./quartier-d.component.scss"],
 })
 export class QuartierDComponent implements OnInit {
+  popoverContent: string = "Unobstructed water view";
+  popoverContent1: string = "Practicaly unlivable";
+  popoverContent2: string = "Old carpet, Old wallpaper, Old vinyl";
+  popoverContent3: string = "Parquet flooring, old melamine, basic faucets";
+  popoverContent4: string =
+    "Wood floor, melamine cabinets, melamine countertops";
+  popoverContent5: string = "Wood floor, melamine cabinets, stone countertops";
+  popoverContent6: string =
+    "Wood floor, thermoformed or wood cabinets, kitchen island";
+  popoverContent7: string =
+    "Custom kitchen with island, open shower, high quality windows";
+  popoverContent8: string =
+    "Custom kitchen, high quality tiles, wall toilets, designer faucets";
+  popoverContent9: string =
+    "Designer's kitchen, luxury appliances, very high quality flooring and tiles";
+  popoverContent10: string = "Incredible layout with incredible products";
   livingArea: number;
   lotArea: number;
   quality: string;
@@ -28,7 +44,7 @@ export class QuartierDComponent implements OnInit {
     this.clearForm();
     this.formatter = new Intl.NumberFormat("en-CA", {
       style: "currency",
-      currency: "CAD"
+      currency: "CAD",
     });
     this.years = [];
     this.currentYear = new Date().getFullYear();

@@ -10,6 +10,22 @@ declare var $: any;
 })
 export class QuartierBComponent implements OnInit {
   // variables
+  popoverContent: string = "Unobstructed water view";
+  popoverContent1: string = "Practicaly unlivable";
+  popoverContent2: string = "Old carpet, Old wallpaper, Old vinyl";
+  popoverContent3: string = "Parquet flooring, old melamine, basic faucets";
+  popoverContent4: string =
+    "Wood floor, melamine cabinets, melamine countertops";
+  popoverContent5: string = "Wood floor, melamine cabinets, stone countertops";
+  popoverContent6: string =
+    "Wood floor, thermoformed or wood cabinets, kitchen island";
+  popoverContent7: string =
+    "Custom kitchen with island, open shower, high quality windows";
+  popoverContent8: string =
+    "Custom kitchen, high quality tiles, wall toilets, designer faucets";
+  popoverContent9: string =
+    "Designer's kitchen, luxury appliances, very high quality flooring and tiles";
+  popoverContent10: string = "Incredible layout with incredible products";
   type: string;
   livingArea: number;
   quality: string;
