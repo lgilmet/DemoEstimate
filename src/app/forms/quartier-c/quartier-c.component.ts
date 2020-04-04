@@ -14,7 +14,7 @@ export class QuartierCComponent implements OnInit {
   type: string;
   livingArea: number;
   lotArea: number;
-  finishQuality: number;
+  quality: string;
   avgQuality: boolean;
   nbWashrooms: string;
   detached: boolean;
@@ -81,6 +81,33 @@ export class QuartierCComponent implements OnInit {
         break;
     }
   }
+  getQuality(option: number) {
+    switch (option) {
+      case 1:
+        return 119162;
+      case 2:
+        return 2 * 119162;
+      case 3:
+        return 3 * 119162;
+      case 4:
+        return 4 * 119162;
+      case 5:
+        return 5 * 119162;
+      case 6:
+        return 6 * 119162;
+      case 7:
+        return 7 * 119162;
+      case 8:
+        return 8 * 119162;
+      case 9:
+        return 9 * 119162;
+      case 10:
+        return 10 * 119162;
+
+      default:
+        break;
+    }
+  }
 
   getYear() {
     return this.ConstructionYear * -250.409;
@@ -104,7 +131,7 @@ export class QuartierCComponent implements OnInit {
       Math.round(
         this.livingArea * 3285.882 +
           this.lotArea * 561.9173 +
-          this.finishQuality * 119162.7 +
+          this.getQuality(Number(this.quality)) +
           this.getYear() +
           this.getBathroooms(Number(this.nbWashrooms)) +
           Number(this.detached) * 104862.4 +
@@ -143,7 +170,7 @@ export class QuartierCComponent implements OnInit {
     this.ConstructionYear = this.currentYear;
     this.livingArea = null;
     this.lotArea = null;
-    this.finishQuality = 5;
+    this.quality = "1";
     this.nbWashrooms = "1";
     this.detached = false;
     this.CDN = false;

@@ -6,13 +6,14 @@ declare var $: any;
 @Component({
   selector: "app-quartier-a",
   templateUrl: "./quartier-a.component.html",
-  styleUrls: ["./quartier-a.component.scss"]
+  styleUrls: ["./quartier-a.component.scss"],
 })
 export class QuartierAComponent implements OnInit {
   // variables
+  popoverContent: string = "Unobstructed water view";
   type: string;
   livingArea: number;
-  finishQuality: number;
+  quality: string;
   nbWashrooms: string;
   level: string;
 
@@ -35,7 +36,7 @@ export class QuartierAComponent implements OnInit {
   ngOnInit() {
     this.formatter = new Intl.NumberFormat("en-CA", {
       style: "currency",
-      currency: "CAD"
+      currency: "CAD",
     });
 
     this.clearForm();
@@ -53,12 +54,39 @@ export class QuartierAComponent implements OnInit {
         break;
     }
   }
+  getQuality(option: number) {
+    switch (option) {
+      case 1:
+        return 35762;
+      case 2:
+        return 2 * 35762;
+      case 3:
+        return 3 * 35762;
+      case 4:
+        return 4 * 35762;
+      case 5:
+        return 5 * 35762;
+      case 6:
+        return 6 * 35762;
+      case 7:
+        return 7 * 35762;
+      case 8:
+        return 8 * 35762;
+      case 9:
+        return 9 * 35762;
+      case 10:
+        return 10 * 35762;
+
+      default:
+        break;
+    }
+  }
 
   computeEstimate() {
     this.estimate = this.formatter.format(
       Math.round(
         this.livingArea * 3280.776 +
-          this.finishQuality * 35762.6 +
+          this.getQuality(Number(this.quality)) +
           this.getLevel(this.level) +
           (Number(this.nbWashrooms) - 1) * 77042.11 +
           Number(this.waterView) * 123594 +
@@ -103,7 +131,7 @@ export class QuartierAComponent implements OnInit {
     // reset all itputs
     this.type = "condo";
     this.livingArea = null;
-    this.finishQuality = 5;
+    this.quality = "1";
     this.nbWashrooms = "1";
     this.level = "above";
     this.privateOutdoor = false;

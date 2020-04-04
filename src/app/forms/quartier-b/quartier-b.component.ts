@@ -6,13 +6,13 @@ declare var $: any;
 @Component({
   selector: "app-quartier-b",
   templateUrl: "./quartier-b.component.html",
-  styleUrls: ["./quartier-b.component.scss"]
+  styleUrls: ["./quartier-b.component.scss"],
 })
 export class QuartierBComponent implements OnInit {
   // variables
   type: string;
   livingArea: number;
-  finishQuality: number;
+  quality: string;
   nbWashrooms: string;
   nbBedrooms: string;
   level: string;
@@ -41,7 +41,7 @@ export class QuartierBComponent implements OnInit {
   ngOnInit() {
     this.formatter = new Intl.NumberFormat("en-CA", {
       style: "currency",
-      currency: "CAD"
+      currency: "CAD",
     });
 
     this.clearForm();
@@ -55,6 +55,33 @@ export class QuartierBComponent implements OnInit {
         return 29424.64;
       case 3:
         return 91869.05;
+
+      default:
+        break;
+    }
+  }
+  getQuality(option: number) {
+    switch (option) {
+      case 1:
+        return 37216;
+      case 2:
+        return 2 * 37216;
+      case 3:
+        return 3 * 37216;
+      case 4:
+        return 4 * 37216;
+      case 5:
+        return 5 * 37216;
+      case 6:
+        return 6 * 37216;
+      case 7:
+        return 7 * 37216;
+      case 8:
+        return 8 * 37216;
+      case 9:
+        return 9 * 37216;
+      case 10:
+        return 10 * 37216;
 
       default:
         break;
@@ -78,7 +105,7 @@ export class QuartierBComponent implements OnInit {
     this.estimate = this.formatter.format(
       Math.round(
         this.livingArea * 2442.839 +
-          this.finishQuality * 35762.6 +
+          this.getQuality(Number(this.quality)) +
           Number(this.nbWashrooms) * 28310.99 +
           this.getBedrooms(Number(this.nbBedrooms)) +
           this.getLevel(this.level) +
@@ -119,7 +146,7 @@ export class QuartierBComponent implements OnInit {
     // reset all itputs
     this.type = "condo";
     this.livingArea = null;
-    this.finishQuality = 5;
+    this.quality = "1";
     this.nbBedrooms = "1";
     this.nbWashrooms = "1";
     this.level = "above";

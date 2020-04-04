@@ -25,7 +25,7 @@
       <!-- type -->
       <li class="list-group-item">
         <div class="row">
-          <div class="col-sm "><label>Type</label></div>
+          <div class="col-sm"><label>Type</label></div>
           <div class="col-sm pl-5 pl-sm-1">
             <mat-radio-group
               class="d-flex flex-column flex-md-row justify-content-md-start"
@@ -65,16 +65,43 @@
       <!-- quality -->
       <li class="list-group-item">
         <div class="row">
-          <div class="col-sm mt-1">Indoor finish quality</div>
-          <div class="col-sm py-0">
-            <mat-slider
-              [(ngModel)]="finishQuality"
-              thumbLabel="true"
-              class="w-100"
-              min="1"
-              max="10"
-              step="1"
-            ></mat-slider>
+          <div class="col-sm">Indoor Finish quality</div>
+          <div class="col-sm">
+            <mat-radio-group
+              class="d-flex flex-column flex-column justify-content-md-start"
+              [(ngModel)]="quality"
+            >
+              <mat-radio-button value="1">
+                1 - To be Demolished
+              </mat-radio-button>
+              <mat-radio-button value="2">
+                2 - Very Low Quality
+              </mat-radio-button>
+              <mat-radio-button value="3">
+                3 - Low Quality
+              </mat-radio-button>
+              <mat-radio-button value="4">
+                4 - Under Average
+              </mat-radio-button>
+              <mat-radio-button value="5">
+                5 - Average
+              </mat-radio-button>
+              <mat-radio-button value="6">
+                6 - Average upgraded
+              </mat-radio-button>
+              <mat-radio-button value="7">
+                7 - High Quality
+              </mat-radio-button>
+              <mat-radio-button value="8">
+                8 - Very High Quality
+              </mat-radio-button>
+              <mat-radio-button value="9">
+                9 - Luxury
+              </mat-radio-button>
+              <mat-radio-button value="10">
+                10 - Architect
+              </mat-radio-button>
+            </mat-radio-group>
           </div>
         </div>
       </li>
@@ -84,7 +111,7 @@
           <div class="col-sm"><label>Number of full bathrooms</label></div>
           <div class="col-sm pl-5 pl-sm-1">
             <mat-radio-group
-              class="d-flex flex-column flex-md-row justify-content-md-start "
+              class="d-flex flex-column flex-md-row justify-content-md-start"
               [(ngModel)]="nbWashrooms"
             >
               <mat-radio-button value="1">
@@ -107,9 +134,17 @@
             <label for="">Unique Features: </label>
           </div>
           <div class="col-sm col-sm pl-5 pl-sm-1 d-flex flex-column">
-            <mat-checkbox [(ngModel)]="waterView">Waterfront view</mat-checkbox>
-            <mat-checkbox [(ngModel)]="indivise">Indivise</mat-checkbox>
-            <mat-checkbox [(ngModel)]="noisySt">Busy street</mat-checkbox>
+            <mat-checkbox [(ngModel)]="waterView"
+              >Has Waterfront view<mat-icon
+                class="info-text ml-2"
+                style="font-size: 1.5em;"
+                matTooltip="{{ popoverContent }}"
+                >info</mat-icon
+              ></mat-checkbox
+            ><mat-checkbox [(ngModel)]="indivise">Is Undivided</mat-checkbox>
+            <mat-checkbox [(ngModel)]="noisySt"
+              >Is on a Busy street</mat-checkbox
+            >
             <mat-checkbox [(ngModel)]="garage">Has Indoor Parking</mat-checkbox>
             <mat-checkbox [(ngModel)]="secondPrkg"
               >Has 2 Indoor Parking</mat-checkbox
