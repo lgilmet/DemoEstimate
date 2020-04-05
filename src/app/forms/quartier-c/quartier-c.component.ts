@@ -143,7 +143,7 @@ export class QuartierCComponent implements OnInit {
   computeEstimate() {
     this.estimate = this.formatter.format(
       Math.round(
-        this.livingArea * 3285.882 +
+        (this.livingArea * 3285.882) / 10.764 +
           this.lotArea * 561.9173 +
           this.getQuality(Number(this.quality)) +
           this.getYear() +

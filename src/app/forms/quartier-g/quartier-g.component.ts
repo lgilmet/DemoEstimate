@@ -131,7 +131,7 @@ export class QuartierGComponent implements OnInit {
   computeEstimate() {
     this.estimate = this.formatter.format(
       Math.round(
-        this.livingArea * 2502.44 +
+        (this.livingArea * 2502.44) / 10.764 +
           this.getQuality(Number(this.quality)) +
           this.getBedrooms(Number(this.nbBedrooms)) +
           this.getLevel(this.level) +

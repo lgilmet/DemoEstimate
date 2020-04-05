@@ -90,7 +90,7 @@ export class QuartierDComponent implements OnInit {
   computeEstimate() {
     this.estimate = this.formatter.format(
       Math.round(
-        this.livingArea * 1488.46 +
+        (this.livingArea * 1488.46) / 10.764 +
           this.lotArea * 583.36 +
           this.constructionYear * 72.04 +
           this.getQuality(Number(this.quality)) +

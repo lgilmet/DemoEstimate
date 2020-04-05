@@ -88,7 +88,7 @@ export class QuartierKComponent implements OnInit {
   computeEstimate() {
     this.estimate = this.formatter.format(
       Math.round(
-        this.livingArea * 3214.78 +
+        (this.livingArea * 3214.78) / 10.764 +
           this.lotArea * 87.34 +
           this.getQuality(Number(this.quality)) +
           Number(this.pool) * 177649 +
