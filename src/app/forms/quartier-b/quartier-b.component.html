@@ -205,7 +205,7 @@
         <div class="row">
           <div class="col-sm">
             <label for=""
-              >Unique Features that add or remove value in le Plateau
+              >Unique Features that add or remove value in le Plateau :
             </label>
           </div>
           <div class="col-sm col-sm pl-5 pl-sm-1 d-flex flex-column">
@@ -220,10 +220,20 @@
               >East of Papineau St</mat-checkbox
             >
             <mat-checkbox [(ngModel)]="rooftop"
-              >Has a private rooftop terrasse</mat-checkbox
+              >Has a private rooftop terrasse<mat-icon
+                class="info-text ml-2"
+                style="font-size: 1.5em;"
+                matTooltip="{{ popoverContent12 }}"
+                >info</mat-icon
+              ></mat-checkbox
             >
             <mat-checkbox [(ngModel)]="terrasse"
-              >Has a private terrase</mat-checkbox
+              >Has a private terrase<mat-icon
+                class="info-text ml-2"
+                style="font-size: 1.5em;"
+                matTooltip="{{ popoverContent12 }}"
+                >info</mat-icon
+              ></mat-checkbox
             >
             <mat-checkbox [(ngModel)]="railway">By a train track</mat-checkbox>
             <mat-checkbox [(ngModel)]="indivise"

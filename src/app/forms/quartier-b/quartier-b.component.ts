@@ -26,6 +26,9 @@ export class QuartierBComponent implements OnInit {
   popoverContent9: string =
     "Designer's kitchen, luxury appliances, very high quality flooring and tiles";
   popoverContent10: string = "Incredible layout with incredible products";
+  popoverContent12: string =
+    "A terrace is a balcony that is over 5 foot wide, and at least 35 sq/foot";
+
   type: string;
   livingArea: number;
   quality: string;
