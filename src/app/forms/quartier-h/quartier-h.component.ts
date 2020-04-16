@@ -102,7 +102,7 @@ export class QuartierHComponent implements OnInit {
       Math.round(
         (this.livingArea * 1683.57) / 10.764 -
           55010 +
-          this.lotArea * 206.1 +
+          (this.lotArea * 206.1) / 10.764 +
           this.getBathroooms(Number(this.nbWashrooms)) +
           this.getQuality(Number(this.quality)) +
           Number(this.detached) * 35672 +
