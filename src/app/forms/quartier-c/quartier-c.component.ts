@@ -76,7 +76,7 @@ export class QuartierCComponent implements OnInit {
       case 2:
         return 0;
       case 3:
-        return 66314.9;
+        return 80262;
 
       default:
         break;
@@ -98,25 +98,25 @@ export class QuartierCComponent implements OnInit {
   getQuality(option: number) {
     switch (option) {
       case 1:
-        return 119162;
+        return 117439;
       case 2:
-        return 2 * 119162;
+        return 2 * 117439;
       case 3:
-        return 3 * 119162;
+        return 3 * 117439;
       case 4:
-        return 4 * 119162;
+        return 4 * 117439;
       case 5:
-        return 5 * 119162;
+        return 5 * 117439;
       case 6:
-        return 6 * 119162;
+        return 6 * 117439;
       case 7:
-        return 7 * 119162;
+        return 7 * 117439;
       case 8:
-        return 8 * 119162;
+        return 8 * 117439;
       case 9:
-        return 9 * 119162;
+        return 9 * 117439;
       case 10:
-        return 10 * 119162;
+        return 10 * 117439;
 
       default:
         break;
@@ -143,18 +143,18 @@ export class QuartierCComponent implements OnInit {
   computeEstimate() {
     this.estimate = this.formatter.format(
       Math.round(
-        (this.livingArea * 3285.882) / 10.764 +
-          this.lotArea * 561.9173 +
+        (this.livingArea * 3079) / 10.764 +
+          (this.lotArea * 561.9173) / 10.764 +
           this.getQuality(Number(this.quality)) +
           this.getYear() +
           this.getBathroooms(Number(this.nbWashrooms)) +
-          Number(this.detached) * 104862.4 +
-          Number(this.CDN) * -191459 +
-          Number(this.eastOfRockland) * -168383 +
-          Number(this.sgl) * 164738.6 +
-          Number(this.yard) * 317283.1 +
-          Number(this.pool) * 87133.82 +
-          Number(this.noisySt) * -188377
+          Number(this.detached) * 94655 +
+          Number(this.CDN) * -182906 +
+          Number(this.eastOfRockland) * -137253 +
+          Number(this.sgl) * 162463 +
+          Number(this.yard) * 336220 +
+          Number(this.pool) * 92051 +
+          Number(this.noisySt) * -188687
       )
     );
   }
