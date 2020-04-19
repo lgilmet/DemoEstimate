@@ -12,12 +12,12 @@
         id="areaInput"
         [(ngModel)]="livingArea"
         type="number"
-        placeholder="Area in square meters"
+        placeholder="Area in square foot"
         class="form-control border"
         aria-describedby="area-label"
       />
       <div class="input-group-append">
-        <span class="input-group-text" id="area-label">m2</span>
+        <span class="input-group-text" id="area-label">sq/f</span>
       </div>
     </div>
 
@@ -25,7 +25,7 @@
       <!-- type -->
       <li class="list-group-item">
         <div class="row">
-          <div class="col-sm "><label>Type</label></div>
+          <div class="col-sm"><label>Type</label></div>
           <div class="col-sm pl-5 pl-sm-1">
             <mat-radio-group
               class="d-flex flex-column flex-md-row justify-content-md-start"
@@ -35,10 +35,7 @@
                 Condo
               </mat-radio-button>
               <mat-radio-button value="apt" disabled>
-                Detached House
-              </mat-radio-button>
-              <mat-radio-button value="rowHouse" disabled>
-                Row House
+                House
               </mat-radio-button>
             </mat-radio-group>
           </div>
@@ -65,26 +62,112 @@
       <!-- quality -->
       <li class="list-group-item">
         <div class="row">
-          <div class="col-sm mt-1">Indoor finish quality</div>
-          <div class="col-sm py-0">
-            <mat-slider
-              [(ngModel)]="finishQuality"
-              thumbLabel="true"
-              class="w-100"
-              min="1"
-              max="10"
-              step="1"
-            ></mat-slider>
+          <div class="col-sm">Overall Interior Quality</div>
+          <div class="col-sm">
+            <mat-radio-group
+              class="d-flex flex-column flex-column justify-content-md-start"
+              [(ngModel)]="quality"
+            >
+              <mat-radio-button value="1">
+                1 - To be Demolished<mat-icon
+                  class="info-text ml-2"
+                  style="font-size: 1.2em;"
+                  matTooltip="{{ popoverContent1 }}"
+                  >info</mat-icon
+                >
+              </mat-radio-button>
+              <mat-radio-button value="2">
+                2 - Very Low Quality<mat-icon
+                  class="info-text ml-2"
+                  style="font-size: 1.2em;"
+                  matTooltip="{{ popoverContent2 }}"
+                  >info</mat-icon
+                >
+              </mat-radio-button>
+              <mat-radio-button value="3">
+                3 - Low Quality<mat-icon
+                  class="info-text ml-2"
+                  style="font-size: 1.2em;"
+                  matTooltip="{{ popoverContent3 }}"
+                  >info</mat-icon
+                >
+              </mat-radio-button>
+              <mat-radio-button value="4">
+                4 - Under Average<mat-icon
+                  class="info-text ml-2"
+                  style="font-size: 1.2em;"
+                  matTooltip="{{ popoverContent4 }}"
+                  >info</mat-icon
+                >
+              </mat-radio-button>
+              <mat-radio-button value="5">
+                5 - Average<mat-icon
+                  class="info-text ml-2"
+                  style="font-size: 1.2em;"
+                  matTooltip="{{ popoverContent5 }}"
+                  >info</mat-icon
+                >
+              </mat-radio-button>
+              <mat-radio-button value="6">
+                6 - Average upgraded<mat-icon
+                  class="info-text ml-2"
+                  style="font-size: 1.2em;"
+                  matTooltip="{{ popoverContent6 }}"
+                  >info</mat-icon
+                >
+              </mat-radio-button>
+              <mat-radio-button value="7">
+                7 - High Quality<mat-icon
+                  class="info-text ml-2"
+                  style="font-size: 1.2em;"
+                  matTooltip="{{ popoverContent7 }}"
+                  >info</mat-icon
+                >
+              </mat-radio-button>
+              <mat-radio-button value="8">
+                8 - Very High Quality<mat-icon
+                  class="info-text ml-2"
+                  style="font-size: 1.2em;"
+                  matTooltip="{{ popoverContent8 }}"
+                  >info</mat-icon
+                >
+              </mat-radio-button>
+              <mat-radio-button value="9">
+                9 - Luxury<mat-icon
+                  class="info-text ml-2"
+                  style="font-size: 1.2em;"
+                  matTooltip="{{ popoverContent9 }}"
+                  >info</mat-icon
+                >
+              </mat-radio-button>
+              <mat-radio-button value="10">
+                10 - Architect<mat-icon
+                  class="info-text ml-2"
+                  style="font-size: 1.2em;"
+                  matTooltip="{{ popoverContent10 }}"
+                  >info</mat-icon
+                >
+              </mat-radio-button>
+            </mat-radio-group>
           </div>
         </div>
       </li>
       <!-- toilets -->
       <li class="list-group-item">
         <div class="row">
-          <div class="col-sm"><label>Number of full bathrooms</label></div>
+          <div class="col-sm">
+            <label
+              >Number of full bathrooms<mat-icon
+                class="info-text ml-2"
+                style="font-size: 1.2em;"
+                matTooltip="{{ popoverContent11 }}"
+                >info</mat-icon
+              ></label
+            >
+          </div>
           <div class="col-sm pl-5 pl-sm-1">
             <mat-radio-group
-              class="d-flex flex-column flex-md-row justify-content-md-start "
+              class="d-flex flex-column flex-md-row justify-content-md-start"
               [(ngModel)]="nbWashrooms"
             >
               <mat-radio-button value="1">
@@ -104,12 +187,31 @@
       <li class="list-group-item">
         <div class="row">
           <div class="col-sm">
-            <label for="">Unique Features: </label>
+            <label for=""
+              >Unique Features that add or remove value in Saint-Henri :
+            </label>
           </div>
           <div class="col-sm col-sm pl-5 pl-sm-1 d-flex flex-column">
-            <mat-checkbox [(ngModel)]="waterView">Waterfront view</mat-checkbox>
-            <mat-checkbox [(ngModel)]="indivise">Indivise</mat-checkbox>
-            <mat-checkbox [(ngModel)]="noisySt">Busy street</mat-checkbox>
+            <mat-checkbox [(ngModel)]="waterView"
+              >Has Waterfront view<mat-icon
+                class="info-text ml-2"
+                style="font-size: 1.5em;"
+                matTooltip="{{ popoverContent }}"
+                >info</mat-icon
+              ></mat-checkbox
+            >
+            <mat-checkbox [(ngModel)]="privateOutdoor"
+              >Has a private terrace<mat-icon
+                class="info-text ml-2"
+                style="font-size: 1.5em;"
+                matTooltip="{{ popoverContent12 }}"
+                >info</mat-icon
+              ></mat-checkbox
+            >
+            <mat-checkbox [(ngModel)]="indivise">Is Undivided </mat-checkbox>
+            <mat-checkbox [(ngModel)]="noisySt"
+              >Is on a Busy street</mat-checkbox
+            >
             <mat-checkbox [(ngModel)]="garage">Has Indoor Parking</mat-checkbox>
             <mat-checkbox [(ngModel)]="secondPrkg"
               >Has 2 Indoor Parking</mat-checkbox
