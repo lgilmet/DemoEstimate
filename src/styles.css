@@ -18,4 +18,46 @@ mat-radio-button {
 .info-text {
   color: #b4b4b4;
 }
+
+.info-icon {
+  -webkit-filter: invert(0.7);
+          filter: invert(0.7);
+  width: 100%;
+}
+
+.info {
+  background-image: url(assets/images/information.svg);
+  z-index: 1500;
+  width: 15px;
+  height: 15px;
+  margin: 0.5em;
+}
+
+.info::before {
+  content: attr(data-tooltip);
+  pointer-events: none;
+  position: absolute;
+  color: white;
+  opacity: 0%;
+  left: 50%;
+  background: none;
+  text-align: center;
+  padding: 0.5em;
+  border-radius: 0.5em;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  max-width: 50vw;
+  -webkit-transform: translateX(-50%) scale(0.5);
+          transform: translateX(-50%) scale(0.5);
+}
+
+.info:hover::before {
+  opacity: 80%;
+  -webkit-transform: translateX(-50%) translateY(30%) scale(1);
+          transform: translateX(-50%) translateY(30%) scale(1);
+  background: #4e4e4e;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+}
 /*# sourceMappingURL=styles.css.map */

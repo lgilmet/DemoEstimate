@@ -21,3 +21,43 @@ mat-radio-button {
 .info-text {
   color: rgb(180, 180, 180);
 }
+
+.info-icon {
+  filter: invert(0.7);
+  width: 100%;
+}
+
+.info {
+  background-image: url(assets/images/information.svg);
+  z-index: 1500;
+  width: 15px;
+  height: 15px;
+  margin: 0.5em;
+  // position: relative;
+}
+
+.info::before {
+  content: attr(data-tooltip);
+  pointer-events: none;
+  position: absolute;
+  color: white;
+  opacity: 0%;
+  left: 50%;
+  //left: calc();
+  background: none;
+  text-align: center;
+  padding: 0.5em;
+  border-radius: 0.5em;
+  width: max-content;
+  max-width: 50vw;
+  transform: translateX(-50%) scale(0.5);
+}
+
+.info:hover::before {
+  opacity: 80%;
+  transform: translateX(-50%) translateY(30%) scale(1);
+
+  //right: calc(30%);
+  background: rgb(78, 78, 78);
+  transition: all 0.1s;
+}

@@ -54,6 +54,10 @@ export class QuartierCComponent implements OnInit {
     this.clearForm();
   }
 
+  info(event) {
+    console.log(event.clientX / window.innerWidth);
+  }
+
   getBathroooms(option: number) {
     switch (option) {
       case 1:

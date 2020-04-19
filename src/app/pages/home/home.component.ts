@@ -11,9 +11,5 @@ export class HomeComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {
-    $(function() {
-      $('[data-toggle="popover"]').popover();
-    });
-  }
+  ngOnInit() {}
 }
