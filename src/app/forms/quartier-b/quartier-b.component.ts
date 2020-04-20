@@ -79,6 +79,10 @@ export class QuartierBComponent implements OnInit {
         break;
     }
   }
+
+  info(event) {
+    console.log(event.clientX / window.innerWidth);
+  }
   getQuality(option: number) {
     switch (option) {
       case 1:
