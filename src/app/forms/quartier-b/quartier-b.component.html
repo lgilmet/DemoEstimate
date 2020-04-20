@@ -1,263 +1,280 @@
-<div class="container">
-  <div class="card my-3">
-    <div class="card-header">
-      <h2>
-        Montreal / <span style="white-space: nowrap;">Plateau Mont-Royal</span>
-      </h2>
-    </div>
-    <!-- area -->
-    <div class="input-group card-body">
-      <div class="input-group-prepend">
-        <span class="input-group-text" id="area-label">Living area</span>
+<div class="yellow">
+  <div class="container py-3">
+    <div class="card light-yellow">
+      <div class="card-header">
+        <h2>
+          Montreal /
+          <span style="white-space: nowrap;">Plateau Mont-Royal</span>
+        </h2>
       </div>
-      <input
-        min="1"
-        id="areaInput"
-        [(ngModel)]="livingArea"
-        type="number"
-        placeholder="Area in square foot"
-        class="form-control border"
-        aria-describedby="area-label"
-      />
-      <div class="input-group-append">
-        <span class="input-group-text" id="area-label">sq/f</span>
+      <!--living  area -->
+      <div class="card-body">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div
+              (mouseenter)="info($event)"
+              class="info"
+              class="info1"
+              data-tooltip="info text fdsa fdsaf dsf adsf sdf  fdsaf dsaf sdfsda fads fds fdsafsdaaf dsaf sdaf ds "
+            ></div>
+            <span class="input-group-text" id="area-label">Living area </span>
+          </div>
+          <input
+            id="areaInput"
+            [(ngModel)]="livingArea"
+            type="number"
+            placeholder="Area in square foot"
+            class="form-control border"
+            aria-describedby="area-label"
+          />
+          <div class="input-group-append">
+            <span class="input-group-text" id="area-label">sq/f</span>
+          </div>
+        </div>
+        <!--lot  area -->
+
+        <!-- construction year -->
       </div>
-    </div>
 
-    <ul class="list-group list-group-flush">
-      <!-- type -->
-      <li class="list-group-item">
-        <div class="row">
-          <div class="col-sm"><label>Type</label></div>
-          <div class="col-sm pl-5 pl-sm-1">
-            <mat-radio-group
-              class="d-flex flex-column flex-md-row justify-content-md-start"
-              [(ngModel)]="type"
-            >
-              <mat-radio-button value="condo">
-                Condo
-              </mat-radio-button>
-              <mat-radio-button value="apt" disabled>
-                Detached House
-              </mat-radio-button>
-              <mat-radio-button value="rowHouse" disabled>
-                Row House
-              </mat-radio-button>
-            </mat-radio-group>
+      <ul class="list-group list-group-flush">
+        <!-- type -->
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-sm">
+              <label>Type</label>
+            </div>
+            <div class="col-sm pl-5 pl-sm-1">
+              <mat-radio-group
+                class="d-flex flex-column flex-md-row justify-content-md-start"
+                [(ngModel)]="type"
+              >
+                <mat-radio-button value="condo" disabled>
+                  Condo
+                </mat-radio-button>
+                <mat-radio-button value="house">
+                  House
+                </mat-radio-button>
+              </mat-radio-group>
+            </div>
           </div>
-        </div>
-      </li>
-      <!-- quality -->
-      <li class="list-group-item">
-        <div class="row">
-          <div class="col-sm">Overall Interior Quality</div>
-          <div class="col-sm">
-            <mat-radio-group
-              class="d-flex flex-column flex-column justify-content-md-start"
-              [(ngModel)]="quality"
-            >
-              <mat-radio-button value="1">
-                1 - To be Demolished<mat-icon
-                  class="info-text ml-2"
-                  style="font-size: 1.2em;"
-                  matTooltip="{{ popoverContent1 }}"
-                  >info</mat-icon
-                >
-              </mat-radio-button>
-              <mat-radio-button value="2">
-                2 - Very Low Quality<mat-icon
-                  class="info-text ml-2"
-                  style="font-size: 1.2em;"
-                  matTooltip="{{ popoverContent2 }}"
-                  >info</mat-icon
-                >
-              </mat-radio-button>
-              <mat-radio-button value="3">
-                3 - Low Quality<mat-icon
-                  class="info-text ml-2"
-                  style="font-size: 1.2em;"
-                  matTooltip="{{ popoverContent3 }}"
-                  >info</mat-icon
-                >
-              </mat-radio-button>
-              <mat-radio-button value="4">
-                4 - Under Average<mat-icon
-                  class="info-text ml-2"
-                  style="font-size: 1.2em;"
-                  matTooltip="{{ popoverContent4 }}"
-                  >info</mat-icon
-                >
-              </mat-radio-button>
-              <mat-radio-button value="5">
-                5 - Average<mat-icon
-                  class="info-text ml-2"
-                  style="font-size: 1.2em;"
-                  matTooltip="{{ popoverContent5 }}"
-                  >info</mat-icon
-                >
-              </mat-radio-button>
-              <mat-radio-button value="6">
-                6 - Average upgraded<mat-icon
-                  class="info-text ml-2"
-                  style="font-size: 1.2em;"
-                  matTooltip="{{ popoverContent6 }}"
-                  >info</mat-icon
-                >
-              </mat-radio-button>
-              <mat-radio-button value="7">
-                7 - High Quality<mat-icon
-                  class="info-text ml-2"
-                  style="font-size: 1.2em;"
-                  matTooltip="{{ popoverContent7 }}"
-                  >info</mat-icon
-                >
-              </mat-radio-button>
-              <mat-radio-button value="8">
-                8 - Very High Quality<mat-icon
-                  class="info-text ml-2"
-                  style="font-size: 1.2em;"
-                  matTooltip="{{ popoverContent8 }}"
-                  >info</mat-icon
-                >
-              </mat-radio-button>
-              <mat-radio-button value="9">
-                9 - Luxury<mat-icon
-                  class="info-text ml-2"
-                  style="font-size: 1.2em;"
-                  matTooltip="{{ popoverContent9 }}"
-                  >info</mat-icon
-                >
-              </mat-radio-button>
-              <mat-radio-button value="10">
-                10 - Architect<mat-icon
-                  class="info-text ml-2"
-                  style="font-size: 1.2em;"
-                  matTooltip="{{ popoverContent10 }}"
-                  >info</mat-icon
-                >
-              </mat-radio-button>
-            </mat-radio-group>
+        </li>
+        <!-- bedrooms -->
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-sm">
+              <label>Number of bedrooms</label
+              ><label for=""
+                >Bedroom = Above Ground - With a window - Minimum 7 foot wide
+              </label>
+            </div>
+            <div class="col-sm pl-5 pl-sm-1">
+              <mat-radio-group
+                class="d-flex flex-column flex-md-row justify-content-md-start"
+                [(ngModel)]="nbBedrooms"
+              >
+                <mat-radio-button value="1">
+                  1
+                </mat-radio-button>
+                <mat-radio-button value="2">
+                  2
+                </mat-radio-button>
+                <mat-radio-button value="3">
+                  3
+                </mat-radio-button>
+              </mat-radio-group>
+            </div>
           </div>
-        </div>
-      </li>
-      <!-- bedrooms -->
-      <li class="list-group-item">
-        <div class="row">
-          <div class="col-sm"><label>Number of bedrooms</label></div>
-          <div class="col-sm pl-5 pl-sm-1">
-            <mat-radio-group
-              class="d-flex flex-column flex-md-row justify-content-md-start"
-              [(ngModel)]="nbBedrooms"
-            >
-              <mat-radio-button value="1">
-                1
-              </mat-radio-button>
-              <mat-radio-button value="2">
-                2
-              </mat-radio-button>
-              <mat-radio-button value="3">
-                3
-              </mat-radio-button>
-            </mat-radio-group>
+        </li>
+        <!-- toilets -->
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-sm">
+              <label>Number of full bathrooms</label>
+            </div>
+            <div class="col-sm pl-5 pl-sm-1">
+              <mat-radio-group
+                class="d-flex flex-column flex-md-row justify-content-md-start"
+                [(ngModel)]="nbWashrooms"
+              >
+                <mat-radio-button value="1">
+                  1
+                </mat-radio-button>
+                <mat-radio-button value="2">
+                  2
+                </mat-radio-button>
+                <mat-radio-button value="3">
+                  3
+                </mat-radio-button>
+              </mat-radio-group>
+            </div>
           </div>
-        </div>
-      </li>
-      <!-- toilets -->
-      <li class="list-group-item">
-        <div class="row">
-          <div class="col-sm"><label>Number of full bathrooms</label></div>
-          <div class="col-sm pl-5 pl-sm-1">
-            <mat-radio-group
-              class="d-flex flex-column flex-md-row justify-content-md-start"
-              [(ngModel)]="nbWashrooms"
-            >
-              <mat-radio-button value="1">
-                1
-              </mat-radio-button>
-              <mat-radio-button value="2">
-                2
-              </mat-radio-button>
-            </mat-radio-group>
+        </li>
+        <!-- basement -->
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-sm"><label>What floor is it on?</label></div>
+            <div class="col-sm pl-5 pl-sm-1">
+              <mat-radio-group class="d-flex flex-column" [(ngModel)]="level">
+                <mat-radio-button value="above">
+                  Above ground
+                </mat-radio-button>
+                <mat-radio-button value="half">
+                  Part of it in the basement
+                </mat-radio-button>
+                <mat-radio-button value="basement">
+                  Most of it in the basement
+                </mat-radio-button>
+              </mat-radio-group>
+            </div>
           </div>
-        </div>
-      </li>
-      <!-- basement -->
-      <li class="list-group-item">
-        <div class="row">
-          <div class="col-sm"><label>What floor is it on?</label></div>
-          <div class="col-sm pl-5 pl-sm-1">
-            <mat-radio-group class="d-flex flex-column" [(ngModel)]="level">
-              <mat-radio-button value="above">
-                Above ground
-              </mat-radio-button>
-              <mat-radio-button value="half">
-                Part of it in the basement
-              </mat-radio-button>
-              <mat-radio-button value="basement">
-                Most of it in the basement
-              </mat-radio-button>
-            </mat-radio-group>
+        </li>
+        <!-- quality -->
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-sm">Overall Interior Quality</div>
+            <div class="col-sm">
+              <mat-radio-group
+                class="d-flex flex-column flex-column justify-content-md-start"
+                [(ngModel)]="quality"
+              >
+                <mat-radio-button value="1">
+                  1 - To be Demolished<mat-icon
+                    class="info-text ml-2"
+                    style="font-size: 1.2em;"
+                    matTooltip="{{ popoverContent1 }}"
+                    >info</mat-icon
+                  >
+                </mat-radio-button>
+                <mat-radio-button value="2">
+                  2 - Very Low Quality<mat-icon
+                    class="info-text ml-2"
+                    style="font-size: 1.2em;"
+                    matTooltip="{{ popoverContent2 }}"
+                    >info</mat-icon
+                  >
+                </mat-radio-button>
+                <mat-radio-button value="3">
+                  3 - Low Quality<mat-icon
+                    class="info-text ml-2"
+                    style="font-size: 1.2em;"
+                    matTooltip="{{ popoverContent3 }}"
+                    >info</mat-icon
+                  >
+                </mat-radio-button>
+                <mat-radio-button value="4">
+                  4 - Under Average<mat-icon
+                    class="info-text ml-2"
+                    style="font-size: 1.2em;"
+                    matTooltip="{{ popoverContent4 }}"
+                    >info</mat-icon
+                  >
+                </mat-radio-button>
+                <mat-radio-button value="5">
+                  5 - Average<mat-icon
+                    class="info-text ml-2"
+                    style="font-size: 1.2em;"
+                    matTooltip="{{ popoverContent5 }}"
+                    >info</mat-icon
+                  >
+                </mat-radio-button>
+                <mat-radio-button value="6">
+                  6 - Average upgraded<mat-icon
+                    class="info-text ml-2"
+                    style="font-size: 1.2em;"
+                    matTooltip="{{ popoverContent6 }}"
+                    >info</mat-icon
+                  >
+                </mat-radio-button>
+                <mat-radio-button value="7">
+                  7 - High Quality<mat-icon
+                    class="info-text ml-2"
+                    style="font-size: 1.2em;"
+                    matTooltip="{{ popoverContent7 }}"
+                    >info</mat-icon
+                  >
+                </mat-radio-button>
+                <mat-radio-button value="8">
+                  8 - Very High Quality<mat-icon
+                    class="info-text ml-2"
+                    style="font-size: 1.2em;"
+                    matTooltip="{{ popoverContent8 }}"
+                    >info</mat-icon
+                  >
+                </mat-radio-button>
+                <mat-radio-button value="9">
+                  9 - Luxury<mat-icon
+                    class="info-text ml-2"
+                    style="font-size: 1.2em;"
+                    matTooltip="{{ popoverContent9 }}"
+                    >info</mat-icon
+                  >
+                </mat-radio-button>
+                <mat-radio-button value="10">
+                  10 - Architect<mat-icon
+                    class="info-text ml-2"
+                    style="font-size: 1.2em;"
+                    matTooltip="{{ popoverContent10 }}"
+                    >info</mat-icon
+                  >
+                </mat-radio-button>
+              </mat-radio-group>
+            </div>
           </div>
-        </div>
-      </li>
-      <!-- checkboxes -->
-      <li class="list-group-item">
-        <div class="row">
-          <div class="col-sm">
-            <label for=""
-              >Unique Features that add or remove value in le Plateau :
-            </label>
+        </li>
+        <!-- checkboxes -->
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-sm">
+              <label for="">Features : </label>
+              <p class="small">
+                Unique Features that add or remove value in Plateau Mont-Royal
+              </p>
+            </div>
+            <div class="col-sm col-sm pl-5 pl-sm-1 d-flex flex-column">
+              <mat-checkbox [(ngModel)]="heritageBldg"
+                >Is in a Heritage Building</mat-checkbox
+              >
+              <mat-checkbox [(ngModel)]="luxuryBldg"
+                >Is in a Luxury Building</mat-checkbox
+              >
+              <mat-checkbox [(ngModel)]="eastPapineau"
+                >Is East of Papineau st</mat-checkbox
+              >
+              <mat-checkbox [(ngModel)]="rooftop"
+                >Has a private Rooftop terrace</mat-checkbox
+              >
+              <mat-checkbox [(ngModel)]="terrasse"
+                >Has a private Terrace</mat-checkbox
+              >
+              <mat-checkbox [(ngModel)]="railway"
+                >By the noisy Train Track</mat-checkbox
+              >
+              <mat-checkbox [(ngModel)]="alley"
+                >Is in a Undivided Co-Ownership</mat-checkbox
+              >
+              <mat-checkbox [(ngModel)]="noisySt"
+                >Has an Outdoor parking</mat-checkbox
+              >
+              <mat-checkbox [(ngModel)]="garage"
+                >Has an Indoor parking</mat-checkbox
+              >
+            </div>
           </div>
-          <div class="col-sm col-sm pl-5 pl-sm-1 d-flex flex-column">
-            <mat-checkbox [(ngModel)]="heritageBldg"
-              >Heritage building</mat-checkbox
-            >
-            <mat-checkbox [(ngModel)]="luxuryBldg"
-              >Luxury building</mat-checkbox
-            >
+        </li>
+      </ul>
+      <!-- submit -->
+      <div class="card-body d-flex justify-content-between">
+        <button mat-stroked-button (click)="clearForm()">Clear</button>
+        <button mat-flat-button color="accent" (click)="getTotal()">
+          Get an estimate
+        </button>
+      </div>
 
-            <mat-checkbox [(ngModel)]="eastPapineau"
-              >East of Papineau St</mat-checkbox
-            >
-            <mat-checkbox [(ngModel)]="rooftop"
-              >Has a private rooftop terrasse<mat-icon
-                class="info-text ml-2"
-                style="font-size: 1.5em;"
-                matTooltip="{{ popoverContent12 }}"
-                >info</mat-icon
-              ></mat-checkbox
-            >
-            <mat-checkbox [(ngModel)]="terrasse"
-              >Has a private terrase<mat-icon
-                class="info-text ml-2"
-                style="font-size: 1.5em;"
-                matTooltip="{{ popoverContent12 }}"
-                >info</mat-icon
-              ></mat-checkbox
-            >
-            <mat-checkbox [(ngModel)]="railway">By a train track</mat-checkbox>
-            <mat-checkbox [(ngModel)]="indivise"
-              >Undivided Co-Ownership</mat-checkbox
-            >
-            <mat-checkbox [(ngModel)]="noisySt">On a busy street</mat-checkbox>
-            <mat-checkbox [(ngModel)]="alley">Has Outdoor Parking</mat-checkbox>
-            <mat-checkbox [(ngModel)]="garage">Has Indoor Garage</mat-checkbox>
-          </div>
+      <div class="card-footer collapse bg-light" id="collapseExample">
+        <div class="d-flex justify-content-between mt-3">
+          <p class="">Your estimate:</p>
+          <h3>CAD {{ estimate }}</h3>
         </div>
-      </li>
-    </ul>
-    <!-- submit -->
-    <div class="card-body d-flex justify-content-between">
-      <button mat-raised-button (click)="clearForm()">Clear</button>
-      <button mat-raised-button [color]="color" (click)="getTotal()">
-        Get an estimate
-      </button>
-    </div>
-
-    <div class="card-footer collapse" id="collapseExample">
-      <div class="d-flex justify-content-between mt-3">
-        <p class="">Your estimate:</p>
-        <h3>CAD {{ estimate }}</h3>
       </div>
     </div>
   </div>
