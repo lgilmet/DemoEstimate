@@ -1,13 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
-@import "../node_modules/bootstrap/scss/functions";
-@import "../node_modules/bootstrap/scss/variables";
-@import "../node_modules/bootstrap/scss/mixins";
+@import "~@angular/material/theming";
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+@font-face {
+  font-family: "Comfortaa";
+  src: url("src/assets/fonts/Comfortaa/static/Comfortaa-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Comfortaa Bold";
+  src: url("src/assets/fonts/Comfortaa/static/Comfortaa-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Sen Bold";
+  src: url("src/assets/fonts/Sen/Sen-Bold.ttf");
+}
 
 html,
 body {
   margin: 0;
   padding: 0;
   height: 100%;
+  overflow-x: hidden;
 }
 body {
   margin: 0;
@@ -60,4 +80,75 @@ mat-radio-button {
   //right: calc(30%);
   background: rgb(78, 78, 78);
   transition: all 0.1s;
+}
+
+.navbar {
+  background-color: rgb(255, 252, 82);
+  text-decoration: none;
+}
+
+.navbar a {
+  color: black;
+}
+
+.navbar-brand {
+  font-family: "Sen Bold";
+  font-size: 2em;
+}
+
+.special {
+  font-family: "Sen Bold";
+}
+
+.yellow {
+  background-color: #fffc52;
+}
+
+.light-yellow,
+.light-yellow li {
+  background-color: #ffff86;
+}
+
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.front-page {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("./assets/images/architecture-building.jpg");
+  background-position: left;
+  background-size: cover;
+  padding-top: 10%;
+}
+
+.front-page .jumbotron {
+  opacity: 0.9;
+}
+
+.info-panels {
+}
+
+.info-panels img {
+  max-width: 60px;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.instructions {
+  list-style: none;
+  margin-top: 50px;
+  counter-reset: my-awesome-counter;
+}
+.instructions li {
+  counter-increment: my-awesome-counter;
+  margin-bottom: 30px;
+}
+.instructions li::before {
+  content: counter(my-awesome-counter) ". ";
+  transform: translateX(-100%);
+  color: #ff4081;
+  font-family: "Sen Bold";
+  font-weight: bold;
+  font-size: larger;
 }

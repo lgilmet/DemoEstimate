@@ -15,7 +15,7 @@ import { QuartierKComponent } from "./forms/quartier-k/quartier-k.component";
 import { PaymentComponent } from "./forms/payment/payment.component";
 
 const routes: Routes = [
-  { path: "", pathMatch: "full", redirectTo: "saint-henri-condo" },
+  { path: "", pathMatch: "full", redirectTo: "home" },
   { path: "home", component: HomeComponent },
   { path: "saint-henri-condo", component: QuartierAComponent },
   { path: "plateau", component: QuartierBComponent },
@@ -28,11 +28,11 @@ const routes: Routes = [
   { path: "lachine", component: QuartierIComponent },
   { path: "pierrefond", component: QuartierJComponent },
   { path: "ndg", component: QuartierKComponent },
-  { path: "payment", component: PaymentComponent }
+  { path: "payment", component: PaymentComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}

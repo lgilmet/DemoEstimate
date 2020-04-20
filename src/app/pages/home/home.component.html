@@ -1,50 +1,124 @@
-<img
+<!-- <img
   class="w-100"
   src="https://images.pexels.com/photos/1642125/pexels-photo-1642125.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
   alt=""
-/>
-<section class="row container mx-auto">
-  <div class="info-panels card border-light col-md col-sm-8 mx-auto">
-    <div class="card-body">
-      <img
-        class="card-img-top mx-auto d-block w-75"
-        src="https://image.flaticon.com/icons/svg/2329/2329087.svg"
-        alt=""
-      />
-      <h2>What is zApp?</h2>
+/> -->
+<div class="front-page">
+  <div class="container">
+    <div class="jumbotron w-75 yellow">
+      <h1 class="display-4 special">
+        Combien ca vaut?
+      </h1>
+      <p class="lead">
+        Vous voulez vendre votre maison et n'avez aucune idée de sa valeur et de
+        l'état du marché immobilier? Notre calculatrice immobilère est à la fine
+        pointe des analyses de marchés.
+      </p>
+      <hr class="my-4" />
       <p>
-        zApp puts you in control of your real estate transaction but giving you
-        access to what you really need : The price breakdown, for each
-        neighbordhood.
+        Notre calculatrice est en version béta et nous sommes activement à la
+        recherche de partenaires pour déveloper une calculatrice robuste et
+        facile d'utilisation.
       </p>
     </div>
   </div>
-  <div class="info-panels card col-md col-8 mx-auto">
-    <div class="card-body">
-      <img
-        class="card-img-top mx-auto d-block w-75"
-        src="https://image.flaticon.com/icons/svg/1467/1467549.svg"
-        alt=""
-      />
-      <h2>Its free.</h2>
-      <p>
-        We give you all the information you need for free.
-      </p>
+</div>
+<div class="yellow">
+  <section class="row pt-4 container mx-auto">
+    <div class="col-md-4 px-3 mx-auto">
+      <div class="info-panels card bg-transparent mx-auto border-0">
+        <div class="card-body">
+          <img
+            class="card-img-top mx-auto d-block w-75"
+            src="https://image.flaticon.com/icons/svg/2329/2329087.svg"
+            alt=""
+          />
+          <h2 class="special">What is zApp?</h2>
+          <p>
+            zApp puts you in control of your real estate transaction but giving
+            you access to what you really need : The price breakdown, for each
+            neighbordhood.
+          </p>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="info-panels card col-lg mx-auto">
-    <div class="card-body">
-      <img
-        class="card-img-top mx-auto d-block w-75"
-        src="https://image.flaticon.com/icons/svg/2329/2329087.svg"
-        alt=""
-      />
-      <h2>Then what?</h2>
-      <p>
-        Once you understand what your money can get you, we put you in contact
-        with the best broker of that neighbordhood so that he can find it for
-        you!
-      </p>
+    <div class="col-md-4 px-3 mx-auto">
+      <div class="info-panels card bg-transparent mx-auto border-0">
+        <div class="card-body">
+          <img
+            class="card-img-top mx-auto d-block w-75"
+            src="https://image.flaticon.com/icons/svg/1467/1467549.svg"
+            alt=""
+          />
+          <h2 class="special">Its free.</h2>
+          <p>
+            We give you all the information you need for free.
+          </p>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+    <div class="col-md-4 px-3 mx-auto">
+      <div class="info-panels card bg-transparent mx-auto border-0">
+        <div class="card-body">
+          <img
+            class="card-img-top mx-auto d-block w-75"
+            src="https://image.flaticon.com/icons/svg/2329/2329087.svg"
+            alt=""
+          />
+          <h2 class="special">Then what?</h2>
+          <p>
+            Once you understand what your money can get you, we put you in
+            contact with the best broker of that neighbordhood so that he can
+            find it for you!
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr class="m-4" />
+  <section class="container">
+    <div class="row">
+      <div class="col-lg-6 p-4 p-auto">
+        <h1 class="align-center special">Comment ca marche?</h1>
+        <ol class="instructions w-75">
+          <li>
+            Choisissez votre quartier: trouvez le parmis la liste. Dans le
+            future vour pourrez entrer votre code postal ou votre adresse ou
+            meme le trouvez sur une carte interactive.
+          </li>
+          <li>
+            Remplissez votre formulaire au meilleur de vos connaissance. Les
+            champs sont ordonnee selon leur influence sur le prix. Par example
+            la superficie habitable et la qualité du fini intérieur on une
+            grande influence dans le calcule.
+          </li>
+          <li>
+            Notre analyse prends en compte les 500 plus récentes ventes de votre
+            secteur. Nous faisons également appel à des courtiers qui
+            connaissent bien leur quartier pour nous aider a rafinner nos
+            modèles.
+          </li>
+          <li>
+            Nos modèles nous servent ensuite a déterminer la valeur médiane des
+            éléments les plus importants dans le calcule du prix tel la
+            superficie, le stationnement, la finition, etc.
+          </li>
+          <li>
+            Finalement la calculatrice suggère un prix de vente pour votre condo
+            / maison selon le marché actuel, toujours en fonction des détails
+            uniques de votre propriété. *
+          </li>
+        </ol>
+        <p class="special">Essayez vous meme!</p>
+      </div>
+      <div class="col-lg-6 order-lg-first">
+        <app-quartier-c></app-quartier-c>
+      </div>
+    </div>
+    <h3>* La calculatrice est en version béta:</h3>
+    <p>
+      Nous n'assumons aucune responsabilité légale quand à la valeur des
+      estimations fournis.
+    </p>
+  </section>
+</div>
