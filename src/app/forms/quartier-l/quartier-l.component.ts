@@ -1,14 +1,13 @@
 import { Component, OnInit } from "@angular/core";
-
 import { ThemePalette } from "@angular/material/core";
 declare var $: any;
 
 @Component({
-  selector: "app-quartier-b",
-  templateUrl: "./quartier-b.component.html",
-  styleUrls: ["./quartier-b.component.scss"],
+  selector: "app-quartier-l",
+  templateUrl: "./quartier-l.component.html",
+  styleUrls: ["./quartier-l.component.scss"],
 })
-export class QuartierBComponent implements OnInit {
+export class QuartierLComponent implements OnInit {
   // variables
   popoverContent: string = "Unobstructed water view";
   popoverContent1: string = "Practicaly unlivable";
@@ -71,9 +70,9 @@ export class QuartierBComponent implements OnInit {
       case 1:
         return 0;
       case 2:
-        return 30910;
+        return 34779;
       case 3:
-        return 96105;
+        return 101336;
 
       default:
         break;
@@ -86,25 +85,25 @@ export class QuartierBComponent implements OnInit {
   getQuality(option: number) {
     switch (option) {
       case 1:
-        return 37724;
+        return 37715;
       case 2:
-        return 2 * 37724;
+        return 2 * 37715;
       case 3:
-        return 3 * 37724;
+        return 3 * 37715;
       case 4:
-        return 4 * 37724;
+        return 4 * 37715;
       case 5:
-        return 5 * 37724;
+        return 5 * 37715;
       case 6:
-        return 6 * 37724;
+        return 6 * 37715;
       case 7:
-        return 7 * 37724;
+        return 7 * 37715;
       case 8:
-        return 8 * 37724;
+        return 8 * 37715;
       case 9:
-        return 9 * 37724;
+        return 9 * 37715;
       case 10:
-        return 10 * 37724;
+        return 10 * 37715;
 
       default:
         break;
@@ -115,9 +114,9 @@ export class QuartierBComponent implements OnInit {
       case "above":
         return 0;
       case "half":
-        return 0.5 * -52464;
+        return 0.5 * -55049;
       case "basement":
-        return 1 * -52464;
+        return 1 * -55049;
 
       default:
         break;
@@ -128,6 +127,7 @@ export class QuartierBComponent implements OnInit {
     this.estimate = this.formatter.format(
       Math.round(
         (this.livingArea * 2429.839) / 10.764 +
+          32526 +
           this.getQuality(Number(this.quality)) +
           Number(this.nbWashrooms) * 26284.99 +
           this.getBedrooms(Number(this.nbBedrooms)) +
