@@ -1,5 +1,5 @@
 <div class="">
-  <nav class="navbar navbar-expand-md justify-content-between">
+  <nav class="navbar sticky-top navbar-expand-md">
     <div class="container">
       <a class="navbar-brand" [routerLink]="['home']">Combien Ça Vaut?</a>
       <button
@@ -16,75 +16,69 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav">
-          <li class="nav-item dropdown dropright">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              id="navbarCalculatrice"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
+          <li class="nav-item">
+            <button
+              mat-raised-button
+              class="bg-red mx-3"
+              [matMenuTriggerFor]="calculator"
             >
               La calculatrice
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarCalculatrice">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="dropdown1"
-                role="button"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                Quartiers Centraux
-              </a>
-
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="dropdown2"
-                role="button"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                West Island
-              </a>
-              <div class="dropdown-menu" aria-labelledby="dropdown1">
-                <a class="nav-link" [routerLink]="['saint-henri-condo']"
-                  >Saint-Henri</a
-                >
-                <a class="nav-link" [routerLink]="['plateau']"
-                  >Plateau Mont-Royal</a
-                >
-                <a class="nav-link" [routerLink]="['ville-mont-royal-house']"
-                  >Ville Mont-Royal</a
-                >
-                <a class="nav-link" [routerLink]="['bois-franc-house']"
-                  >Bois Franc</a
-                >
-                <a class="nav-link" [routerLink]="['vieux-montreal']"
-                  >Vieux-Montreal</a
-                >
-                <a class="nav-link" [routerLink]="['HoMa']">HoMa</a>
-                <a class="nav-link" [routerLink]="['rosemont']">Rosemont</a>
-                <a class="nav-link" [routerLink]="['ndg']"
-                  >Notre-Dame-de-Grace</a
-                >
-              </div>
-              <div class="dropdown-menu" aria-labelledby="dropdown2">
-                <a class="nav-link" [routerLink]="['dorval']">Dorval</a>
-                <a class="nav-link" [routerLink]="['lachine']">Lachine</a>
-                <a class="nav-link" [routerLink]="['pierrefond']"
-                  >Pierrefond/Roxboro</a
-                >
-              </div>
-            </div>
+            </button>
           </li>
+          <mat-menu #calculator="matMenu">
+            <button mat-menu-item [matMenuTriggerFor]="choice1">
+              Quartiers Centraux
+            </button>
+            <button mat-menu-item [matMenuTriggerFor]="choice2">
+              West Island
+            </button>
+          </mat-menu>
 
-          <a class="nav-link" [routerLink]="['payment']">Payment</a>
+          <mat-menu #choice1="matMenu">
+            <a
+              mat-menu-item
+              class="nav-link"
+              [routerLink]="['saint-henri-condo']"
+              >Saint-Henri</a
+            >
+            <a mat-menu-item class="nav-link" [routerLink]="['plateau']"
+              >Plateau Mont-Royal</a
+            >
+            <a
+              mat-menu-item
+              class="nav-link"
+              [routerLink]="['ville-mont-royal-house']"
+              >Ville Mont-Royal</a
+            >
+            <a
+              mat-menu-item
+              class="nav-link"
+              [routerLink]="['bois-franc-house']"
+              >Bois Franc</a
+            >
+            <a mat-menu-item class="nav-link" [routerLink]="['vieux-montreal']"
+              >Vieux-Montreal</a
+            >
+            <a mat-menu-item class="nav-link" [routerLink]="['HoMa']">HoMa</a>
+            <a mat-menu-item class="nav-link" [routerLink]="['rosemont']"
+              >Rosemont</a
+            >
+            <a mat-menu-item class="nav-link" [routerLink]="['ndg']"
+              >Notre-Dame-de-Grace</a
+            >
+          </mat-menu>
+
+          <mat-menu #choice2="matMenu">
+            <a mat-menu-item class="nav-link" [routerLink]="['dorval']"
+              >Dorval</a
+            >
+            <a mat-menu-item class="nav-link" [routerLink]="['lachine']"
+              >Lachine</a
+            >
+            <a mat-menu-item class="nav-link" [routerLink]="['pierrefond']"
+              >Pierrefond/Roxboro</a
+            >
+          </mat-menu>
         </ul>
       </div>
     </div>

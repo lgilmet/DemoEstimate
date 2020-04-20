@@ -1,12 +1,7 @@
-<!-- <img
-  class="w-100"
-  src="https://images.pexels.com/photos/1642125/pexels-photo-1642125.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
-  alt=""
-/> -->
 <div class="front-page">
   <div class="container">
     <div class="jumbotron w-75 yellow">
-      <h1 class="display-4 special">
+      <h1 class="display-4 special red">
         Combien ca vaut?
       </h1>
       <p class="lead">
@@ -78,9 +73,11 @@
   <hr class="m-4" />
   <section class="container">
     <div class="row">
-      <div class="col-lg-6 p-4 p-auto">
-        <h1 class="align-center special">Comment ca marche?</h1>
-        <ol class="instructions w-75">
+      <div class="col-lg-6 p-4 p-md-0 p-auto">
+        <div class="text-center">
+          <h1 class="align-center special">Comment ca marche?</h1>
+        </div>
+        <ol class="instructions w-75 mx-auto">
           <li>
             Choisissez votre quartier: trouvez le parmis la liste. Dans le
             future vour pourrez entrer votre code postal ou votre adresse ou
@@ -109,7 +106,11 @@
             uniques de votre propriété. *
           </li>
         </ol>
-        <p class="special">Essayez vous meme!</p>
+        <div class="text-center">
+          <h2 class="special red pl-4">
+            Essayez vous meme!
+          </h2>
+        </div>
       </div>
       <div class="col-lg-6 order-lg-first">
         <app-quartier-c></app-quartier-c>
@@ -120,5 +121,107 @@
       Nous n'assumons aucune responsabilité légale quand à la valeur des
       estimations fournis.
     </p>
+  </section>
+  <hr class="m-4" />
+  <section class="pt-4 container mx-auto">
+    <div class="text-center">
+      <h1 class="align-center mb-5">Notre équipe</h1>
+    </div>
+    <div class="row">
+      <div class="col-md-4 px-3 mx-auto">
+        <div class="card bg-transparent mx-auto border-0">
+          <div class="img-staff">
+            <img src="./assets/images/staff1.jpg" alt="" />
+          </div>
+          <div class="card-body">
+            <h2 class="special">Jeff Lee - CMO</h2>
+            <p>
+              Communications + Marketing 33 ans Reconnu pour ses nombreuses
+              bonnes et mauvaises idées au fil des années, Jeff Lee s’est prouvé
+              créatif et innovant en publicité et production de contenus en
+              collabo avec des marques et des agences nationales depuis son
+              arrivée dans le paysage Montréalais. Il détient une license de
+              courtage immobilier et conclue des dizaines de transactions
+              immobilières par année.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 px-3 mx-auto">
+        <div class="card bg-transparent mx-auto border-0">
+          <div class="img-staff">
+            <img src="./assets/images/staff2.jpg" alt="" />
+          </div>
+          <div class="card-body">
+            <h2 class="special">Marie-Claude Bergeron - CFO</h2>
+            <p>
+              Actuaire + Partenariats d’affaires 34 ans Avez plus de 10 années
+              d’expérience en finances et private banking derrière la cravate,
+              M-C contribue son expertise en actuariat et formulation comptables
+              ainsi qu’un respectable réseau de contacts actifs sur la scène
+              Montréalaise. Elle détient une license de courtage immobilier et
+              conclue des dizaines de transactions immobilières par année.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 px-3 mx-auto">
+        <div class="card bg-transparent mx-auto border-0">
+          <div class="img-staff">
+            <img src="./assets/images/staff3.jpg" alt="" />
+          </div>
+          <div class="card-body">
+            <h2 class="special">Sébastien Millette - CEO</h2>
+            <p>
+              Intégrateur + Chef produit 31 ans Longtemps directeur des ventes
+              pour le plus grand détaillant Volvo de Montréal et consultant sur
+              plusieurs projets techs, Sebastien sait comment bien capturer une
+              opportunité en rassemblant une équipe béton qui peut accomplir les
+              objectifs “on time and on budget”. Il détient une license de
+              courtage immobilier et conclue des dizaines de transactions
+              immobilières par année.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr class="m-4" />
+  <section class="pt-4 container mx-auto">
+    <div class="text-center">
+      <h1 class="align-center mb-5">La calculatrice</h1>
+    </div>
+    <div class="row pb-5">
+      <div class="col-md-6">
+        <h5 class="special">
+          “ Au départ, la calculatrice était vraiment juste un formulaire Excel
+          que nous avons créé pour sauver un peu de temps dans nos évaluations.
+          ”
+        </h5>
+        <p>
+          Et puis à mesure que nous commencions à ajouter à la main dans notre
+          formulaire davantage de données tirées des ventes de propriétés, notre
+          outil et notre algorithme qui calcule derrière est devenu plus précis
+          dans l’analyse des propriétés à vendre de nos clients.
+        </p>
+
+        <h4>La calculatrice immobilière (version BETA)</h4>
+
+        <p>
+          En rendant cette calculatrice disponible au grand public sur le web,
+          nous réussirons à accélérer de façon exponentielle, l’apprentissage +
+          l’amélioration de notre algorithme grace au volume de données entrées
+          par les utilisateurs. Autant les particuliers que les courtiers et
+          autres professionnels de l’industrie. Nous espérons ainsi pouvoir
+          rapidement développer les autres quartiers et secteurs immédiats de
+          Montréal, pour évidemment ajouter ensuite le reste du Canada en
+          utilisant toujours la même méthodologie et les récentes données de
+          ventes du marché immobilier pan-canadien.
+        </p>
+      </div>
+      <div class="col-md-6 demo-img">
+        <img src="./assets/images/building.jpg" alt="" />
+      </div>
+    </div>
   </section>
 </div>

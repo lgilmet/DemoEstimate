@@ -85,15 +85,32 @@ mat-radio-button {
 .navbar {
   background-color: rgb(255, 252, 82);
   text-decoration: none;
+  box-shadow: rgba(0, 0, 0, 0.205) 2px 2px 2px;
 }
 
 .navbar a {
   color: black;
 }
-
+.sticky-top {
+  z-index: 50;
+}
 .navbar-brand {
   font-family: "Sen Bold";
   font-size: 2em;
+}
+
+.navbar-collapse {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+@media (max-width: 767.98px) {
+  .navbar-collapse {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
 }
 
 .special {
@@ -102,6 +119,14 @@ mat-radio-button {
 
 .yellow {
   background-color: #fffc52;
+}
+.red {
+  color: #ff4081;
+}
+
+.bg-red {
+  background-color: #ff4081;
+  color: white;
 }
 
 .light-yellow,
@@ -126,13 +151,38 @@ mat-radio-button {
   opacity: 0.9;
 }
 
-.info-panels {
-}
-
 .info-panels img {
   max-width: 60px;
   width: 50%;
   margin: 0 auto;
+}
+.img-staff {
+  text-align: center;
+}
+.img-staff img {
+  width: 50vw;
+  height: 50vw;
+  border-radius: 25vw;
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .img-staff img {
+    width: 20vw;
+    height: 20vw;
+    border-radius: 10vw;
+    object-fit: cover;
+  }
+}
+
+.demo-img {
+  text-align: center;
+}
+
+.demo-img img {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
 }
 
 .instructions {

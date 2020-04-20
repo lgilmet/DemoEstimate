@@ -27,6 +27,7 @@ import { QuartierKComponent } from "./forms/quartier-k/quartier-k.component";
 import { MatTooltipModule } from "@angular/material/tooltip";
 import { PaymentComponent } from "./forms/payment/payment.component";
 import { MatIconModule } from "@angular/material/icon";
+import { MatMenuModule } from "@angular/material/menu";
 
 @NgModule({
   declarations: [
@@ -43,7 +44,7 @@ import { MatIconModule } from "@angular/material/icon";
     QuartierIComponent,
     QuartierJComponent,
     QuartierKComponent,
-    PaymentComponent
+    PaymentComponent,
   ],
   imports: [
     FormsModule,
@@ -57,9 +58,10 @@ import { MatIconModule } from "@angular/material/icon";
     MatDialogModule,
     MatSlideToggleModule,
     MatTooltipModule,
-    MatIconModule
+    MatIconModule,
+    MatMenuModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
