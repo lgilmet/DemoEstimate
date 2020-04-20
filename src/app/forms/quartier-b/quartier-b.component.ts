@@ -71,9 +71,9 @@ export class QuartierBComponent implements OnInit {
       case 1:
         return 0;
       case 2:
-        return 29424.64;
+        return 30910;
       case 3:
-        return 91869.05;
+        return 96105;
 
       default:
         break;
@@ -86,25 +86,25 @@ export class QuartierBComponent implements OnInit {
   getQuality(option: number) {
     switch (option) {
       case 1:
-        return 37216;
+        return 37724;
       case 2:
-        return 2 * 37216;
+        return 2 * 37724;
       case 3:
-        return 3 * 37216;
+        return 3 * 37724;
       case 4:
-        return 4 * 37216;
+        return 4 * 37724;
       case 5:
-        return 5 * 37216;
+        return 5 * 37724;
       case 6:
-        return 6 * 37216;
+        return 6 * 37724;
       case 7:
-        return 7 * 37216;
+        return 7 * 37724;
       case 8:
-        return 8 * 37216;
+        return 8 * 37724;
       case 9:
-        return 9 * 37216;
+        return 9 * 37724;
       case 10:
-        return 10 * 37216;
+        return 10 * 37724;
 
       default:
         break;
@@ -115,9 +115,9 @@ export class QuartierBComponent implements OnInit {
       case "above":
         return 0;
       case "half":
-        return 0.5 * -54514.2;
+        return 0.5 * -52464;
       case "basement":
-        return 1 * -54514.2;
+        return 1 * -52464;
 
       default:
         break;
@@ -127,21 +127,21 @@ export class QuartierBComponent implements OnInit {
   computeEstimate() {
     this.estimate = this.formatter.format(
       Math.round(
-        (this.livingArea * 2442.839) / 10.764 +
+        (this.livingArea * 2446.839) / 10.764 +
           this.getQuality(Number(this.quality)) +
-          Number(this.nbWashrooms) * 28310.99 +
+          Number(this.nbWashrooms) * 28819.99 +
           this.getBedrooms(Number(this.nbBedrooms)) +
           this.getLevel(this.level) +
-          Number(this.eastPapineau) * -60745.8 +
-          Number(this.rooftop) * 70224.33 +
-          Number(this.terrasse) * 40733.43 +
-          Number(this.railway) * -97407.3 +
-          Number(this.alley) * 20484.77 +
-          Number(this.heritageBldg) * 80020.64 +
-          Number(this.noisySt) * -30164.7 +
-          Number(this.luxuryBldg) * 61656.98 +
-          Number(this.indivise) * -32567.97 +
-          Number(this.garage) * 17690.52
+          Number(this.eastPapineau) * -61925.8 +
+          Number(this.rooftop) * 70306.33 +
+          Number(this.terrasse) * 40474.43 +
+          Number(this.railway) * -98151.3 +
+          Number(this.alley) * 21599.77 +
+          Number(this.heritageBldg) * 70934.64 +
+          Number(this.noisySt) * -29769.7 +
+          Number(this.luxuryBldg) * 68353.98 +
+          Number(this.indivise) * -32109.97 +
+          Number(this.garage) * 18617.52
       )
     );
   }
