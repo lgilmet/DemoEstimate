@@ -1,169 +1,241 @@
 <div class="front-page">
-  <div class="container">
-    <div class="jumbotron w-75 yellow">
-      <h1 class="display-4 special red">
-        Combien ca vaut?
-      </h1>
-      <p class="my-4">
-        Cette calculatrice de prix d'immobilier utilise la même technique et les
-        mêmes données que les professionnels de l’immobilier pour mettre un prix
-        sur une maison.
-      </p>
-      <hr class="lead" />
-      <p class="my-4">
-        Notre calculatrice est en version béta et nous sommes activement à la
-        recherche de partenaires pour déveloper une calculatrice robuste et
-        facile d'utilisation.
-      </p>
-    </div>
-  </div>
-</div>
-<div class="yellow">
-  <section class="row pt-4 container mx-auto"></section>
-  <hr class="m-4" />
   <section class="container">
     <div class="row">
-      <div class="col-lg-6 p-4 p-md-0 p-auto">
-        <div class="text-center">
-          <h1 class="align-center special">Comment ca marche?</h1>
+      <div class="col-lg-6 p-0 p-md-0 p-auto jumbotron yellow">
+        <div class="text-center pt-5">
+          <h1 class="align-center special">Combien ca vaut?</h1>
         </div>
-        <ol class="instructions w-75 mx-auto">
-          <li>
-            Choisissez votre quartier: trouvez le parmis la liste.
-          </li>
-          <li>
-            Remplissez votre formulaire au meilleur de vos connaissance.
-          </li>
-          <li>
-            Notre analyse prends en compte toutes les plus récentes ventes de
-            votre secteur.
-          </li>
-          <li>
-            Nos modèles nous servent ensuite a déterminer la valeur médiane des
-            éléments les plus importants dans le calcule du prix tel la
-            superficie, le stationnement, la finition, etc.
-          </li>
-          <li>
-            Finalement la calculatrice suggère un prix de vente pour votre condo
-            / maison selon le marché actuel, toujours en fonction des détails
-            uniques de votre propriété. *
-          </li>
-        </ol>
+
+        <p class="instructions pl-4 mx-auto">
+          Cette calculatrice de prix d'immobilier utilise la même technique et
+          les mêmes données que les professionnels de l’immobilier pour mettre
+          un prix sur une maison.
+        </p>
+        <hr class="lead" />
+        <p class="instructions pl-4 mx-auto">
+          Notre calculatrice est en version béta et nous sommes activement à la
+          recherche de partenaires pour déveloper une calculatrice robuste et
+          facile d'utilisation.
+        </p>
+
         <div class="text-center">
           <h2 class="special red pl-4">
             Essayez vous meme!
           </h2>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <button
+                mat-raised-button
+                class="bg-red mx-3"
+                [matMenuTriggerFor]="calculator"
+              >
+                Cliquez ici :
+              </button>
+            </li>
+            <mat-menu #calculator="matMenu">
+              <button mat-menu-item [matMenuTriggerFor]="choice1">
+                Quartiers Centraux
+              </button>
+              <button mat-menu-item [matMenuTriggerFor]="choice2">
+                West Island
+              </button>
+            </mat-menu>
+
+            <mat-menu #choice1="matMenu">
+              <a
+                mat-menu-item
+                class="nav-link"
+                [routerLink]="['saint-henri-condo']"
+                >Saint-Henri</a
+              >
+              <a mat-menu-item class="nav-link" [routerLink]="['plateau']"
+                >Plateau Mont-Royal</a
+              >
+              <a mat-menu-item class="nav-link" [routerLink]="['mileend']"
+                >Mile-End</a
+              >
+              <a
+                mat-menu-item
+                class="nav-link"
+                [routerLink]="['ville-mont-royal-house']"
+                >Ville Mont-Royal</a
+              >
+              <a
+                mat-menu-item
+                class="nav-link"
+                [routerLink]="['bois-franc-house']"
+                >Bois Franc</a
+              >
+              <a
+                mat-menu-item
+                class="nav-link"
+                [routerLink]="['vieux-montreal']"
+                >Vieux-Montreal</a
+              >
+              <a mat-menu-item class="nav-link" [routerLink]="['HoMa']">HoMa</a>
+              <a mat-menu-item class="nav-link" [routerLink]="['rosemont']"
+                >Rosemont</a
+              >
+              <a mat-menu-item class="nav-link" [routerLink]="['ndg']"
+                >Notre-Dame-de-Grace</a
+              >
+            </mat-menu>
+
+            <mat-menu #choice2="matMenu">
+              <a mat-menu-item class="nav-link" [routerLink]="['dorval']"
+                >Dorval</a
+              >
+              <a mat-menu-item class="nav-link" [routerLink]="['lachine']"
+                >Lachine</a
+              >
+              <a mat-menu-item class="nav-link" [routerLink]="['pierrefond']"
+                >Pierrefond/Roxboro</a
+              >
+            </mat-menu>
+          </ul>
         </div>
       </div>
-      <div class="col-lg-6 order-lg-first">
+
+      <div class="col-lg-6 p-4 p-md-0 p-auto jumbotron w-50 yellow">
         <app-quartier-b></app-quartier-b>
-      </div>
-    </div>
-    <h3>* La calculatrice est en version béta:</h3>
-    <p>
-      Zéro responsables des mésaventures de la calculatrice.
-    </p>
-  </section>
-  <hr class="m-4" />
-  <section class="pt-4 container mx-auto">
-    <div class="text-center">
-      <h1 class="align-center mb-5">Notre équipe</h1>
-    </div>
-    <div class="row">
-      <div class="col-md-4 px-3 mx-auto">
-        <div class="card bg-transparent mx-auto border-0">
-          <div class="img-staff">
-            <img src="./assets/images/staff1.jpg" alt="" />
-          </div>
-          <div class="card-body">
-            <h2 class="special">Jeff Lee - CMO</h2>
-            <p>
-              Communications + Marketing 33 ans Reconnu pour ses nombreuses
-              bonnes et mauvaises idées au fil des années, Jeff Lee s’est prouvé
-              créatif et innovant en publicité et production de contenus en
-              collabo avec des marques et des agences nationales depuis son
-              arrivée dans le paysage Montréalais. Il détient une license de
-              courtage immobilier et conclue des dizaines de transactions
-              immobilières par année.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 px-3 mx-auto">
-        <div class="card bg-transparent mx-auto border-0">
-          <div class="img-staff">
-            <img src="./assets/images/staff2.jpg" alt="" />
-          </div>
-          <div class="card-body">
-            <h2 class="special">Marie-Claude Bergeron - CFO</h2>
-            <p>
-              Actuaire + Partenariats d’affaires 34 ans Avez plus de 10 années
-              d’expérience en finances et private banking derrière la cravate,
-              M-C contribue son expertise en actuariat et formulation comptables
-              ainsi qu’un respectable réseau de contacts actifs sur la scène
-              Montréalaise. Elle détient une license de courtage immobilier et
-              conclue des dizaines de transactions immobilières par année.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 px-3 mx-auto">
-        <div class="card bg-transparent mx-auto border-0">
-          <div class="img-staff">
-            <img src="./assets/images/staff3.jpg" alt="" />
-          </div>
-          <div class="card-body">
-            <h2 class="special">Sébastien Millette - CEO</h2>
-            <p>
-              Intégrateur + Chef produit 31 ans Longtemps directeur des ventes
-              pour le plus grand détaillant Volvo de Montréal et consultant sur
-              plusieurs projets techs, Sebastien sait comment bien capturer une
-              opportunité en rassemblant une équipe béton qui peut accomplir les
-              objectifs “on time and on budget”. Il détient une license de
-              courtage immobilier et conclue des dizaines de transactions
-              immobilières par année.
-            </p>
-          </div>
-        </div>
+        <h3>* La calculatrice est en version béta:</h3>
+        <p>Zéro responsables des mésaventures de la calculatrice.</p>
       </div>
     </div>
   </section>
-  <hr class="m-4" />
-  <section class="pt-4 container mx-auto">
-    <div class="text-center">
-      <h1 class="align-center mb-5">La calculatrice</h1>
-    </div>
-    <div class="row pb-5">
-      <div class="col-md-6">
-        <h5 class="special">
-          “ Au départ, la calculatrice était vraiment juste un formulaire Excel
-          que nous avons créé pour sauver un peu de temps dans nos évaluations.
-          ”
-        </h5>
-        <p>
-          Et puis à mesure que nous commencions à ajouter à la main dans notre
-          formulaire davantage de données tirées des ventes de propriétés, notre
-          outil et notre algorithme qui calcule derrière est devenu plus précis
-          dans l’analyse des propriétés à vendre de nos clients.
-        </p>
 
-        <h4>La calculatrice immobilière (version BETA)</h4>
+  <div class="w-100 yellow">
+    <h1 class="align-center special text-center pt-5">
+      Comment ca marche?
+    </h1>
+    <ol class="instructions w-75 p-4 pb-0">
+      <li>
+        Choisissez votre quartier: trouvez le parmis la liste.
+      </li>
+      <li>
+        Remplissez votre formulaire au meilleur de vos connaissance.
+      </li>
+      <li>
+        Notre analyse prends en compte toutes les plus récentes ventes de votre
+        secteur.
+      </li>
+      <li>
+        Nos modèles nous servent ensuite a déterminer la valeur médiane des
+        éléments les plus importants dans le calcule du prix tel la superficie,
+        le stationnement, la finition, etc.
+      </li>
+      <li>
+        Finalement la calculatrice suggère un prix de vente pour votre condo /
+        maison selon le marché actuel, toujours en fonction des détails uniques
+        de votre propriété. *
+      </li>
+    </ol>
+  </div>
 
-        <p>
-          En rendant cette calculatrice disponible au grand public sur le web,
-          nous réussirons à accélérer de façon exponentielle, l’apprentissage +
-          l’amélioration de notre algorithme grace au volume de données entrées
-          par les utilisateurs. Autant les particuliers que les courtiers et
-          autres professionnels de l’industrie. Nous espérons ainsi pouvoir
-          rapidement développer les autres quartiers et secteurs immédiats de
-          Montréal, pour évidemment ajouter ensuite le reste du Canada en
-          utilisant toujours la même méthodologie et les récentes données de
-          ventes du marché immobilier pan-canadien.
-        </p>
+  <div class="yellow">
+    <hr class="m-4 mt-0" />
+
+    <section class="pt-0 container mx-auto">
+      <div class="text-center">
+        <h1 class="align-center mb-5">Notre équipe</h1>
       </div>
-      <div class="col-md-6 demo-img">
-        <img src="./assets/images/building.jpg" alt="" />
+      <div class="row">
+        <div class="col-md-4 px-3 mx-auto">
+          <div class="card bg-transparent mx-auto border-0">
+            <div class="img-staff">
+              <img src="./assets/images/staff1.jpg" alt="" />
+            </div>
+            <div class="card-body">
+              <h2 class="special">Jeff Lee - CMO</h2>
+              <p>
+                Communications + Marketing 33 ans Reconnu pour ses nombreuses
+                bonnes et mauvaises idées au fil des années, Jeff Lee s’est
+                prouvé créatif et innovant en publicité et production de
+                contenus en collabo avec des marques et des agences nationales
+                depuis son arrivée dans le paysage Montréalais. Il détient une
+                license de courtage immobilier et conclue des dizaines de
+                transactions immobilières par année.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 px-3 mx-auto">
+          <div class="card bg-transparent mx-auto border-0">
+            <div class="img-staff">
+              <img src="./assets/images/staff2.jpg" alt="" />
+            </div>
+            <div class="card-body">
+              <h2 class="special">Marie-Claude Bergeron - CFO</h2>
+              <p>
+                Actuaire + Partenariats d’affaires 34 ans Avez plus de 10 années
+                d’expérience en finances et private banking derrière la cravate,
+                M-C contribue son expertise en actuariat et formulation
+                comptables ainsi qu’un respectable réseau de contacts actifs sur
+                la scène Montréalaise. Elle détient une license de courtage
+                immobilier et conclue des dizaines de transactions immobilières
+                par année.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 px-3 mx-auto">
+          <div class="card bg-transparent mx-auto border-0">
+            <div class="img-staff">
+              <img src="./assets/images/staff3.jpg" alt="" />
+            </div>
+            <div class="card-body">
+              <h2 class="special">Sébastien Millette - CEO</h2>
+              <p>
+                Intégrateur + Chef produit 31 ans Longtemps directeur des ventes
+                pour le plus grand détaillant Volvo de Montréal et consultant
+                sur plusieurs projets techs, Sebastien sait comment bien
+                capturer une opportunité en rassemblant une équipe béton qui
+                peut accomplir les objectifs “on time and on budget”. Il détient
+                une license de courtage immobilier et conclue des dizaines de
+                transactions immobilières par année.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+    <hr class="m-4" />
+    <section class="pt-4 container mx-auto">
+      <div class="text-center">
+        <h1 class="align-center mb-5">La calculatrice</h1>
+      </div>
+      <div class="row pb-5">
+        <div class="col-md-6">
+          <h5 class="special">
+            “ Au départ, la calculatrice était vraiment juste un formulaire
+            Excel que nous avons créé pour sauver un peu de temps dans nos
+            évaluations. ”
+          </h5>
+          <p>
+            Et puis à mesure que nous commencions à ajouter à la main dans notre
+            formulaire davantage de données tirées des ventes de propriétés,
+            notre outil et notre algorithme qui calcule derrière est devenu plus
+            précis dans l’analyse des propriétés à vendre de nos clients.
+          </p>
+
+          <h4>La calculatrice immobilière (version BETA)</h4>
+
+          <p>
+            En rendant cette calculatrice disponible au grand public sur le web,
+            nous réussirons à accélérer de façon exponentielle, l’apprentissage
+            + l’amélioration de notre algorithme grace au volume de données
+            entrées par les utilisateurs. Autant les particuliers que les
+            courtiers et autres professionnels de l’industrie. Nous espérons
+            ainsi pouvoir rapidement développer les autres quartiers et secteurs
+            immédiats de Montréal, pour évidemment ajouter ensuite le reste du
+            Canada en utilisant toujours la même méthodologie et les récentes
+            données de ventes du marché immobilier pan-canadien.
+          </p>
+        </div>
+        <div class="col-md-6 demo-img">
+          <img src="./assets/images/building.jpg" alt="" />
+        </div>
+      </div>
+    </section>
+  </div>
 </div>
