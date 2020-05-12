@@ -83,7 +83,7 @@ mat-radio-button {
 }
 
 .navbar {
-  background-color: rgb(255, 252, 82);
+  background-color: #ffc800;
   text-decoration: none;
   box-shadow: rgba(0, 0, 0, 0.205) 2px 2px 2px;
 }
@@ -118,7 +118,7 @@ mat-radio-button {
 }
 
 .yellow {
-  background-color: #fffc52;
+  background-color: #ffc800;
 }
 .red {
   color: #ff4081;
@@ -131,7 +131,7 @@ mat-radio-button {
 
 .light-yellow,
 .light-yellow li {
-  background-color: #ffff86;
+  background-color: #ffc800;
 }
 
 .custom-toggler .navbar-toggler-icon {
@@ -140,11 +140,11 @@ mat-radio-button {
 
 .front-page {
   width: 100vw;
-  height: 100vh;
-  background-image: url("./assets/images/299790200_Montréal_XL_Large.jpg");
+  height: 200vh;
+  background-color: #ffc800;
   background-position: left;
   background-size: cover;
-  padding-top: 10%;
+  padding-top: 0%;
 }
 
 .front-page .jumbotron {
