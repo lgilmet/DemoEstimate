@@ -32,8 +32,10 @@ export class QuartierHComponent implements OnInit {
   detached: boolean;
   highway: boolean;
   waterfront: boolean;
+  nbBedrooms: string;
   garage: boolean;
   estimate: number;
+  level: string;
 
   formatter;
   color: ThemePalette = "primary";
@@ -97,6 +99,19 @@ export class QuartierHComponent implements OnInit {
         break;
     }
   }
+  getBedrooms(option: number) {
+    switch (option) {
+      case 1:
+        return 0;
+      case 2:
+        return 16562.17;
+      case 3:
+        return 39848.3;
+
+      default:
+        break;
+    }
+  }
 
   computeEstimate() {
     this.estimate = this.formatter.format(
@@ -119,7 +134,7 @@ export class QuartierHComponent implements OnInit {
     $("#collapseResult").collapse("show");
     setTimeout(() => {
       window.scrollTo(0, document.body.scrollHeight);
-    }, 500);
+    }, 100);
   }
 
   checkForm() {
@@ -133,14 +148,16 @@ export class QuartierHComponent implements OnInit {
   }
 
   clearForm() {
+    this.level = "above";
     this.livingArea = null;
     this.lotArea = null;
     this.quality = "1";
-    this.type = "house";
+    this.type = "condo";
     this.detached = false;
     this.highway = false;
     this.nbWashrooms = "1";
     this.waterfront = false;
+    this.nbBedrooms = "1";
   }
   getTotal() {
     if (this.checkForm()) this.showResult();

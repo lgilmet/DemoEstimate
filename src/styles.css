@@ -21,7 +21,7 @@ mat-radio-button {
 
 .info-icon {
   -webkit-filter: invert(0.7);
-          filter: invert(0.7);
+  filter: invert(0.7);
   width: 100%;
 }
 
@@ -49,13 +49,13 @@ mat-radio-button {
   width: max-content;
   max-width: 50vw;
   -webkit-transform: translateX(-50%) scale(0.5);
-          transform: translateX(-50%) scale(0.5);
+  transform: translateX(-50%) scale(0.5);
 }
 
 .info:hover::before {
   opacity: 80%;
   -webkit-transform: translateX(-50%) translateY(30%) scale(1);
-          transform: translateX(-50%) translateY(30%) scale(1);
+  transform: translateX(-50%) translateY(30%) scale(1);
   background: #4e4e4e;
   -webkit-transition: all 0.1s;
   transition: all 0.1s;

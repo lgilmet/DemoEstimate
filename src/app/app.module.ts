@@ -28,7 +28,8 @@ import { MatTooltipModule } from "@angular/material/tooltip";
 import { PaymentComponent } from "./forms/payment/payment.component";
 import { MatIconModule } from "@angular/material/icon";
 import { MatMenuModule } from "@angular/material/menu";
-import { OldHomeComponent } from './pages/old-home/old-home.component';
+import { OldHomeComponent } from "./pages/old-home/old-home.component";
+import { QuartierLComponent } from "./forms/quartier-l/quartier-l.component";
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { OldHomeComponent } from './pages/old-home/old-home.component';
     QuartierKComponent,
     PaymentComponent,
     OldHomeComponent,
+    QuartierLComponent,
   ],
   imports: [
     FormsModule,

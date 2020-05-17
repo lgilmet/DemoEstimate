@@ -13,6 +13,7 @@ import { QuartierIComponent } from "./forms/quartier-i/quartier-i.component";
 import { QuartierJComponent } from "./forms/quartier-j/quartier-j.component";
 import { QuartierKComponent } from "./forms/quartier-k/quartier-k.component";
 import { PaymentComponent } from "./forms/payment/payment.component";
+import { QuartierLComponent } from "./forms/quartier-l/quartier-l.component";
 
 const routes: Routes = [
   { path: "", pathMatch: "full", redirectTo: "home" },
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: "pierrefond", component: QuartierJComponent },
   { path: "ndg", component: QuartierKComponent },
   { path: "payment", component: PaymentComponent },
+  { path: "mileend", component: QuartierLComponent },
 ];
 
 @NgModule({
