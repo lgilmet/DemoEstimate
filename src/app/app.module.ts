@@ -28,6 +28,7 @@ import { MatTooltipModule } from "@angular/material/tooltip";
 import { PaymentComponent } from "./forms/payment/payment.component";
 import { MatIconModule } from "@angular/material/icon";
 import { MatMenuModule } from "@angular/material/menu";
+import { OldHomeComponent } from './pages/old-home/old-home.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { MatMenuModule } from "@angular/material/menu";
     QuartierJComponent,
     QuartierKComponent,
     PaymentComponent,
+    OldHomeComponent,
   ],
   imports: [
     FormsModule,
