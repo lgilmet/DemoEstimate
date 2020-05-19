@@ -14,10 +14,21 @@ import { QuartierJComponent } from "./forms/quartier-j/quartier-j.component";
 import { QuartierKComponent } from "./forms/quartier-k/quartier-k.component";
 import { PaymentComponent } from "./forms/payment/payment.component";
 import { QuartierLComponent } from "./forms/quartier-l/quartier-l.component";
+import { AboutComponent } from "./pages/about/about.component";
 
 const routes: Routes = [
-  { path: "", pathMatch: "full", redirectTo: "home" },
-  { path: "home", component: HomeComponent },
+  //{ path: "", pathMatch: "full", redirectTo: "home" },
+  {
+    path: "",
+    component: HomeComponent,
+    children: [
+      { path: "", redirectTo: "plateau-mont-royal", pathMatch: "full" },
+      { path: "plateau-mont-royal", component: QuartierBComponent },
+      { path: "saint-henri-condo", component: QuartierAComponent },
+      { path: "ville-mont-royal-house", component: QuartierCComponent },
+    ],
+  },
+  { path: "a-propos", component: AboutComponent },
   { path: "saint-henri-condo", component: QuartierAComponent },
   { path: "plateau", component: QuartierBComponent },
   { path: "ville-mont-royal-house", component: QuartierCComponent },

@@ -1,14 +1,14 @@
-<div class="yellow">
-  <div class="container py-3">
-    <div class="card light-yellow">
-      <div class="card-header">
+<div class="form">
+  <div class="">
+    <div class="">
+      <!-- <div class="card-header">
         <h2>
           <span style="white-space: nowrap;">Plateau Mont-Royal</span>
         </h2>
-      </div>
+      </div> -->
       <!--living  area -->
       <div class="card-body">
-        <div class="input-group">
+        <div class="input-group w-50">
           <div class="input-group-prepend">
             <div
               (mouseenter)="info($event)"
@@ -30,6 +30,7 @@
             <span class="input-group-text" id="area-label">sq/f</span>
           </div>
         </div>
+
         <!--lot  area -->
 
         <!-- construction year -->
@@ -263,15 +264,17 @@
       </ul>
       <!-- submit -->
       <div class="card-body d-flex justify-content-between">
-        <button mat-stroked-button (click)="clearForm()">Clear</button>
-        <button mat-flat-button color="accent" (click)="getTotal()">
-          Get an estimate
+        <button class="btn btn-outline-secondary" (click)="clearForm()">
+          Effacer
+        </button>
+        <button class="btn yellow btn-outline-dark" (click)="getTotal()">
+          Calculer 💸
         </button>
       </div>
 
       <div class="card-footer collapse bg-light" id="collapseExample">
         <div class="d-flex justify-content-between mt-3">
-          <p class="">Your estimate:</p>
+          <!-- <p class="">Your estimate:</p> -->
           <h3>CAD {{ estimate }}</h3>
         </div>
       </div>

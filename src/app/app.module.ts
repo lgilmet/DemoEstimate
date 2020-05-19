@@ -30,6 +30,7 @@ import { MatIconModule } from "@angular/material/icon";
 import { MatMenuModule } from "@angular/material/menu";
 import { OldHomeComponent } from "./pages/old-home/old-home.component";
 import { QuartierLComponent } from "./forms/quartier-l/quartier-l.component";
+import { AboutComponent } from './pages/about/about.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { QuartierLComponent } from "./forms/quartier-l/quartier-l.component";
     PaymentComponent,
     OldHomeComponent,
     QuartierLComponent,
+    AboutComponent,
   ],
   imports: [
     FormsModule,

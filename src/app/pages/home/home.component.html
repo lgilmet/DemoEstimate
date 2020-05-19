@@ -1,152 +1,197 @@
-<div class="front-page">
+<div class="front-page yellow">
+  <section class="container">
+    <div class="row title">
+      <div class="col-lg-6 offset-lg-1 d-flex align-items-center">
+        <h1 class="special brand">
+          Combien <br />
+          Ça Vaut? 💸
+        </h1>
+      </div>
+      <div class="col-lg-4 d-flex align-items-center">
+        <div class="w-100 w-sm-50">
+          <p class="">
+            La Calculatrice Immobilière™ indique le juste prix de vente d’une
+            propriété basé sur les 500 dernières transactions de votre quartier.
+          </p>
+        </div>
+      </div>
+      <hr class="lead" />
+    </div>
+  </section>
+  <section>
+    <div class="border-thick w-75 mx-auto">
+      <button class="calc-button shadow-sm" [matMenuTriggerFor]="calculator">
+        {{ selectedCalculator }}
+      </button>
+      <mat-menu #calculator="matMenu">
+        <button mat-menu-item [matMenuTriggerFor]="choice1">
+          Quartiers Centraux
+        </button>
+        <button mat-menu-item [matMenuTriggerFor]="choice2">
+          West Island
+        </button>
+      </mat-menu>
+
+      <mat-menu #choice1="matMenu">
+        <a mat-menu-item class="nav-link" [routerLink]="['saint-henri-condo']"
+          >Saint-Henri</a
+        >
+        <a mat-menu-item class="nav-link" [routerLink]="['plateau-mont-royal']"
+          >Plateau Mont-Royal</a
+        >
+        <a mat-menu-item class="nav-link" [routerLink]="['mileend']"
+          >Mile-End</a
+        >
+        <a
+          mat-menu-item
+          class="nav-link"
+          [routerLink]="['ville-mont-royal-house']"
+          >Ville Mont-Royal</a
+        >
+        <a mat-menu-item class="nav-link" [routerLink]="['bois-franc-house']"
+          >Bois Franc</a
+        >
+        <a mat-menu-item class="nav-link" [routerLink]="['vieux-montreal']"
+          >Vieux-Montreal</a
+        >
+        <a mat-menu-item class="nav-link" [routerLink]="['HoMa']">HoMa</a>
+        <a mat-menu-item class="nav-link" [routerLink]="['rosemont']"
+          >Rosemont</a
+        >
+        <a mat-menu-item class="nav-link" [routerLink]="['ndg']"
+          >Notre-Dame-de-Grace</a
+        >
+      </mat-menu>
+
+      <mat-menu #choice2="matMenu">
+        <a mat-menu-item class="nav-link" [routerLink]="['dorval']">Dorval</a>
+        <a mat-menu-item class="nav-link" [routerLink]="['lachine']">Lachine</a>
+        <a mat-menu-item class="nav-link" [routerLink]="['pierrefond']"
+          >Pierrefond/Roxboro</a
+        >
+      </mat-menu>
+      <router-outlet></router-outlet>
+    </div>
+  </section>
+  <section class="text-center">
+    <h2 class="special heading">Le saviez-vous?</h2>
+    <div class="w-75 white mx-auto card-body border-thick">
+      <p class="special heading">
+        Dans le quartier de Rosemont, c'est items valent:
+      </p>
+      <div class="row">
+        <div class="col-md">
+          <h1 class="larger">🌇</h1>
+          <h2 class="special heading">65,000$</h2>
+          <p>Terrase prive sur le toit</p>
+        </div>
+        <div class="col-md">
+          <h1 class="larger">🚗</h1>
+          <h2 class="special heading">
+            65,000$
+          </h2>
+          <p>Garage interieur</p>
+        </div>
+        <div class="col-md">
+          <h1 class="larger">🛁</h1>
+          <h2 class="special heading">65,000$</h2>
+          <p>Salle de bain extra</p>
+        </div>
+      </div>
+    </div>
+  </section>
   <section class="container">
     <div class="row">
-      <div class="col-lg-6 p-0 p-md-0 p-auto jumbotron yellow">
-        <div class="text-center pt-5">
-          <h1 class="align-center special">Combien ca vaut?</h1>
-        </div>
-
-        <p class="instructions pl-4 mx-auto">
-          La Calculatrice Immobilière™ indique le juste prix de vente d’une
-          propriété basé sur les 500 dernières transactions de votre quartier.
-        </p>
-        <hr class="lead" />
-      </div>
-
-      <div class="col-lg-6 p-4 p-md-0 p-auto jumbotron w-50 yellow">
-        <app-quartier-b></app-quartier-b>
-        <h3>* La calculatrice est en version béta:</h3>
-        <p>Zéro responsables des mésaventures de la calculatrice.</p>
+      <div class="col-3 section-icon"><p>🔬</p></div>
+      <div class="col-9">
+        <h1 class="special heading">
+          Comment ça fonctionne?
+        </h1>
+        <ol class="instructions">
+          <li>
+            La calculatrice analyse les données des 500 plus récentes
+            transactions de votre quartier.
+          </li>
+          <li>
+            Elle détermine ensuite les valeurs médianes ($) de chacun des
+            éléments importants (superficies, stationnements, chambres,
+            terrasse, finitions, étages, vues, walk-score etc.)
+          </li>
+          <li>
+            Elle suggère finalement le juste prix de vente de votre propriété en
+            date d’aujourd’hui, selon les détails que vous entrez dans la
+            calculatrice.
+          </li>
+        </ol>
       </div>
     </div>
   </section>
 
-  <div class="w-100 yellow">
-    <h1 class="align-left special text-center pt-5">
-      Comment ça fonctionne?
-    </h1>
-    <ol class="instructions w-75 p-4 pb-0">
-      <li>
-        La calculatrice analyse les données des 500 plus récentes transactions
-        de votre quartier.
-      </li>
-      <li>
-        Elle détermine ensuite les valeurs médianes ($) de chacun des éléments
-        importants (superficies, stationnements, chambres, terrasse, finitions,
-        étages, vues, walk-score etc.)
-      </li>
-      <li>
-        Elle suggère finalement le juste prix de vente de votre propriété en
-        date d’aujourd’hui, selon les détails que vous entrez dans la
-        calculatrice.
-      </li>
-    </ol>
-  </div>
-
-  <div class="yellow">
-    <hr class="m-4 mt-0" />
-
-    <section class="pt-0 container mx-auto">
-      <div class="text-center">
-        <h1 class="align-center mb-5">Notre équipe</h1>
-      </div>
-      <div class="row">
-        <div class="col-md-4 px-3 mx-auto">
-          <div class="card bg-transparent mx-auto border-0">
-            <div class="img-staff">
-              <img src="./assets/images/staff1.jpg" alt="" />
-            </div>
-            <div class="card-body">
-              <h2 class="special">Jeff Lee</h2>
-              <p>
-                Communications + Marketing 33 ans Reconnu pour ses nombreuses
-                bonnes et mauvaises idées au fil des années, Jeff Lee s’est
-                prouvé créatif et innovant en publicité et production de
-                contenus en collabo avec des marques et des agences nationales
-                depuis son arrivée dans le paysage Montréalais. Il détient une
-                license de courtage immobilier et conclue des dizaines de
-                transactions immobilières par année.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 px-3 mx-auto">
-          <div class="card bg-transparent mx-auto border-0">
-            <div class="img-staff">
-              <img src="./assets/images/staff2.jpg" alt="" />
-            </div>
-            <div class="card-body">
-              <h2 class="special">Marie-Claude Bergeron</h2>
-              <p>
-                Actuaire + Partenariats d’affaires 34 ans Avez plus de 10 années
-                d’expérience en finances et private banking derrière la cravate,
-                M-C contribue son expertise en actuariat et formulation
-                comptables ainsi qu’un respectable réseau de contacts actifs sur
-                la scène Montréalaise. Elle détient une license de courtage
-                immobilier et conclue des dizaines de transactions immobilières
-                par année.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 px-3 mx-auto">
-          <div class="card bg-transparent mx-auto border-0">
-            <div class="img-staff">
-              <img src="./assets/images/staff3.jpg" alt="" />
-            </div>
-            <div class="card-body">
-              <h2 class="special">Sébastien Millette</h2>
-              <p>
-                Intégrateur + Chef produit 31 ans Longtemps directeur des ventes
-                pour le plus grand détaillant Volvo de Montréal et consultant
-                sur plusieurs projets techs, Sebastien sait comment bien
-                capturer une opportunité en rassemblant une équipe béton qui
-                peut accomplir les objectifs “on time and on budget”. Il détient
-                une license de courtage immobilier et conclue des dizaines de
-                transactions immobilières par année.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <hr class="m-4" />
-    <section class="pt-4 container mx-auto">
-      <div class="text-center">
-        <h1 class="align-center mb-5">La calculatrice</h1>
-      </div>
-      <div class="row pb-5">
-        <div class="col-md-6">
-          <h5 class="special">
-            “ Au départ, la calculatrice était vraiment juste un formulaire
-            Excel que nous avons créé pour sauver un peu de temps dans nos
-            évaluations. ”
-          </h5>
+  <section class="container">
+    <div class="row">
+      <div class="col-3 section-icon"><p>🚧</p></div>
+      <div class="col-9">
+        <h1 class="special heading">
+          Quartiers en developpement
+        </h1>
+        <div class="instructions">
           <p>
-            Et puis à mesure que nous commencions à ajouter à la main dans notre
-            formulaire davantage de données tirées des ventes de propriétés,
-            notre outil et notre algorithme qui calcule derrière est devenu plus
-            précis dans l’analyse des propriétés à vendre de nos clients.
-          </p>
-
-          <h4>La calculatrice immobilière (version BETA)</h4>
-
-          <p>
-            En rendant cette calculatrice disponible au grand public sur le web,
-            nous réussirons à accélérer de façon exponentielle, l’apprentissage
-            + l’amélioration de notre algorithme grace au volume de données
-            entrées par les utilisateurs. Autant les particuliers que les
-            courtiers et autres professionnels de l’industrie. Nous espérons
-            ainsi pouvoir rapidement développer les autres quartiers et secteurs
-            immédiats de Montréal, pour évidemment ajouter ensuite le reste du
-            Canada en utilisant toujours la même méthodologie et les récentes
-            données de ventes du marché immobilier pan-canadien.
+            Chaque nouveau quartier analyser est evidement unique. C'est
+            pourquoi les algorithmes qui analysent les donnees sont toujours
+            testes et ajusters en etroite collaboration avec des experts
+            immobiliers locaux, des actuaires et des ingenieurs de donnees.
           </p>
         </div>
-        <div class="col-md-6 demo-img">
-          <img src="./assets/images/building.jpg" alt="" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8 demo-img">
+        <img class="border-thick" src="./assets/images/mtlmap.jpg" alt="" />
+      </div>
+      <div class="col-md-4 d-flex align-items-center">
+        <div class="quartiers mx-auto">
+          <p>Quartiers Disponibles</p>
+          <ul>
+            <li>Plateau</li>
+            <li>Mont-Royal</li>
+            <li>Petite-Patrie</li>
+            <li>HoMa</li>
+            <li>Rosemont</li>
+            <li>Villeray</li>
+          </ul>
+          <p>Bientot Disponibles</p>
+          <ul>
+            <li>Saint-Laurent</li>
+            <li>Ahuntsic</li>
+          </ul>
         </div>
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
+  <section class="container">
+    <div class="row">
+      <div class="col-md-9 beta">
+        <h3 class="special heading">
+          🔩 La Calculatrice Immobilière™ est disponible au public en version
+          BETA.
+        </h3>
+        <p>
+          Elle se sent zero responsable des anomalies qui pourraient survenir.
+        </p>
+        <p>
+          Ou bien : Les resultats n'ont aucune valeur legale et ne devrait etre
+          utilise qu'a des fins educatives
+        </p>
+      </div>
+      <div class="col-md-2 details">
+        <p class="special heading">Contact</p>
+        <ul>
+          <li>Si ta</li>
+          <li>besoin de</li>
+          <li>mettre autre chose</li>
+        </ul>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </section>
 </div>

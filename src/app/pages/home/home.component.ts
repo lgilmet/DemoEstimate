@@ -9,6 +9,7 @@ declare var $: any;
 })
 export class HomeComponent implements OnInit {
   popoverContent: string = "Content of the popover";
+  selectedCalculator: string = "Plateau Mont-royal";
 
   constructor() {}
 
