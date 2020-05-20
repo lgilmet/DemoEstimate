@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute, Router, NavigationEnd } from "@angular/router";
 
 declare var $: any;
 
@@ -8,10 +9,22 @@ declare var $: any;
   styleUrls: ["./home.component.scss"],
 })
 export class HomeComponent implements OnInit {
-  popoverContent: string = "Content of the popover";
-  selectedCalculator: string = "Plateau Mont-royal";
+  selectedCalculator: string = "";
 
-  constructor() {}
+  constructor(private route: ActivatedRoute, private router: Router) {
+    this.getTitle();
+  }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getTitle();
+  }
+
+  getTitle() {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.selectedCalculator = this.route.snapshot.firstChild.data["title"];
+        console.log(this.selectedCalculator);
+      }
+    });
+  }
 }

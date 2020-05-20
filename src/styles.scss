@@ -114,15 +114,17 @@ mat-radio-button {
   }
 }
 
-.nav-link {
-  font-size: 0.8em;
-  padding: 0.7em;
-  background-color: black;
-  color: $yellow;
-
-  &:hover {
+.navbar {
+  .nav-link {
+    font-size: 0.8em;
+    padding: 0.7em;
+    background-color: black;
     color: $yellow;
-    text-decoration: underline;
+
+    &:hover {
+      color: $yellow;
+      text-decoration: underline;
+    }
   }
 }
 
@@ -174,9 +176,6 @@ mat-radio-button {
 
   .btn {
     font-family: "Gothic Bold", Arial, Helvetica, sans-serif;
-  }
-
-  .before {
   }
 }
 

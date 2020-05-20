@@ -17,31 +17,57 @@ import { QuartierLComponent } from "./forms/quartier-l/quartier-l.component";
 import { AboutComponent } from "./pages/about/about.component";
 
 const routes: Routes = [
-  //{ path: "", pathMatch: "full", redirectTo: "home" },
   {
     path: "",
     component: HomeComponent,
     children: [
       { path: "", redirectTo: "plateau-mont-royal", pathMatch: "full" },
-      { path: "plateau-mont-royal", component: QuartierBComponent },
-      { path: "saint-henri-condo", component: QuartierAComponent },
-      { path: "ville-mont-royal-house", component: QuartierCComponent },
+      {
+        path: "plateau-mont-royal",
+        component: QuartierBComponent,
+        data: { title: "Plateau Mont-Royal" }, // Le titre du quartier est pris d'ici pour etre utiliser dans le homepage
+      },
+      {
+        path: "ville-mont-royal-house",
+        component: QuartierCComponent,
+        data: { title: "Ville Mont-Royal" },
+      },
+      {
+        path: "ville-mont-royal-house",
+        component: QuartierCComponent,
+        data: { title: "Petite-Patrie" },
+      },
+      {
+        path: "HoMa",
+        component: QuartierFComponent,
+        data: { title: "Hochelaga Maisonneuve" },
+      },
+      {
+        path: "rosemont",
+        component: QuartierGComponent,
+        data: { title: "Rosemont" },
+      },
+      {
+        path: "ville-mont-royal-house",
+        component: QuartierCComponent,
+        data: { title: "Villeray" },
+      },
     ],
   },
-  { path: "a-propos", component: AboutComponent },
-  { path: "saint-henri-condo", component: QuartierAComponent },
-  { path: "plateau", component: QuartierBComponent },
-  { path: "ville-mont-royal-house", component: QuartierCComponent },
-  { path: "bois-franc-house", component: QuartierDComponent },
-  { path: "vieux-montreal", component: QuartierEComponent },
-  { path: "HoMa", component: QuartierFComponent },
-  { path: "rosemont", component: QuartierGComponent },
-  { path: "dorval", component: QuartierHComponent },
-  { path: "lachine", component: QuartierIComponent },
-  { path: "pierrefond", component: QuartierJComponent },
-  { path: "ndg", component: QuartierKComponent },
-  { path: "payment", component: PaymentComponent },
-  { path: "mileend", component: QuartierLComponent },
+  // { path: "a-propos", component: AboutComponent },
+  // { path: "saint-henri-condo", component: QuartierAComponent },
+  // { path: "plateau", component: QuartierBComponent },
+  // { path: "ville-mont-royal-house", component: QuartierCComponent },
+  // { path: "bois-franc-house", component: QuartierDComponent },
+  // { path: "vieux-montreal", component: QuartierEComponent },
+  // { path: "HoMa", component: QuartierFComponent },
+  // { path: "rosemont", component: QuartierGComponent },
+  // { path: "dorval", component: QuartierHComponent },
+  // { path: "lachine", component: QuartierIComponent },
+  // { path: "pierrefond", component: QuartierJComponent },
+  // { path: "ndg", component: QuartierKComponent },
+  // { path: "payment", component: PaymentComponent },
+  // { path: "mileend", component: QuartierLComponent },
 ];
 
 @NgModule({

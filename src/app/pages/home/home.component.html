@@ -20,54 +20,38 @@
   </section>
   <section>
     <div class="border-thick w-75 mx-auto">
-      <button class="calc-button shadow-sm" [matMenuTriggerFor]="calculator">
-        {{ selectedCalculator }}
+      <button class="calc-button shadow-sm" [matMenuTriggerFor]="choice1">
+        {{ selectedCalculator }} &#x25BE;
       </button>
-      <mat-menu #calculator="matMenu">
-        <button mat-menu-item [matMenuTriggerFor]="choice1">
-          Quartiers Centraux
-        </button>
-        <button mat-menu-item [matMenuTriggerFor]="choice2">
-          West Island
-        </button>
-      </mat-menu>
 
       <mat-menu #choice1="matMenu">
-        <a mat-menu-item class="nav-link" [routerLink]="['saint-henri-condo']"
-          >Saint-Henri</a
-        >
-        <a mat-menu-item class="nav-link" [routerLink]="['plateau-mont-royal']"
+        <a
+          mat-menu-item
+          class="nav-link"
+          (click)="getTitle()"
+          [routerLink]="['/plateau-mont-royal']"
           >Plateau Mont-Royal</a
-        >
-        <a mat-menu-item class="nav-link" [routerLink]="['mileend']"
-          >Mile-End</a
         >
         <a
           mat-menu-item
           class="nav-link"
-          [routerLink]="['ville-mont-royal-house']"
+          (click)="getTitle()"
+          [routerLink]="['/ville-mont-royal-house']"
           >Ville Mont-Royal</a
         >
-        <a mat-menu-item class="nav-link" [routerLink]="['bois-franc-house']"
-          >Bois Franc</a
+        <a
+          mat-menu-item
+          class="nav-link"
+          (click)="getTitle()"
+          [routerLink]="['/HoMa']"
+          >HoMa</a
         >
-        <a mat-menu-item class="nav-link" [routerLink]="['vieux-montreal']"
-          >Vieux-Montreal</a
-        >
-        <a mat-menu-item class="nav-link" [routerLink]="['HoMa']">HoMa</a>
-        <a mat-menu-item class="nav-link" [routerLink]="['rosemont']"
+        <a
+          mat-menu-item
+          class="nav-link"
+          (click)="getTitle()"
+          [routerLink]="['/rosemont']"
           >Rosemont</a
-        >
-        <a mat-menu-item class="nav-link" [routerLink]="['ndg']"
-          >Notre-Dame-de-Grace</a
-        >
-      </mat-menu>
-
-      <mat-menu #choice2="matMenu">
-        <a mat-menu-item class="nav-link" [routerLink]="['dorval']">Dorval</a>
-        <a mat-menu-item class="nav-link" [routerLink]="['lachine']">Lachine</a>
-        <a mat-menu-item class="nav-link" [routerLink]="['pierrefond']"
-          >Pierrefond/Roxboro</a
         >
       </mat-menu>
       <router-outlet></router-outlet>
