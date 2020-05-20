@@ -7,6 +7,14 @@
 // Be sure that you only ever include this mixin once!
 @include mat-core();
 
+$my-theme-primary: mat-palette($mat-blue);
+$my-theme-accent: mat-palette($mat-yellow, 700);
+
+$my-theme: mat-light-theme($my-theme-primary, $my-theme-accent);
+
+@include angular-material-theme($my-theme);
+
+$yellow: #ffc800;
 @font-face {
   font-family: "Gothic";
   src: url("src/assets/fonts/Gothic/ITC Avant Garde Gothic LT Book Regular.otf");
@@ -31,8 +39,6 @@
   font-family: "Sen Bold";
   src: url("src/assets/fonts/Sen/Sen-Bold.ttf");
 }
-
-$yellow: #ffc800;
 
 html,
 body {
@@ -133,6 +139,21 @@ mat-radio-button {
     height: 3.5em;
   }
 }
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+  border-color: black;
+  background-color: $yellow;
+}
+
+.mat-checkbox.mat-accent {
+  &.mat-checkbox-checked .mat-checkbox-background {
+    border: 2px solid black;
+    border-radius: 3px;
+  }
+
+  .mat-checkbox-checkmark-path {
+    stroke: black !important;
+  }
+}
 
 .title {
   height: 50vh;
@@ -167,7 +188,7 @@ mat-radio-button {
   font-family: "Gothic Bold";
   text-align: left;
   border: none;
-  background-color: lighten($yellow, 10);
+  background-color: $yellow;
   box-shadow: rgba(77, 77, 77, 0.65) 0px 2px 3px;
 }
 
@@ -177,6 +198,17 @@ mat-radio-button {
 
   .btn {
     font-family: "Gothic Bold", Arial, Helvetica, sans-serif;
+  }
+
+  .form-control {
+    option {
+      background-color: $yellow;
+
+      :hover {
+        background: darken($yellow, 20);
+        color: black;
+      }
+    }
   }
 }
 
