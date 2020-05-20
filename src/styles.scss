@@ -167,7 +167,8 @@ mat-radio-button {
   font-family: "Gothic Bold";
   text-align: left;
   border: none;
-  background-color: $yellow;
+  background-color: lighten($yellow, 10);
+  box-shadow: rgba(77, 77, 77, 0.65) 0px 2px 3px;
 }
 
 .form {
@@ -181,11 +182,6 @@ mat-radio-button {
 
 .special.heading {
   font-family: "Gothic Bold", Arial, Helvetica, sans-serif;
-}
-
-.light-yellow,
-.light-yellow li {
-  background-color: $yellow;
 }
 
 .front-page {
