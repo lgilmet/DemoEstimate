@@ -38,7 +38,7 @@ export class QuartierBComponent implements OnInit {
 
   alley: boolean;
   eastPapineau: boolean;
-  indivise: boolean;
+  indivise: string;
   garage: boolean;
   rooftop: boolean;
   terrasse: boolean;
@@ -178,7 +178,7 @@ export class QuartierBComponent implements OnInit {
     this.terrasse = false;
     this.railway = false;
     this.alley = false;
-    this.indivise = false;
+    this.indivise = "1";
     this.garage = false;
     this.noisySt = false;
     this.heritageBldg = false;
