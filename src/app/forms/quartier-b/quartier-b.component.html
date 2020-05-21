@@ -12,7 +12,9 @@
         <div class="row mb-5">
           <div class="input-group col-lg-6">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="area-label">Living area </span>
+              <span class="input-group-text" id="area-label"
+                >Superficie habitable
+              </span>
             </div>
             <input
               id="areaInput"
@@ -23,7 +25,7 @@
               aria-describedby="area-label"
             />
             <div class="input-group-append">
-              <span class="input-group-text" id="area-label">sq/f</span>
+              <span class="input-group-text" id="area-label">pi/2</span>
             </div>
           </div>
           <div class="col-lg-6 pt-3 pt-lg-1">
@@ -36,11 +38,11 @@
                   class="d-flex flex-column flex-md-row justify-content-md-start"
                   [(ngModel)]="type"
                 >
-                  <mat-radio-button value="condo" disabled>
+                  <mat-radio-button value="condo">
                     Condo
                   </mat-radio-button>
-                  <mat-radio-button value="house">
-                    House
+                  <mat-radio-button value="house" disabled>
+                    Maison
                   </mat-radio-button>
                 </mat-radio-group>
               </div>
@@ -52,7 +54,7 @@
           <div class="col-lg-6">
             <div class="row mt-2">
               <div class="col-sm">
-                <label>Number of bedrooms</label>
+                <label>Nombre de chambres</label>
               </div>
               <div class="col-sm pl-5 pl-sm-1">
                 <mat-radio-group
@@ -73,7 +75,7 @@
             </div>
             <div class="row mt-2">
               <div class="col-sm">
-                <label>Number of full bathrooms</label>
+                <label>Salle de bains complètes</label>
               </div>
               <div class="col-sm pl-5 pl-sm-1">
                 <mat-radio-group
@@ -99,12 +101,12 @@
               <div class="col-sm pl-5 pl-sm-1">
                 <mat-radio-group
                   class="d-flex flex-column flex-md-row justify-content-md-start"
-                  [(ngModel)]="nbWashrooms"
+                  [(ngModel)]="indivise"
                 >
-                  <mat-radio-button value="1">
+                  <mat-radio-button value="0">
                     Divise
                   </mat-radio-button>
-                  <mat-radio-button value="2">
+                  <mat-radio-button value="1">
                     Indivise
                   </mat-radio-button>
                 </mat-radio-group>
@@ -114,20 +116,29 @@
 
           <div class="col-lg-6">
             <div class="row mt-2">
-              <div class="col-sm">Yearbuild</div>
+              <div class="col-sm">Étage</div>
               <div class="col-sm">
-                <select class="form-control">
-                  <option>Default select</option>
-                  <option>Default select</option>
-                  <option>Default select</option>
+                <select class="form-control" [(ngModel)]="level">
+                  <option value="above">Hors-Sol</option>
+                  <option value="half">1ier Étage + sous-sol</option>
+                  <option value="basement">Tout au sous-sol</option>
                 </select>
               </div>
             </div>
             <div class="row mt-2">
-              <div class="col-sm">overall quality</div>
+              <div class="col-sm">Qualitée globale</div>
               <div class="col-sm">
-                <select class="form-control">
-                  <option>Default select</option>
+                <select class="form-control" [(ngModel)]="quality">
+                  <option value="1">1 - À démolir</option>
+                  <option value="2">2 - Réparations requises</option>
+                  <option value="3">3 - Viellot</option>
+                  <option value="4">4 - À rénover</option>
+                  <option value="5">5 - Décent</option>
+                  <option value="6">6 - Rénové en partie</option>
+                  <option value="7">7 - Totalement rénové</option>
+                  <option value="8">8 - Éléments de design</option>
+                  <option value="9">9 - Produit d'architecture</option>
+                  <option value="10">10 - Digne de magazine</option>
                 </select>
               </div>
             </div>
@@ -162,32 +173,25 @@
           <div class="">
             <div class="items-flex-list">
               <mat-checkbox [(ngModel)]="heritageBldg"
-                >Is in a Heritage Building</mat-checkbox
+                >Dans un batiment patrimonial</mat-checkbox
               >
               <mat-checkbox [(ngModel)]="luxuryBldg"
-                >Is in a Luxury Building</mat-checkbox
+                >Dans un batiment de luxe</mat-checkbox
               >
               <mat-checkbox [(ngModel)]="eastPapineau"
-                >Is East of Papineau st</mat-checkbox
+                >À l'Est de Papineau</mat-checkbox
               >
               <mat-checkbox [(ngModel)]="rooftop"
-                >Has a private Rooftop terrace</mat-checkbox
+                >Terrasse sur le toit</mat-checkbox
               >
               <mat-checkbox [(ngModel)]="terrasse"
-                >Has a private Terrace</mat-checkbox
+                >Grand balcon ( table à diner )</mat-checkbox
               >
               <mat-checkbox [(ngModel)]="noisySt"
-                >On a busy street</mat-checkbox
+                >Rue passante / bruyante</mat-checkbox
               >
-              <mat-checkbox [(ngModel)]="indivise"
-                >Is in a Undivided Co-Ownership</mat-checkbox
-              >
-              <mat-checkbox [(ngModel)]="alley"
-                >Has an Outdoor parking</mat-checkbox
-              >
-              <mat-checkbox [(ngModel)]="garage"
-                >Has an Indoor parking</mat-checkbox
-              >
+              <mat-checkbox [(ngModel)]="alley">Stationement</mat-checkbox>
+              <mat-checkbox [(ngModel)]="garage">Garage</mat-checkbox>
             </div>
           </div>
         </li>

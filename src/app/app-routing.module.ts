@@ -28,9 +28,9 @@ const routes: Routes = [
         data: { title: "Plateau Mont-Royal" }, // Le titre du quartier est pris d'ici pour etre utiliser dans le homepage
       },
       {
-        path: "ville-mont-royal-house",
-        component: QuartierCComponent,
-        data: { title: "Ville Mont-Royal" },
+        path: "mileend",
+        component: QuartierLComponent,
+        data: { title: "Mile-End" },
       },
       {
         path: "ville-mont-royal-house",
