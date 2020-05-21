@@ -178,7 +178,7 @@ export class QuartierLComponent implements OnInit {
     this.terrasse = false;
     this.railway = false;
     this.alley = false;
-    this.indivise = "0";
+    this.indivise = "1";
     this.garage = false;
     this.noisySt = false;
     this.heritageBldg = false;
