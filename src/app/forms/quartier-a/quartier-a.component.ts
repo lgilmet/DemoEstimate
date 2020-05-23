@@ -26,7 +26,6 @@ export class QuartierAComponent implements OnInit {
   popoverContent9: string =
     "Designer's kitchen, luxury appliances, very high quality flooring and tiles";
   popoverContent10: string = "Incredible layout with incredible products";
-  popoverContent11: string = "Full bathrom has toilet, shower/bath and sink";
   popoverContent12: string =
     "A terrace is a balcony that is over 5 foot wide, and at least 35 sq/foot";
 
@@ -34,15 +33,21 @@ export class QuartierAComponent implements OnInit {
   livingArea: number;
   quality: string;
   nbWashrooms: string;
+  nbBedrooms: string;
   level: string;
 
-  basement: boolean;
-  waterView: boolean;
-  indivise: boolean;
+  alley: boolean;
+  eastPapineau: boolean;
+  indivise: string;
   garage: boolean;
+  rooftop: boolean;
+  terrasse: boolean;
+  railway: boolean;
   noisySt: boolean;
   secondPrkg: boolean;
-  privateOutdoor: boolean;
+
+  heritageBldg: boolean;
+  luxuryBldg: boolean;
   estimate: string;
 
   formatter;
@@ -61,41 +66,58 @@ export class QuartierAComponent implements OnInit {
     this.clearForm();
   }
 
-  getLevel(option: string) {
+  getBedrooms(option: number) {
     switch (option) {
-      case "above":
+      case 1:
         return 0;
-      case "half":
-        return 0.5 * -82823.4;
-      case "basement":
-        return 1 * -82823.4;
+      case 2:
+        return 36027;
+      case 3:
+        return 103314;
 
       default:
         break;
     }
   }
+
+  info(event) {
+    console.log(event.clientX / window.innerWidth);
+  }
   getQuality(option: number) {
     switch (option) {
       case 1:
-        return 35762;
+        return 38039;
       case 2:
-        return 2 * 35762;
+        return 2 * 38039;
       case 3:
-        return 3 * 35762;
+        return 3 * 38039;
       case 4:
-        return 4 * 35762;
+        return 4 * 38039;
       case 5:
-        return 5 * 35762;
+        return 5 * 38039;
       case 6:
-        return 6 * 35762;
+        return 6 * 38039;
       case 7:
-        return 7 * 35762;
+        return 7 * 38039;
       case 8:
-        return 8 * 35762;
+        return 8 * 38039;
       case 9:
-        return 9 * 35762;
+        return 9 * 38039;
       case 10:
-        return 10 * 35762;
+        return 10 * 38039;
+
+      default:
+        break;
+    }
+  }
+  getLevel(option: string) {
+    switch (option) {
+      case "above":
+        return 0;
+      case "half":
+        return 0.5 * -14971;
+      case "basement":
+        return 1 * -44197;
 
       default:
         break;
@@ -105,16 +127,21 @@ export class QuartierAComponent implements OnInit {
   computeEstimate() {
     this.estimate = this.formatter.format(
       Math.round(
-        this.livingArea * 3280.776 +
+        (this.livingArea * 2437.23) / 10.764 +
           this.getQuality(Number(this.quality)) +
+          Number(this.nbWashrooms) * 26451.99 +
+          this.getBedrooms(Number(this.nbBedrooms)) +
           this.getLevel(this.level) +
-          (Number(this.nbWashrooms) - 1) * 77042.11 +
-          Number(this.waterView) * 123594 +
-          Number(this.indivise) * -47426.5 +
-          Number(this.privateOutdoor) * 59266 +
-          Number(this.garage) * 32524.31 +
-          Number(this.noisySt) * -39936.4 +
-          Number(this.secondPrkg) * 60206.06
+          Number(this.eastPapineau) * -61706.8 +
+          Number(this.rooftop) * 76508.33 +
+          Number(this.terrasse) * 43978.43 +
+          Number(this.railway) * -99782.3 +
+          Number(this.alley) * 23921.77 +
+          Number(this.heritageBldg) * 72036 +
+          Number(this.noisySt) * -28724.7 +
+          Number(this.luxuryBldg) * 70861 +
+          Number(this.indivise) * -30463.97 +
+          Number(this.garage) * 22064.52
       )
     );
   }
@@ -130,21 +157,11 @@ export class QuartierAComponent implements OnInit {
   }
 
   showResult() {
+    this.computeEstimate();
     $("#collapseExample").collapse("show");
     setTimeout(() => {
-      window.scrollTo(0, document.body.scrollHeight + 200);
+      window.scrollTo(0, document.body.scrollHeight);
     }, 500);
-
-    this.computeEstimate();
-    console.log("estimate", this.estimate);
-    // console.log(
-    //   "area",
-    //   this.livingArea,
-    //   "quality",
-    //   this.finishQuality,
-    //   "waterview",
-    //   this.waterView
-    // );
   }
 
   clearForm() {
@@ -153,14 +170,19 @@ export class QuartierAComponent implements OnInit {
     this.type = "condo";
     this.livingArea = null;
     this.quality = "1";
+    this.nbBedrooms = "1";
     this.nbWashrooms = "1";
     this.level = "above";
-    this.privateOutdoor = false;
-    this.waterView = false;
-    this.indivise = false;
+    this.eastPapineau = false;
+    this.rooftop = false;
+    this.terrasse = false;
+    this.railway = false;
+    this.alley = false;
+    this.indivise = "0";
     this.garage = false;
     this.noisySt = false;
-    this.secondPrkg = false;
+    this.heritageBldg = false;
+    this.luxuryBldg = false;
   }
   getTotal() {
     if (this.checkForm()) this.showResult();

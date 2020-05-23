@@ -8,21 +8,6 @@ declare var $: any;
 })
 export class QuartierFComponent implements OnInit {
   // variables
-  //Habitable 	 $1,977.44
-  //SDB 	 $43,077.18
-  //2 bed 	 $16,562.87
-  //3 Bed 	 $39,848.30
-  //Indivise 	 $(39,962.50)
-  //Garage  	 $34,708.66
-  //Sous-Sol 	 $(28,403.76)
-  //Qualitée 	 $27,288.70
-  //Rooftop 	 $76,231.57
-  //Terrasse 	 $28,288.91
-  //Industrial loft 	 $31,621.57
-  //Boulevard 	 $(19,815.48)
-  //Allée 	 $13,267.94
-  //0 Chambres 	 $(15,834.70)
-  //Orientation (1 vers sud 0 vers nord) 	 $13,555.71
   popoverContent: string = "Unobstructed water view";
   popoverContent1: string = "Practicaly unlivable";
   popoverContent2: string = "Old carpet, Old wallpaper, Old vinyl";
@@ -39,25 +24,30 @@ export class QuartierFComponent implements OnInit {
   popoverContent9: string =
     "Designer's kitchen, luxury appliances, very high quality flooring and tiles";
   popoverContent10: string = "Incredible layout with incredible products";
+  popoverContent12: string =
+    "A terrace is a balcony that is over 5 foot wide, and at least 35 sq/foot";
+
   type: string;
   livingArea: number;
-  finishQuality: number;
+  quality: string;
   nbWashrooms: string;
   nbBedrooms: string;
-  quality: string;
   level: string;
+  nordJarry: boolean;
+  eastCC: boolean;
 
   alley: boolean;
-  orientation: boolean;
-  indivise: boolean;
+  eastPapineau: boolean;
+  indivise: string;
   garage: boolean;
   rooftop: boolean;
   terrasse: boolean;
-  industrial: boolean;
+  railway: boolean;
   noisySt: boolean;
-  nobed: boolean;
+  secondPrkg: boolean;
 
-  secondGarage: boolean;
+  heritageBldg: boolean;
+  luxuryBldg: boolean;
   estimate: string;
 
   formatter;
@@ -81,36 +71,40 @@ export class QuartierFComponent implements OnInit {
       case 1:
         return 0;
       case 2:
-        return 16562.17;
+        return 48593;
       case 3:
-        return 39848.3;
+        return 103367;
 
       default:
         break;
     }
   }
+
+  info(event) {
+    console.log(event.clientX / window.innerWidth);
+  }
   getQuality(option: number) {
     switch (option) {
       case 1:
-        return 27288;
+        return 28768;
       case 2:
-        return 54577.4;
+        return 2 * 28768;
       case 3:
-        return 81866;
+        return 3 * 28768;
       case 4:
-        return 109152;
+        return 4 * 28768;
       case 5:
-        return 136440;
+        return 5 * 28768;
       case 6:
-        return 163728;
+        return 6 * 28768;
       case 7:
-        return 191016;
+        return 7 * 28768;
       case 8:
-        return 218304;
+        return 8 * 28768;
       case 9:
-        return 245592;
+        return 9 * 28768;
       case 10:
-        return 272880;
+        return 10 * 28768;
 
       default:
         break;
@@ -121,9 +115,9 @@ export class QuartierFComponent implements OnInit {
       case "above":
         return 0;
       case "half":
-        return 0.5 * -28403.76;
+        return 0.5 * -49073;
       case "basement":
-        return 1 * -28403.76;
+        return 1 * -49073;
 
       default:
         break;
@@ -133,19 +127,18 @@ export class QuartierFComponent implements OnInit {
   computeEstimate() {
     this.estimate = this.formatter.format(
       Math.round(
-        (this.livingArea * 1977.44) / 10.764 +
+        (this.livingArea * 2867.23) / 10.764 +
           this.getQuality(Number(this.quality)) +
-          Number(this.nbWashrooms) * 43077.18 +
+          Number(this.nbWashrooms) * 17806 +
           this.getBedrooms(Number(this.nbBedrooms)) +
           this.getLevel(this.level) +
-          Number(this.orientation) * 13555.71 +
-          Number(this.rooftop) * 76231.77 +
-          Number(this.terrasse) * 28288.91 +
-          Number(this.industrial) * 31621.57 +
-          Number(this.alley) * 13267.54 +
-          Number(this.noisySt) * -19815.8 +
-          Number(this.indivise) * -39962.5 +
-          Number(this.garage) * 34708.32
+          Number(this.eastPapineau) * -60151 +
+          Number(this.rooftop) * 44643 +
+          Number(this.terrasse) * 16490 +
+          Number(this.nordJarry) * -38561 +
+          Number(this.eastCC) * -47367 +
+          Number(this.noisySt) * -26986 +
+          Number(this.garage) * 52785
       )
     );
   }
@@ -177,12 +170,13 @@ export class QuartierFComponent implements OnInit {
     this.nbBedrooms = "1";
     this.nbWashrooms = "1";
     this.level = "above";
-    this.orientation = false;
+    this.eastPapineau = false;
+    this.eastCC = false;
+    this.nordJarry = false;
     this.rooftop = false;
     this.terrasse = false;
-    this.industrial = false;
-    this.alley = false;
-    this.indivise = false;
+
+    this.indivise = "0";
     this.garage = false;
     this.noisySt = false;
   }

@@ -8,15 +8,6 @@ declare var $: any;
 })
 export class QuartierGComponent implements OnInit {
   // variables
-  // Sup. Habitable	 $2,502.84
-  // 2 bed	 $26,168.31
-  // 3 bed	 $16,641.81
-  // Salles d'eau	 $36,342.80
-  // Garage 	 $50,505.21
-  // Sous-Sol	 $(66,633.11)
-  // Maison	 $105,322.42
-  // Terrasse	 $33,653.45
-  // Qualitée	 $28,794.49
   popoverContent: string = "Unobstructed water view";
   popoverContent1: string = "Practicaly unlivable";
   popoverContent2: string = "Old carpet, Old wallpaper, Old vinyl";
@@ -33,18 +24,28 @@ export class QuartierGComponent implements OnInit {
   popoverContent9: string =
     "Designer's kitchen, luxury appliances, very high quality flooring and tiles";
   popoverContent10: string = "Incredible layout with incredible products";
+  popoverContent12: string =
+    "A terrace is a balcony that is over 5 foot wide, and at least 35 sq/foot";
+
   type: string;
   livingArea: number;
-  finishQuality: number;
-  nbBedrooms: string;
   quality: string;
+  nbWashrooms: string;
+  nbBedrooms: string;
   level: string;
-  powder: boolean;
 
+  alley: boolean;
+  eastPapineau: boolean;
+  indivise: string;
   garage: boolean;
+  rooftop: boolean;
   terrasse: boolean;
+  railway: boolean;
   noisySt: boolean;
+  secondPrkg: boolean;
 
+  heritageBldg: boolean;
+  luxuryBldg: boolean;
   estimate: string;
 
   formatter;
@@ -68,47 +69,40 @@ export class QuartierGComponent implements OnInit {
       case 1:
         return 0;
       case 2:
-        return 26168.17;
+        return 36027;
       case 3:
-        return 16641.25;
+        return 103314;
 
       default:
         break;
     }
   }
-  getType(option: string) {
-    switch (option) {
-      case "condo":
-        return 0;
-      case "apt":
-        return 105322;
 
-      default:
-        break;
-    }
+  info(event) {
+    console.log(event.clientX / window.innerWidth);
   }
   getQuality(option: number) {
     switch (option) {
       case 1:
-        return 28794;
+        return 38039;
       case 2:
-        return 2 * 28794;
+        return 2 * 38039;
       case 3:
-        return 3 * 28794;
+        return 3 * 38039;
       case 4:
-        return 4 * 28794;
+        return 4 * 38039;
       case 5:
-        return 5 * 28794;
+        return 5 * 38039;
       case 6:
-        return 6 * 28794;
+        return 6 * 38039;
       case 7:
-        return 7 * 28794;
+        return 7 * 38039;
       case 8:
-        return 8 * 28794;
+        return 8 * 38039;
       case 9:
-        return 9 * 28794;
+        return 9 * 38039;
       case 10:
-        return 10 * 28794;
+        return 10 * 38039;
 
       default:
         break;
@@ -119,9 +113,9 @@ export class QuartierGComponent implements OnInit {
       case "above":
         return 0;
       case "half":
-        return 0.5 * -66633;
+        return 0.5 * -14971;
       case "basement":
-        return 1 * -66633;
+        return 1 * -44197;
 
       default:
         break;
@@ -131,14 +125,21 @@ export class QuartierGComponent implements OnInit {
   computeEstimate() {
     this.estimate = this.formatter.format(
       Math.round(
-        (this.livingArea * 2502.44) / 10.764 +
+        (this.livingArea * 2437.23) / 10.764 +
           this.getQuality(Number(this.quality)) +
+          Number(this.nbWashrooms) * 26451.99 +
           this.getBedrooms(Number(this.nbBedrooms)) +
           this.getLevel(this.level) +
-          this.getType(this.type) +
-          Number(this.terrasse) * 33633 +
-          Number(this.powder) * 36342.36 +
-          Number(this.garage) * 50505
+          Number(this.eastPapineau) * -61706.8 +
+          Number(this.rooftop) * 76508.33 +
+          Number(this.terrasse) * 43978.43 +
+          Number(this.railway) * -99782.3 +
+          Number(this.alley) * 23921.77 +
+          Number(this.heritageBldg) * 72036 +
+          Number(this.noisySt) * -28724.7 +
+          Number(this.luxuryBldg) * 70861 +
+          Number(this.indivise) * -30463.97 +
+          Number(this.garage) * 22064.52
       )
     );
   }
@@ -168,11 +169,18 @@ export class QuartierGComponent implements OnInit {
     this.livingArea = null;
     this.quality = "1";
     this.nbBedrooms = "1";
+    this.nbWashrooms = "1";
     this.level = "above";
+    this.eastPapineau = false;
+    this.rooftop = false;
     this.terrasse = false;
+    this.railway = false;
+    this.alley = false;
+    this.indivise = "0";
     this.garage = false;
     this.noisySt = false;
-    this.powder = false;
+    this.heritageBldg = false;
+    this.luxuryBldg = false;
   }
   getTotal() {
     if (this.checkForm()) this.showResult();

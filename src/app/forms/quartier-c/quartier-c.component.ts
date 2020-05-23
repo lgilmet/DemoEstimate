@@ -25,30 +25,30 @@ export class QuartierCComponent implements OnInit {
   popoverContent9: string =
     "Designer's kitchen, luxury appliances, very high quality flooring and tiles";
   popoverContent10: string = "Incredible layout with incredible products";
+  popoverContent12: string =
+    "A terrace is a balcony that is over 5 foot wide, and at least 35 sq/foot";
+
   type: string;
   livingArea: number;
-  lotArea: number;
   quality: string;
-  avgQuality: boolean;
   nbWashrooms: string;
-  detached: boolean;
+  nbBedrooms: string;
   level: string;
-  years: number[];
-  ConstructionYear: number;
 
-  CDN: boolean;
+  alley: boolean;
+  house: boolean;
   eastPapineau: boolean;
-  eastOfRockland: boolean;
-  sgl: boolean;
-  yard: boolean;
-  pool: boolean;
+  indivise: string;
+  garage: boolean;
+  rooftop: boolean;
+  terrasse: boolean;
+
   noisySt: boolean;
 
   estimate: string;
 
   formatter;
   localStr: string;
-  currentYear: number;
 
   color: ThemePalette = "primary";
 
@@ -59,28 +59,49 @@ export class QuartierCComponent implements OnInit {
       style: "currency",
       currency: "CAD",
     });
-    this.years = [];
-    this.currentYear = new Date().getFullYear();
-    this.ConstructionYear = this.currentYear;
-    for (let i = 0; i < 100; i++) {
-      this.years.push(this.currentYear - i);
-    }
 
     this.clearForm();
+  }
+
+  getBedrooms(option: number) {
+    switch (option) {
+      case 1:
+        return 0;
+      case 2:
+        return 18404;
+      case 3:
+        return 9728;
+
+      default:
+        break;
+    }
   }
 
   info(event) {
     console.log(event.clientX / window.innerWidth);
   }
-
-  getBathroooms(option: number) {
+  getQuality(option: number) {
     switch (option) {
       case 1:
-        return 0;
+        return 28432;
       case 2:
-        return 0;
+        return 2 * 28432;
       case 3:
-        return 80262;
+        return 3 * 28432;
+      case 4:
+        return 4 * 28432;
+      case 5:
+        return 5 * 28432;
+      case 6:
+        return 6 * 28432;
+      case 7:
+        return 7 * 28432;
+      case 8:
+        return 8 * 28432;
+      case 9:
+        return 9 * 28432;
+      case 10:
+        return 10 * 28432;
 
       default:
         break;
@@ -91,74 +112,31 @@ export class QuartierCComponent implements OnInit {
       case "above":
         return 0;
       case "half":
-        return 0.5 * -54514.2;
+        return 0.5 * -66008;
       case "basement":
-        return 1 * -54514.2;
+        return 1 * -66008;
 
       default:
         break;
     }
   }
-  getQuality(option: number) {
-    switch (option) {
-      case 1:
-        return 117439;
-      case 2:
-        return 2 * 117439;
-      case 3:
-        return 3 * 117439;
-      case 4:
-        return 4 * 117439;
-      case 5:
-        return 5 * 117439;
-      case 6:
-        return 6 * 117439;
-      case 7:
-        return 7 * 117439;
-      case 8:
-        return 8 * 117439;
-      case 9:
-        return 9 * 117439;
-      case 10:
-        return 10 * 117439;
-
-      default:
-        break;
-    }
-  }
-
-  getYear() {
-    return this.ConstructionYear * -250.409;
-  }
-
-  // -Année de construction	(2020 - 1924) * 	-250.409
-  // -Size House	m2	3285.882
-  // -Size Lot	m2	561.9173
-  // -3 bath	0/1	66314.9
-  // Detached	0/1	104862.4
-  // CDN	0/1 (section)	-191459
-  // Apres Rockland	0/1 (est de rockland	-168383
-  // Qualitée Moyenne	0/1	119162.7
-  // SGL	0/1	164738.6
-  // Cour	0/1	317283.1
-  // Piscine	0/1	87133.82
-  // Mauvaise Rue	0/1	-188377
 
   computeEstimate() {
     this.estimate = this.formatter.format(
       Math.round(
-        (this.livingArea * 3079) / 10.764 +
-          (this.lotArea * 561.9173) / 10.764 +
+        (this.livingArea * 2955.23) / 10.764 -
+          36381 +
           this.getQuality(Number(this.quality)) +
-          this.getYear() +
-          this.getBathroooms(Number(this.nbWashrooms)) +
-          Number(this.detached) * 94655 +
-          Number(this.CDN) * -182906 +
-          Number(this.eastOfRockland) * -137253 +
-          Number(this.sgl) * 162463 +
-          Number(this.yard) * 336220 +
-          Number(this.pool) * 92051 +
-          Number(this.noisySt) * -188687
+          Number(this.nbWashrooms) * 26451.99 +
+          this.getBedrooms(Number(this.nbBedrooms)) +
+          this.getLevel(this.level) +
+          Number(this.eastPapineau) * -25497 +
+          Number(this.rooftop) * 106627 +
+          Number(this.terrasse) * 39414 +
+          Number(this.house) * 126163 +
+          Number(this.noisySt) * -25120.7 +
+          Number(this.indivise) * -15435 +
+          Number(this.garage) * 52992.52
       )
     );
   }
@@ -184,19 +162,20 @@ export class QuartierCComponent implements OnInit {
   clearForm() {
     $("#collapseExample").collapse("hide");
     // reset all itputs
-    this.type = "house";
-    this.ConstructionYear = this.currentYear;
+    this.type = "condo";
     this.livingArea = null;
-    this.lotArea = null;
     this.quality = "1";
+    this.nbBedrooms = "1";
     this.nbWashrooms = "1";
-    this.detached = false;
-    this.CDN = false;
-    this.yard = false;
-    this.pool = false;
-    this.sgl = false;
-    this.eastOfRockland = false;
+    this.level = "above";
+    this.eastPapineau = false;
+    this.rooftop = false;
+    this.terrasse = false;
+    this.alley = false;
+    this.indivise = "0";
+    this.garage = false;
     this.noisySt = false;
+    this.house = false;
   }
   getTotal() {
     if (this.checkForm()) this.showResult();
