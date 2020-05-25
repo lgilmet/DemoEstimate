@@ -7,5 +7,32 @@
         "workspaceRoot": null,
         "workspacePath": null,
         "id": "Q9zJ06Ce5wEqPmjO"
+    },
+    {
+        "type": "File",
+        "name": "c:\\Users\\iluca\\OneDrive\\Documents\\Project\\Estimations\\DemoForms\\package.json",
+        "parent_id": null,
+        "fsPath": "c:\\Users\\iluca\\OneDrive\\Documents\\Project\\Estimations\\DemoForms\\package.json",
+        "workspaceRoot": null,
+        "workspacePath": null,
+        "id": "0Yotl6sHVhTqdw1W"
+    },
+    {
+        "type": "File",
+        "name": "c:\\Users\\iluca\\OneDrive\\Documents\\Project\\Estimations\\DemoForms\\src\\styles.scss",
+        "parent_id": null,
+        "fsPath": "c:\\Users\\iluca\\OneDrive\\Documents\\Project\\Estimations\\DemoForms\\src\\styles.scss",
+        "workspaceRoot": null,
+        "workspacePath": null,
+        "id": "5Kvnd4IXgaseSOZH"
+    },
+    {
+        "type": "File",
+        "name": "c:\\Users\\iluca\\OneDrive\\Documents\\Project\\Estimations\\DemoForms\\src\\index.html",
+        "parent_id": null,
+        "fsPath": "c:\\Users\\iluca\\OneDrive\\Documents\\Project\\Estimations\\DemoForms\\src\\index.html",
+        "workspaceRoot": null,
+        "workspacePath": null,
+        "id": "bDWg5h87wYIx1SvA"
     }
 ]

@@ -3,6 +3,11 @@
 This is the icon displayed in the brower tab.
 Visit: https://favicon.io/favicon-generator/
 
+# To deploy
+
+run:
+npm run deploy
+
 # DemoForms
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.21.

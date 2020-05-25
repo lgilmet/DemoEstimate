@@ -142,6 +142,7 @@ mat-radio-button {
 .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
   border-color: black;
   background-color: $yellow;
+  color: black;
 }
 
 .mat-checkbox.mat-accent {
@@ -334,6 +335,11 @@ ul {
   }
 }
 
+.content-section {
+  width: 75%;
+  margin: auto;
+}
+
 @media (min-width: 768px) {
   .img-staff img {
     width: 20vw;
@@ -353,12 +359,20 @@ ul {
   }
 }
 
+// small screens
 @media (max-width: 768px) {
+  .brand {
+    font-size: 3em;
+  }
   .section-icon {
     font-size: 3em;
   }
 
   .special.heading {
     font-size: 4vw;
+  }
+
+  .content-section {
+    width: 90%;
   }
 }
