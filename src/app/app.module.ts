@@ -30,7 +30,8 @@ import { MatIconModule } from "@angular/material/icon";
 import { MatMenuModule } from "@angular/material/menu";
 import { OldHomeComponent } from "./pages/old-home/old-home.component";
 import { QuartierLComponent } from "./forms/quartier-l/quartier-l.component";
-import { AboutComponent } from './pages/about/about.component';
+import { AboutComponent } from "./pages/about/about.component";
+import { NgWormholeModule } from "ng-wormhole";
 
 @NgModule({
   declarations: [
@@ -66,6 +67,7 @@ import { AboutComponent } from './pages/about/about.component';
     MatTooltipModule,
     MatIconModule,
     MatMenuModule,
+    NgWormholeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

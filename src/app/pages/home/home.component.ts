@@ -27,4 +27,8 @@ export class HomeComponent implements OnInit {
       }
     });
   }
+
+  recordForm() {
+    // get all elements from form and keep in a global object.
+  }
 }
