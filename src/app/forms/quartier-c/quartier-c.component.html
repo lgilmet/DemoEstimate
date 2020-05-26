@@ -3,7 +3,7 @@
     <div class="">
       <!-- <div class="card-header">
         <h2>
-          <span style="white-space: nowrap;">Plateau Mont-Royal</span>
+          <span style="white-space: nowrap;">Rosemont</span>
         </h2>
       </div> -->
       <!--living  area -->
@@ -25,7 +25,7 @@
               aria-describedby="area-label"
             />
             <div class="input-group-append">
-              <span class="input-group-text" id="area-label">pi/2</span>
+              <span class="input-group-text" id="area-label">pi²</span>
             </div>
           </div>
           <div class="col-lg-6 pt-3 pt-lg-1">
@@ -175,15 +175,18 @@
               <mat-checkbox [(ngModel)]="eastPapineau"
                 >À l'Est de Papineau</mat-checkbox
               >
-              <mat-checkbox [(ngModel)]="rooftop"
-                >Terrasse sur le toit</mat-checkbox
-              >
-              <mat-checkbox [(ngModel)]="terrasse"
-                >Grand balcon ( table à diner )</mat-checkbox
-              >
               <mat-checkbox [(ngModel)]="noisySt"
                 >Rue passante / bruyante</mat-checkbox
               >
+
+              <mat-checkbox [(ngModel)]="rooftop"
+                >Terrasse sur le toit</mat-checkbox
+              >
+
+              <mat-checkbox [(ngModel)]="terrasse"
+                >Grand balcon ( table à diner )</mat-checkbox
+              >
+
               <mat-checkbox [(ngModel)]="house">Maison de ville</mat-checkbox>
               <mat-checkbox [(ngModel)]="garage">Garage</mat-checkbox>
             </div>
