@@ -216,4 +216,12 @@
   </div>
 </div>
 
-<div *ngWormhole="'#saviezVous'">que</div>
+<div *ngWormhole="'#saviezVous'">
+  <div class="row white">
+    <div *ngFor="let item of leSaviezVous" class="col-md">
+      <h1 class="larger">{{ item.icon }}</h1>
+      <h2 class="special heading">{{ item.price }}$</h2>
+      <p>{{ item.desc }}</p>
+    </div>
+  </div>
+</div>

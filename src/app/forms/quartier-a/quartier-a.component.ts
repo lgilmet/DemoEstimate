@@ -55,6 +55,12 @@ export class QuartierAComponent implements OnInit {
 
   color: ThemePalette = "primary";
 
+  leSaviezVous: any[] = [
+    { icon: "🎂", price: 1000, desc: "cest du gateau" },
+    { icon: "💋", price: 1000, desc: "bisou" },
+    { icon: "💕", price: 1000, desc: "Love!" },
+  ];
+
   constructor() {}
 
   ngOnInit() {
@@ -62,6 +68,8 @@ export class QuartierAComponent implements OnInit {
       style: "currency",
       currency: "CAD",
     });
+
+    console.log(this.leSaviezVous);
 
     this.clearForm();
   }
