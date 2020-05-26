@@ -216,4 +216,15 @@
   </div>
 </div>
 
-<div *ngWormhole="'#saviezVous'">que</div>
+<div *ngWormhole="'#saviezVous'">
+  que
+  <div class="row">
+    <div *ngFor="let item of leSaviezVous" class="col-md">
+      <h1 class="larger">{{item.emoji}}</h1>
+      <h2 class="special heading">{{item.price}}$</h2>
+      <p>{{item.description}}</p>
+    </div>
+  </div>
+</div>
+
+<ng-template #saviezVous2> test saviez vous 2</ng-template>

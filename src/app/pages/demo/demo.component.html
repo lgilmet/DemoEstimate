@@ -1,0 +1,35 @@
+<form [formGroup]="formConfig" (ngSubmit)="soumettre()"class="white">
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="area-label"
+              >Sup. habitable
+            </span>
+          </div>
+          <input
+            placeholder="Area in square foot"
+            class="form-control border"
+            aria-describedby="area-label"
+            type="number" formControlName="superficie"
+            />
+          <div class="input-group-append">
+            <span class="input-group-text" id="area-label">pi²</span>
+          </div>
+    </div>
+    <div class="form-check">
+    <input class="form-check-input" id="option1" type="radio" value="bungalow" formControlName="type" name="type">
+    <label class="form-check-label" for="option1">
+        Bungalow
+      </label>
+    </div>
+      <div class="form-check">
+    <input class="form-check-input" id="option2" type="radio" value="appartement" formControlName="type" name="type">
+    <label class="form-check-label" for="option2">
+        Appartement
+      </label>
+    </div>
+    Indoor Quality<input type="number" formControlName="indoorQuality"><br>
+    Noisi street<input type="checkbox" formControlName="noisi Street"><br>
+    Terasse <input type="checkbox" formControlName="terrasse"><br>
+    <button class="btn btn-primary" type="submit">click me pls</button>
+</form ><br>
+Valeur actuelle: {{valeur | async}}

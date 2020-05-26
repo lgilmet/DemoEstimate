@@ -52,9 +52,15 @@ const routes: Routes = [
         component: QuartierFComponent,
         data: { title: "Villeray" },
       },
+
+      {
+        path: 'demo', loadChildren: () => import('./pages/demo/demo.module').then(m => m.DemoModule),
+        data: { title: "Demo Form" }
+      },
     ],
   },
   { path: "a-propos", component: AboutComponent },
+
   // { path: "plateau", component: QuartierAComponent },
   // { path: "plateau", component: QuartierBComponent },
   // { path: "ville-mont-royal-house", component: QuartierCComponent },
@@ -74,4 +80,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

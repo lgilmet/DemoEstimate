@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild, TemplateRef } from "@angular/core";
 import { ActivatedRoute, Router, NavigationEnd } from "@angular/router";
 
 declare var $: any;
@@ -9,6 +9,9 @@ declare var $: any;
   styleUrls: ["./home.component.scss"],
 })
 export class HomeComponent implements OnInit {
+
+  @ViewChild('saviezVous2', { static: false }) saviezVous2: TemplateRef<any>;
+
   selectedCalculator: string = "";
 
   constructor(private route: ActivatedRoute, private router: Router) {

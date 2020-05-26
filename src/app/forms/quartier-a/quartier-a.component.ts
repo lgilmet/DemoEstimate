@@ -55,13 +55,21 @@ export class QuartierAComponent implements OnInit {
 
   color: ThemePalette = "primary";
 
-  constructor() {}
+  constructor() { }
+
+  leSaviezVous: any[] = [
+    { emoji: '💕', price: 10000, description: 'lamour' },
+    { emoji: '�', price: 10000, description: 'lCoolio' },
+    { emoji: '🎂', price: 10000, description: 'boulemi' }
+  ]
 
   ngOnInit() {
     this.formatter = new Intl.NumberFormat("en-CA", {
       style: "currency",
       currency: "CAD",
     });
+
+    console.log(this.leSaviezVous)
 
     this.clearForm();
   }
@@ -128,20 +136,20 @@ export class QuartierAComponent implements OnInit {
     this.estimate = this.formatter.format(
       Math.round(
         (this.livingArea * 2437.23) / 10.764 +
-          this.getQuality(Number(this.quality)) +
-          Number(this.nbWashrooms) * 26451.99 +
-          this.getBedrooms(Number(this.nbBedrooms)) +
-          this.getLevel(this.level) +
-          Number(this.eastPapineau) * -61706.8 +
-          Number(this.rooftop) * 76508.33 +
-          Number(this.terrasse) * 43978.43 +
-          Number(this.railway) * -99782.3 +
-          Number(this.alley) * 23921.77 +
-          Number(this.heritageBldg) * 72036 +
-          Number(this.noisySt) * -28724.7 +
-          Number(this.luxuryBldg) * 70861 +
-          Number(this.indivise) * -30463.97 +
-          Number(this.garage) * 22064.52
+        this.getQuality(Number(this.quality)) +
+        Number(this.nbWashrooms) * 26451.99 +
+        this.getBedrooms(Number(this.nbBedrooms)) +
+        this.getLevel(this.level) +
+        Number(this.eastPapineau) * -61706.8 +
+        Number(this.rooftop) * 76508.33 +
+        Number(this.terrasse) * 43978.43 +
+        Number(this.railway) * -99782.3 +
+        Number(this.alley) * 23921.77 +
+        Number(this.heritageBldg) * 72036 +
+        Number(this.noisySt) * -28724.7 +
+        Number(this.luxuryBldg) * 70861 +
+        Number(this.indivise) * -30463.97 +
+        Number(this.garage) * 22064.52
       )
     );
   }
