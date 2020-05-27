@@ -51,6 +51,11 @@ export class QuartierEComponent implements OnInit {
   localStr: string;
 
   color: ThemePalette = "primary";
+  leSaviezVous: any[] = [
+    { icon: "🎂", price: 106627, desc: "Terrasse sur le toit" },
+    { icon: "💋", price: 52992, desc: "Garage" },
+    { icon: "💕", price: 39414, desc: "Terrasse" },
+  ];
 
   constructor() {}
 
