@@ -56,15 +56,15 @@ export class QuartierAComponent implements OnInit {
   color: ThemePalette = "primary";
 
   leSaviezVous: any[] = [
-    { icon: "🎂", price: 76508, desc: "Terrasse sur le toit" },
-    { icon: "💋", price: 22064, desc: "Garage" },
-    { icon: "💕", price: 26451, desc: "Salle de bain" },
+    { icon: "terrace", price: 76508, desc: "Terrasse sur le toit" },
+    { icon: "garage", price: 22064, desc: "Garage" },
+    { icon: "bathtub", price: 26451, desc: "Salle de bain" },
   ];
 
   constructor() {}
 
   ngOnInit() {
-    this.formatter = new Intl.NumberFormat("en-CA", {
+    this.formatter = new Intl.NumberFormat("fr-CA", {
       style: "currency",
       currency: "CAD",
     });
@@ -72,6 +72,10 @@ export class QuartierAComponent implements OnInit {
     console.log(this.leSaviezVous);
 
     this.clearForm();
+
+    this.leSaviezVous.forEach((item) => {
+      item.price = this.formatter.format(item.price);
+    });
   }
 
   getBedrooms(option: number) {

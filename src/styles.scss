@@ -346,6 +346,20 @@ ul {
   margin: auto;
 }
 
+.svg-icon {
+  &.large {
+    width: 2em;
+  }
+  &.medium {
+    width: 5em;
+    margin: 2em;
+  }
+  &.small {
+    float: left;
+    width: 1.5em;
+  }
+}
+
 @media (min-width: 768px) {
   .img-staff img {
     width: 20vw;
