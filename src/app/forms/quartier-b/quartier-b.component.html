@@ -219,7 +219,11 @@
   </p>
   <div class="row white">
     <div *ngFor="let item of leSaviezVous" class="col-md">
-      <h1 class="larger">{{ item.icon }}</h1>
+      <img
+        class="svg-icon medium"
+        src="./assets/icons/{{ item.icon }}.svg"
+        alt=""
+      />
       <h2 class="special heading">{{ item.price }}$</h2>
       <p>{{ item.desc }}</p>
     </div>

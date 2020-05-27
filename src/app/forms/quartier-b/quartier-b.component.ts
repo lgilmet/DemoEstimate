@@ -55,9 +55,9 @@ export class QuartierBComponent implements OnInit {
 
   color: ThemePalette = "primary";
   leSaviezVous: any[] = [
-    { icon: "🎂", price: 76508, desc: "Terrasse sur le toit" },
-    { icon: "💋", price: 22064, desc: "Garage" },
-    { icon: "💕", price: 26451, desc: "Salle de bain" },
+    { icon: "terrace2", price: 76508, desc: "Terrasse sur le toit" },
+    { icon: "garage", price: 22064, desc: "Garage" },
+    { icon: "bathtub", price: 26451, desc: "Salle de bain" },
   ];
 
   constructor() {}
