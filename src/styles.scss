@@ -315,6 +315,12 @@ section {
   }
 }
 
+.vertical-center {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
 ul {
   list-style-type: none;
 }

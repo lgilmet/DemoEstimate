@@ -11,6 +11,8 @@ declare var gtag;
 })
 export class AppComponent {
   title = "DemoForms";
+  loggedIn: boolean = false;
+  inputPassword: string = "";
 
   constructor(router: Router) {
     const navEndEvents = router.events.pipe(
@@ -21,5 +23,13 @@ export class AppComponent {
         page_path: event.urlAfterRedirects,
       });
     });
+  }
+
+  signIn() {
+    console.log("trying to login", this.inputPassword);
+    if (this.inputPassword == "secret") {
+      this.loggedIn = true;
+      console.log("login");
+    }
   }
 }

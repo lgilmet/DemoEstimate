@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.getTitle();
+    this.selectedCalculator = this.route.snapshot.firstChild.data["title"];
   }
 
   getTitle() {

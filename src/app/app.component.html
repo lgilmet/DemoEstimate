@@ -1,4 +1,25 @@
-<div class="">
+<div class="vertical-center" *ngIf="!loggedIn">
+  <div class="w-50 m-auto">
+    <h1 class="w-100 text-center my-5">Combien Ça Vaut? 💸</h1>
+    <form (submit)="signIn()">
+      <input
+        class="form-control"
+        type="password"
+        placeholder="Entrez le mot de passe..."
+        [(ngModel)]="inputPassword"
+        [ngModelOptions]="{ standalone: true }"
+      />
+      <button
+        class="btn btn-primary align-right my-3 float-right"
+        (click)="signIn()"
+      >
+        Entrez
+      </button>
+    </form>
+  </div>
+</div>
+
+<div *ngIf="loggedIn" class="">
   <nav class="navbar sticky-top">
     <div class="container">
       <a class="navbar-brand" [routerLink]="['']">Combien Ça Vaut?</a>
