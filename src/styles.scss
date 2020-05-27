@@ -191,6 +191,17 @@ mat-radio-button {
   border: none;
   background-color: $yellow;
   box-shadow: rgba(77, 77, 77, 0.65) 0px 2px 3px;
+
+  &:hover {
+    background-color: lighten($yellow, 20);
+  }
+
+  &::after {
+    content: "▼";
+    margin-left: 1em;
+    color: rgb(2, 2, 119);
+    font-size: 1em;
+  }
 }
 
 .form {
