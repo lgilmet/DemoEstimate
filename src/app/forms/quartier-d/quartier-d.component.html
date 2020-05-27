@@ -13,7 +13,7 @@
           <div class="input-group col-lg-6">
             <div class="input-group-prepend">
               <span class="input-group-text" id="area-label"
-                >Sup. habitable
+                >Sup. habitable*
               </span>
             </div>
             <input
@@ -119,9 +119,9 @@
               <div class="col-sm">Étage</div>
               <div class="col-sm">
                 <select class="form-control" [(ngModel)]="level">
-                  <option value="above">Hors-Sol</option>
-                  <option value="half">1ier Étage + sous-sol</option>
-                  <option value="basement">Tout au sous-sol</option>
+                  <option value="above">2ième et +</option>
+                  <option value="half">Rez-de-chaussée + sous-sol</option>
+                  <option value="basement">Demi sous-sol</option>
                 </select>
               </div>
             </div>
@@ -206,6 +206,18 @@
           <h3 class="special heading text-right">CAD {{ estimate }}</h3>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+<div *ngWormhole="'#saviezVous'">
+  <p class="special heading">
+    Dans la Petite-Patrie, c'est items valent:
+  </p>
+  <div class="row white">
+    <div *ngFor="let item of leSaviezVous" class="col-md">
+      <h1 class="larger">{{ item.icon }}</h1>
+      <h2 class="special heading">{{ item.price }}$</h2>
+      <p>{{ item.desc }}</p>
     </div>
   </div>
 </div>
