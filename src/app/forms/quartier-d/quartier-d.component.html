@@ -9,7 +9,7 @@
       <!--living  area -->
 
       <div class="card-body">
-        <div class="row mb-5">
+        <div class="row mb-4">
           <div class="input-group col-lg-6">
             <div class="input-group-prepend">
               <span class="input-group-text" id="area-label"
@@ -20,7 +20,7 @@
               id="areaInput"
               [(ngModel)]="livingArea"
               type="number"
-              placeholder="Area in square foot"
+              placeholder="exemple : 758"
               class="form-control border"
               aria-describedby="area-label"
             />
@@ -28,33 +28,14 @@
               <span class="input-group-text" id="area-label">pi²</span>
             </div>
           </div>
-          <div class="col-lg-6 pt-3 pt-lg-1">
-            <div class="row">
-              <div class="col-sm pl-3">
-                <label>Type</label>
-              </div>
-              <div class="col-sm">
-                <mat-radio-group
-                  class="d-flex flex-column flex-md-row justify-content-md-start"
-                  [(ngModel)]="type"
-                >
-                  <mat-radio-button value="condo">
-                    Condo
-                  </mat-radio-button>
-                  <mat-radio-button value="house" disabled>
-                    Maison
-                  </mat-radio-button>
-                </mat-radio-group>
-              </div>
-            </div>
-          </div>
+          <div class="col-lg-6 pt-3 pt-lg-1"></div>
         </div>
 
         <div class="row">
           <div class="col-lg-6">
             <div class="row mt-2">
               <div class="col-sm">
-                <label>Nombre de chambres</label>
+                <label>🛏️ Nombre de chambres</label>
               </div>
               <div class="col-sm pl-5 pl-sm-1">
                 <mat-radio-group
@@ -75,7 +56,7 @@
             </div>
             <div class="row mt-2">
               <div class="col-sm">
-                <label>Salle de bains complètes</label>
+                <label>🚿 Salle de bains complètes</label>
               </div>
               <div class="col-sm pl-5 pl-sm-1">
                 <mat-radio-group
@@ -95,10 +76,48 @@
               </div>
             </div>
             <div class="row mt-2">
+              <div class="col-sm mt-2">💎 Qualitée globale*</div>
+              <div class="col-sm">
+                <select class="form-control" [(ngModel)]="quality">
+                  <option value="1">1 - À démolir</option>
+                  <option value="2">2 - Réparations requises</option>
+                  <option value="3">3 - Viellot</option>
+                  <option value="4">4 - À rénover</option>
+                  <option value="5">5 - Décent</option>
+                  <option value="6">6 - Rénové en partie</option>
+                  <option value="7">7 - Totalement rénové</option>
+                  <option value="8">8 - Éléments de design</option>
+                  <option value="9">9 - Produit d'architecture</option>
+                  <option value="10">10 - Digne de magazine</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="row mt-2">
+              <div class="col-sm">
+                <label>Type</label>
+              </div>
+              <div class="col-sm pl-4 pl-sm-1">
+                <mat-radio-group
+                  class="d-flex flex-column flex-md-row justify-content-md-start"
+                  [(ngModel)]="type"
+                >
+                  <mat-radio-button value="condo">
+                    Condo 🏢
+                  </mat-radio-button>
+                  <mat-radio-button value="house" disabled>
+                    Maison 🏠
+                  </mat-radio-button>
+                </mat-radio-group>
+              </div>
+            </div>
+            <div class="row mt-2">
               <div class="col-sm">
                 <label>Division</label>
               </div>
-              <div class="col-sm pl-5 pl-sm-1">
+              <div class="col-sm pl-4 pl-sm-1">
                 <mat-radio-group
                   class="d-flex flex-column flex-md-row justify-content-md-start"
                   [(ngModel)]="indivise"
@@ -112,33 +131,13 @@
                 </mat-radio-group>
               </div>
             </div>
-          </div>
-
-          <div class="col-lg-6">
             <div class="row mt-2">
-              <div class="col-sm">Étage</div>
+              <div class="col-sm mt-2">Étage</div>
               <div class="col-sm">
                 <select class="form-control" [(ngModel)]="level">
                   <option value="above">2ième et +</option>
                   <option value="half">Rez-de-chaussée + sous-sol</option>
                   <option value="basement">Demi sous-sol</option>
-                </select>
-              </div>
-            </div>
-            <div class="row mt-2">
-              <div class="col-sm">Qualitée globale*</div>
-              <div class="col-sm">
-                <select class="form-control" [(ngModel)]="quality">
-                  <option value="1">1 - À démolir</option>
-                  <option value="2">2 - Réparations requises</option>
-                  <option value="3">3 - Viellot</option>
-                  <option value="4">4 - À rénover</option>
-                  <option value="5">5 - Décent</option>
-                  <option value="6">6 - Rénové en partie</option>
-                  <option value="7">7 - Totalement rénové</option>
-                  <option value="8">8 - Éléments de design</option>
-                  <option value="9">9 - Produit d'architecture</option>
-                  <option value="10">10 - Digne de magazine</option>
                 </select>
               </div>
             </div>
@@ -215,8 +214,12 @@
   </p>
   <div class="row white">
     <div *ngFor="let item of leSaviezVous" class="col-md">
-      <h1 class="larger">{{ item.icon }}</h1>
-      <h2 class="special heading">{{ item.price }}$</h2>
+      <img
+        class="svg-icon medium"
+        src="./assets/icons/{{ item.icon }}.svg"
+        alt=""
+      />
+      <h2 class="special heading">{{ item.price }}</h2>
       <p>{{ item.desc }}</p>
     </div>
   </div>
