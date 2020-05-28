@@ -189,11 +189,11 @@ mat-radio-button {
   font-family: "Gothic Bold";
   text-align: left;
   border: none;
-  background-color: $yellow;
+  background-color: lighten($yellow, 20);
   box-shadow: rgba(77, 77, 77, 0.65) 0px 2px 3px;
 
   &:hover {
-    background-color: lighten($yellow, 20);
+    background-color: $yellow;
   }
 
   &::after {
@@ -317,7 +317,7 @@ section {
 }
 
 .quartiers {
-  font-family: "Gothic Bold";
+  font-family: "Gothic";
   margin-top: 30px;
 
   ul {
@@ -326,6 +326,7 @@ section {
   }
 
   p {
+    font-family: "Gothic Bold";
     font-size: 1.3em;
   }
 }
