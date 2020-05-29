@@ -165,6 +165,13 @@ mat-radio-button {
   color: black;
 }
 
+.subtitle {
+  font-family: "Gothic", Arial, sans-serif;
+  color: black;
+  padding-left: 3em;
+  padding-top: 1em;
+}
+
 .brand {
   font-family: "Gothic Bold", Arial, sans-serif;
   font-size: 5em;
@@ -250,7 +257,7 @@ section {
 }
 
 .liner {
-  font-size: 1.5em;
+  font-size: 1.8em;
 }
 
 .border-thick {
@@ -278,8 +285,8 @@ section {
   text-align: center;
 }
 .img-staff img {
-  width: 50vw;
-  height: 50vw;
+  width: 25vw;
+  height: 25vw;
   border-radius: 25vw;
   object-fit: cover;
 }
