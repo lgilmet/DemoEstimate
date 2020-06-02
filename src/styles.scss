@@ -14,7 +14,7 @@ $my-theme: mat-light-theme($my-theme-primary, $my-theme-accent);
 
 @include angular-material-theme($my-theme);
 
-$yellow: #ffc800;
+$yellow: #d2ff00;
 @font-face {
   font-family: "Gothic";
   src: url("src/assets/fonts/Gothic/ITC Avant Garde Gothic LT Book Regular.otf");
@@ -101,7 +101,7 @@ mat-radio-button {
 }
 
 .navbar {
-  background-color: #ffc800;
+  background-color: #d2ff00;
   text-decoration: none;
   box-shadow: rgba(0, 0, 0, 0.205) 2px 2px 2px;
   height: 5em;
@@ -237,7 +237,7 @@ mat-radio-button {
 
 .front-page {
   width: 100vw;
-  background-color: #ffc800;
+  background-color: #d2ff00;
   background-position: left;
   background-size: cover;
   padding-top: 0%;
