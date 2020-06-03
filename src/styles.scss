@@ -8,12 +8,12 @@
 @include mat-core();
 
 $my-theme-primary: mat-palette($mat-blue);
-$my-theme-accent: mat-palette($mat-yellow, 700);
+$my-theme-accent: mat-palette($mat-grey, 900);
 
 $my-theme: mat-light-theme($my-theme-primary, $my-theme-accent);
 
 @include angular-material-theme($my-theme);
-
+$yellow1: #aeea00;
 $yellow: #d2ff00;
 @font-face {
   font-family: "Gothic";
@@ -146,16 +146,17 @@ mat-radio-button {
 }
 
 .mat-checkbox.mat-accent {
-  &.mat-checkbox-checked .mat-checkbox-background {
-    border: 2px solid black;
-    border-radius: 3px;
-  }
+  // &.mat-checkbox-checked .mat-checkbox-background {
+  //   border: 2px solid black;
+  //   border-radius: 3px;
+  // }
 
-  .mat-checkbox-checkmark-path {
-    stroke: black !important;
-  }
+  
 }
-
+.mat-checkbox-checkmark-path {
+    stroke: $yellow !important;
+    width: 2px;
+  }
 .title {
   height: 50vh;
 }
