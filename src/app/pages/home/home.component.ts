@@ -24,12 +24,7 @@ export class HomeComponent implements OnInit {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.selectedCalculator = this.route.snapshot.firstChild.data["title"];
-        console.log(this.selectedCalculator);
       }
     });
-  }
-
-  recordForm() {
-    // get all elements from form and keep in a global object.
   }
 }

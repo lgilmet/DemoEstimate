@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { Router, NavigationEnd } from "@angular/router";
 import { filter } from "rxjs/operators";
 
@@ -15,6 +15,7 @@ export class AppComponent {
   inputPassword: string = "";
 
   constructor(router: Router) {
+    
     const navEndEvents = router.events.pipe(
       filter((event) => event instanceof NavigationEnd)
     );
@@ -25,11 +26,24 @@ export class AppComponent {
     });
   }
 
+  ngOnInit(){
+    console.log('ngoninit')
+    let pageUpLink = document.querySelectorAll('.nav-link, .navbar-brand, .footer-link')
+    console.log(pageUpLink)
+    pageUpLink.forEach(link => {
+      console.log('convert links')
+      link.addEventListener('click', function() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        console.log('tring to scroll up')
+      })
+    });
+  }
+
   signIn() {
-    console.log("trying to login", this.inputPassword);
     if (this.inputPassword == "secret") {
       this.loggedIn = true;
-      console.log("login");
+      this.ngOnInit()
     }
   }
 }

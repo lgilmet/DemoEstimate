@@ -69,8 +69,6 @@ export class QuartierAComponent implements OnInit {
       currency: "CAD",
     });
 
-    console.log(this.leSaviezVous);
-
     this.clearForm();
 
     this.leSaviezVous.forEach((item) => {
