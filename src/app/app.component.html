@@ -27,43 +27,47 @@
     </div>
   </nav>
 
-  <router-outlet ></router-outlet>
+  <router-outlet></router-outlet>
 
   <section class="container">
-    <hr>
-  <div class="row">
-    <div class="col-md-9 beta">
-      <h3 class="special heading">
-        <img class="svg-icon small" src="./assets/icons/screw.svg" alt="" />
-        La Calculatrice Immobilière™ est disponible au public en version BETA.
-      </h3>
-    
-      <p>
-        En rendant cette calculatrice disponible au grand public sur le web,
-        nous réussirons à accélérer de façon exponentielle l’apprentissage +
-        l'amélioration de notre algorithme propriétaire grâce au volume de
-        données entrées par les utilisateurs.
-      </p>
-      <p>
-        Nous espérons ainsi rapidement développer d'autres quartiers et
-        secteurs immédiats de Montréal, pour évidemment ajouter ensuite le
-        reste du Canada en utilisant toujours la même méthodologie prouvée et
-        les récentes données de transaction du marché immobilier pancanadien.
-      </p>
-    </div>
-    <div class="col-md-3 details">
-      <p class="special heading">Contact</p>
-      <ul>
-        <li><a class="footer-link" [routerLink]="['a-propos']">Partenariats</a></li>
-        <li><a class="footer-link" [routerLink]="['a-propos']">License et API</a></li>
-        <li><a class="footer-link" [routerLink]="['a-propos']">Média et RP</a></li>
-        <li><a class="footer-link" [routerLink]="['a-propos']">Légal advisor</a></li>
-        <li><a class="footer-link" [routerLink]="['a-propos']">Trade Credentials</a></li>
-      </ul>
-    </div>
+    <hr />
+    <div class="row">
+      <div class="col-md-9 beta">
+        <h3 class="special heading">
+          <img class="svg-icon small" src="./assets/icons/screw.svg" alt="" />
+          La Calculatrice Immobilière™ est disponible au public en version BETA.
+        </h3>
 
-    <div class="col-md-2"></div>
-  </div>
-</section>
+        <p>
+          Elle se sent zero responsable des anomalies qui pourraient survenir.
+        </p>
+      </div>
+      <div class="col-md-3 details">
+        <p class="special heading">Contact</p>
+        <ul>
+          <li>
+            <a class="footer-link" [routerLink]="['a-propos']">Partenariats</a>
+          </li>
+          <li>
+            <a class="footer-link" [routerLink]="['a-propos']"
+              >License et API</a
+            >
+          </li>
+          <li>
+            <a class="footer-link" [routerLink]="['a-propos']">Média et RP</a>
+          </li>
+          <li>
+            <a class="footer-link" [routerLink]="['a-propos']">Légal advisor</a>
+          </li>
+          <li>
+            <a class="footer-link" [routerLink]="['a-propos']"
+              >Trade Credentials</a
+            >
+          </li>
+        </ul>
+      </div>
 
+      <div class="col-md-2"></div>
+    </div>
+  </section>
 </div>
