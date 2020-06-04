@@ -162,6 +162,7 @@ mat-radio-button {
 .special {
   font-family: "Gothic", Arial, sans-serif;
   color: black;
+  font-size: 2em;
 }
 
 .subtitle {
@@ -239,6 +240,8 @@ mat-radio-button {
 
 .special.heading {
   font-family: "Gothic Bold", Arial, Helvetica, sans-serif;
+  padding-bottom: 20px;
+  text-align: center;
 }
 
 .front-page {
@@ -313,6 +316,7 @@ section {
 .plan-img {
   text-align: center;
   margin: 0;
+  padding-bottom: 30px;
 }
 
 .plan-img img {
