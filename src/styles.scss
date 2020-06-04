@@ -239,9 +239,10 @@ mat-radio-button {
 .front-page {
   width: 100vw;
   background-color: #d2ff00;
-  background-position: left;
-  background-size: cover;
+  //background-position: left;
+  //background-size: cover;
   padding-top: 0%;
+  position: relative;
 }
 
 section {
@@ -259,6 +260,7 @@ section {
 
 .liner {
   font-size: 1.8em;
+  overflow: auto;
 }
 
 .border-thick {
@@ -373,6 +375,7 @@ a.footer-link {
 }
 
 .content-section {
+  clear:both;
   width: 75%;
   margin: auto;
 }
@@ -425,6 +428,11 @@ a.footer-link {
   }
 
   .content-section {
-    width: 100%;
+    clear:both;
+    width: 95%;
+  }
+
+  .liner {
+    font-size: 1em;
   }
 }
