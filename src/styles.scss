@@ -150,13 +150,11 @@ mat-radio-button {
   //   border: 2px solid black;
   //   border-radius: 3px;
   // }
-
-  
 }
 .mat-checkbox-checkmark-path {
-    stroke: $yellow !important;
-    width: 2px;
-  }
+  stroke: $yellow !important;
+  width: 2px;
+}
 .title {
   height: 50vh;
 }
@@ -210,6 +208,13 @@ mat-radio-button {
     color: rgb(49, 49, 49);
     font-size: 1em;
   }
+}
+
+.tm {
+  font-size: 0.5em;
+  text-align: left;
+  padding: 0em;
+  margin-left: 1em;
 }
 
 .form {
@@ -375,7 +380,7 @@ a.footer-link {
 }
 
 .content-section {
-  clear:both;
+  clear: both;
   width: 75%;
   margin: auto;
 }
@@ -428,7 +433,7 @@ a.footer-link {
   }
 
   .content-section {
-    clear:both;
+    clear: both;
     width: 95%;
   }
 
