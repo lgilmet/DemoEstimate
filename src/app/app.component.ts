@@ -11,11 +11,10 @@ declare var gtag;
 })
 export class AppComponent {
   title = "DemoForms";
-  loggedIn: boolean = false;
+  loggedIn: boolean = true;
   inputPassword: string = "";
 
   constructor(router: Router) {
-    
     const navEndEvents = router.events.pipe(
       filter((event) => event instanceof NavigationEnd)
     );
@@ -26,24 +25,26 @@ export class AppComponent {
     });
   }
 
-  ngOnInit(){
-    console.log('ngoninit')
-    let pageUpLink = document.querySelectorAll('.nav-link, .navbar-brand, .footer-link')
-    console.log(pageUpLink)
-    pageUpLink.forEach(link => {
-      console.log('convert links')
-      link.addEventListener('click', function() {
+  ngOnInit() {
+    console.log("ngoninit");
+    let pageUpLink = document.querySelectorAll(
+      ".nav-link, .navbar-brand, .footer-link"
+    );
+    console.log(pageUpLink);
+    pageUpLink.forEach((link) => {
+      console.log("convert links");
+      link.addEventListener("click", function () {
         document.body.scrollTop = 0; // For Safari
         document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-        console.log('tring to scroll up')
-      })
+        console.log("tring to scroll up");
+      });
     });
   }
 
   signIn() {
     if (this.inputPassword == "secret") {
       this.loggedIn = true;
-      this.ngOnInit()
+      this.ngOnInit();
     }
   }
 }
