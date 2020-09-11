@@ -55,6 +55,7 @@ const routes: Routes = [
     ],
   },
   { path: "a-propos", component: AboutComponent },
+  { path: "payment", component: PaymentComponent },
   // { path: "plateau", component: QuartierAComponent },
   // { path: "plateau", component: QuartierBComponent },
   // { path: "ville-mont-royal-house", component: QuartierCComponent },

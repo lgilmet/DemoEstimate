@@ -11,7 +11,7 @@ declare var gtag;
 })
 export class AppComponent {
   title = "DemoForms";
-  loggedIn: boolean = false;
+  loggedIn: boolean = true;
   inputPassword: string = "";
 
   constructor(router: Router) {

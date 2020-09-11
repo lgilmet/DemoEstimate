@@ -26,11 +26,11 @@
             />
             <div class="input-group-append">
               <span class="input-group-text" id="area-label">pi²</span>
+              <div class="input-group-prepend"></div>
             </div>
           </div>
           <div class="col-lg-6 pt-3 pt-lg-1"></div>
         </div>
-
         <div class="row">
           <div class="col-lg-6">
             <div class="row mt-2">
@@ -42,15 +42,9 @@
                   class="d-flex flex-column flex-md-row justify-content-md-start"
                   [(ngModel)]="nbBedrooms"
                 >
-                  <mat-radio-button value="1">
-                    1
-                  </mat-radio-button>
-                  <mat-radio-button value="2">
-                    2
-                  </mat-radio-button>
-                  <mat-radio-button value="3">
-                    3
-                  </mat-radio-button>
+                  <mat-radio-button value="1"> 1 </mat-radio-button>
+                  <mat-radio-button value="2"> 2 </mat-radio-button>
+                  <mat-radio-button value="3"> 3 </mat-radio-button>
                 </mat-radio-group>
               </div>
             </div>
@@ -63,15 +57,9 @@
                   class="d-flex flex-column flex-md-row justify-content-md-start"
                   [(ngModel)]="nbWashrooms"
                 >
-                  <mat-radio-button value="1">
-                    1
-                  </mat-radio-button>
-                  <mat-radio-button value="2">
-                    2
-                  </mat-radio-button>
-                  <mat-radio-button value="3">
-                    3
-                  </mat-radio-button>
+                  <mat-radio-button value="1"> 1 </mat-radio-button>
+                  <mat-radio-button value="2"> 2 </mat-radio-button>
+                  <mat-radio-button value="3"> 3 </mat-radio-button>
                 </mat-radio-group>
               </div>
             </div>
@@ -82,11 +70,11 @@
                   <option value="1">1 - À démolir</option>
                   <option value="2">2 - Réparations requises</option>
                   <option value="3">3 - Viellot</option>
-                  <option value="4">4 - À rénover</option>
+                  <option value="4">4 - Entrée de gamme</option>
                   <option value="5">5 - Décent</option>
-                  <option value="6">6 - Rénové en partie</option>
-                  <option value="7">7 - Totalement rénové</option>
-                  <option value="8">8 - Éléments de design</option>
+                  <option value="6">6 - Medium gamme</option>
+                  <option value="7">7 - Designer</option>
+                  <option value="8">8 - Haut de gamme</option>
                   <option value="9">9 - Produit d'architecture</option>
                   <option value="10">10 - Digne de magazine</option>
                 </select>
@@ -104,9 +92,7 @@
                   class="d-flex flex-column flex-md-row justify-content-md-start"
                   [(ngModel)]="type"
                 >
-                  <mat-radio-button value="condo">
-                    Condo 🏢
-                  </mat-radio-button>
+                  <mat-radio-button value="condo"> Condo 🏢 </mat-radio-button>
                   <mat-radio-button value="house" disabled>
                     Maison 🏠
                   </mat-radio-button>
@@ -122,12 +108,8 @@
                   class="d-flex flex-column flex-md-row justify-content-md-start"
                   [(ngModel)]="indivise"
                 >
-                  <mat-radio-button value="0">
-                    Divise
-                  </mat-radio-button>
-                  <mat-radio-button value="1">
-                    Indivise
-                  </mat-radio-button>
+                  <mat-radio-button value="0"> Divise </mat-radio-button>
+                  <mat-radio-button value="1"> Indivise </mat-radio-button>
                 </mat-radio-group>
               </div>
             </div>
@@ -138,6 +120,7 @@
                   <option value="above">Rez-de-chaussée et +</option>
                   <option value="half">Rez-de-chaussée + sous-sol</option>
                   <option value="basement">Demi sous-sol</option>
+                  <option value="dernier">Dernier étage</option>
                 </select>
               </div>
             </div>
@@ -146,51 +129,53 @@
       </div>
       <hr />
       <ul class="list-group list-group-flush">
-        <!-- basement
         <li class="list-group-item">
-          <div class="row">
-            <div class="col-sm"><label>What floor is it on?</label></div>
-            <div class="col-sm pl-5 pl-sm-1">
-              <mat-radio-group class="d-flex flex-column" [(ngModel)]="level">
-                <mat-radio-button value="above">
-                  Above ground
-                </mat-radio-button>
-                <mat-radio-button value="half">
-                  Part of it in the basement
-                </mat-radio-button>
-                <mat-radio-button value="basement">
-                  Most of it in the basement
-                </mat-radio-button>
-              </mat-radio-group>
+          <div class="">
+            <div class="items-flex-list">
+              <mat-checkbox [(ngModel)]="terrasse"
+                >Grand balcon ( table à diner )
+              </mat-checkbox>
+              <mat-checkbox [(ngModel)]="rooftop"
+                >Terrasse sur le toit ( privée )</mat-checkbox
+              >
+              <mat-checkbox [(ngModel)]="backyard">Cour arrière</mat-checkbox>
             </div>
           </div>
-        </li> -->
-        <!-- quality -->
-
-        <!-- checkboxes -->
+        </li>
+      </ul>
+      <ul class="list-group list-group-flush">
         <li class="list-group-item">
           <div class="">
             <div class="items-flex-list">
               <mat-checkbox [(ngModel)]="heritageBldg"
                 >Dans un batiment patrimonial</mat-checkbox
               >
-              <mat-checkbox [(ngModel)]="luxuryBldg"
-                >Dans un batiment de luxe</mat-checkbox
+              <mat-checkbox [(ngModel)]="nbPowder"
+                >A une salle d'eau</mat-checkbox
               >
-              <mat-checkbox [(ngModel)]="eastPapineau"
-                >À l'est de Papineau</mat-checkbox
-              >
-              <mat-checkbox [(ngModel)]="rooftop"
-                >Terrasse sur le toit ( privée )</mat-checkbox
-              >
-              <mat-checkbox [(ngModel)]="terrasse"
-                >Grand balcon ( table à diner )
-              </mat-checkbox>
+
               <mat-checkbox [(ngModel)]="noisySt"
                 >Rue passante / bruyante</mat-checkbox
               >
+              <mat-checkbox [(ngModel)]="park">Devant un parc 🏞️</mat-checkbox>
               <mat-checkbox [(ngModel)]="alley">Stationement</mat-checkbox>
               <mat-checkbox [(ngModel)]="garage">Garage 🚗</mat-checkbox>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <div class="">
+            <div class="items-flex-list">
+              <mat-checkbox [(ngModel)]="eastPapineau"
+                >À l'Est de Papineau</mat-checkbox
+              >
+              <mat-checkbox [(ngModel)]="mcgill">Mcgill Ghetto</mat-checkbox>
+              <mat-checkbox [(ngModel)]="westStLau"
+                >À l'Ouest de Saint-Laurent</mat-checkbox
+              >
+              <mat-checkbox [(ngModel)]="laurier">Ghetto Laurier</mat-checkbox>
             </div>
           </div>
         </li>
