@@ -9,6 +9,7 @@
       <!--living  area -->
 
       <div class="card-body">
+        <label>Caractéristiques de base</label>
         <div class="row mb-4">
           <div class="input-group col-lg-6">
             <div class="input-group-prepend">
@@ -73,10 +74,10 @@
                   <option value="4">4 - Entrée de gamme</option>
                   <option value="5">5 - Décent</option>
                   <option value="6">6 - Medium gamme</option>
-                  <option value="7">7 - Designer</option>
-                  <option value="8">8 - Haut de gamme</option>
-                  <option value="9">9 - Produit d'architecture</option>
-                  <option value="10">10 - Digne de magazine</option>
+                  <option value="7">7 - Haut de gamme</option>
+                  <option value="8">8 - Designer</option>
+                  <option value="9">9 - Luxueux</option>
+                  <option value="10">10 - Produit d'architecture</option>
                 </select>
               </div>
             </div>
@@ -119,7 +120,7 @@
                 <select class="form-control" [(ngModel)]="level">
                   <option value="above">Rez-de-chaussée et +</option>
                   <option value="half">Rez-de-chaussée + sous-sol</option>
-                  <option value="basement">Demi sous-sol</option>
+                  <option value="basement">Demi sous-sol/Rez-de-jardin</option>
                   <option value="dernier">Dernier étage</option>
                 </select>
               </div>
@@ -130,10 +131,11 @@
       <hr />
       <ul class="list-group list-group-flush">
         <li class="list-group-item">
+          <label>Espace extérieur</label>
           <div class="">
             <div class="items-flex-list">
               <mat-checkbox [(ngModel)]="terrasse"
-                >Grand balcon ( table à diner )
+                >Terrasse ou cour intérieur
               </mat-checkbox>
               <mat-checkbox [(ngModel)]="rooftop"
                 >Terrasse sur le toit ( privée )</mat-checkbox
@@ -145,6 +147,7 @@
       </ul>
       <ul class="list-group list-group-flush">
         <li class="list-group-item">
+          <label>Perks</label>
           <div class="">
             <div class="items-flex-list">
               <mat-checkbox [(ngModel)]="heritageBldg"
@@ -166,6 +169,7 @@
       </ul>
       <ul class="list-group list-group-flush">
         <li class="list-group-item">
+          <label>Sous-Quartier</label>
           <div class="">
             <div class="items-flex-list">
               <mat-checkbox [(ngModel)]="eastPapineau"
@@ -175,7 +179,9 @@
               <mat-checkbox [(ngModel)]="westStLau"
                 >À l'Ouest de Saint-Laurent</mat-checkbox
               >
-              <mat-checkbox [(ngModel)]="laurier">Ghetto Laurier</mat-checkbox>
+              <mat-checkbox [(ngModel)]="laurier"
+                >Entre Saint-Denis et Parc Laurier</mat-checkbox
+              >
             </div>
           </div>
         </li>
