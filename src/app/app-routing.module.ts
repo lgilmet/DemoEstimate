@@ -52,6 +52,11 @@ const routes: Routes = [
         component: QuartierFComponent,
         data: { title: "Villeray" },
       },
+      {
+        path: "vieux",
+        component: QuartierGComponent,
+        data: { title: "Vieux-Montreal" },
+      },
     ],
   },
   { path: "a-propos", component: AboutComponent },
