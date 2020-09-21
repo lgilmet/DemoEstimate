@@ -14,7 +14,7 @@
           <div class="input-group col-lg-6">
             <div class="input-group-prepend">
               <span class="input-group-text" id="area-label"
-                >Sup. habitable*
+                >📐 Sup. habitable
               </span>
             </div>
             <input
@@ -65,7 +65,9 @@
               </div>
             </div>
             <div class="row mt-2">
-              <div class="col-sm mt-2">💎 Qualitée globale*</div>
+              <div class="col-sm mt-2">
+                💎 Qualitée de la finition intérieure
+              </div>
               <div class="col-sm">
                 <select class="form-control" [(ngModel)]="quality">
                   <option value="1">1 - À démolir</option>
@@ -151,8 +153,9 @@
           <div class="">
             <div class="items-flex-list">
               <mat-checkbox [(ngModel)]="heritageBldg"
-                >Dans un batiment patrimonial</mat-checkbox
+                >Batiment patrimonial 🏛️</mat-checkbox
               >
+              <mat-checkbox [(ngModel)]="park">Devant un parc 🌳</mat-checkbox>
               <mat-checkbox [(ngModel)]="nbPowder"
                 >A une salle d'eau</mat-checkbox
               >
@@ -160,9 +163,11 @@
               <mat-checkbox [(ngModel)]="noisySt"
                 >Rue passante / bruyante</mat-checkbox
               >
-              <mat-checkbox [(ngModel)]="park">Devant un parc 🏞️</mat-checkbox>
-              <mat-checkbox [(ngModel)]="alley">Stationement</mat-checkbox>
-              <mat-checkbox [(ngModel)]="garage">Garage 🚗</mat-checkbox>
+
+              <mat-checkbox [(ngModel)]="alley"
+                >Stationement extérieur</mat-checkbox
+              >
+              <mat-checkbox [(ngModel)]="garage">Garage </mat-checkbox>
             </div>
           </div>
         </li>

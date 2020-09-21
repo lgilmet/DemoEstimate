@@ -13,7 +13,7 @@
           <div class="input-group col-lg-6">
             <div class="input-group-prepend">
               <span class="input-group-text" id="area-label"
-                >Sup. habitable*
+                >📐 Sup. habitable
               </span>
             </div>
             <input
@@ -42,15 +42,9 @@
                   class="d-flex flex-column flex-md-row justify-content-md-start"
                   [(ngModel)]="nbBedrooms"
                 >
-                  <mat-radio-button value="1">
-                    1
-                  </mat-radio-button>
-                  <mat-radio-button value="2">
-                    2
-                  </mat-radio-button>
-                  <mat-radio-button value="3">
-                    3
-                  </mat-radio-button>
+                  <mat-radio-button value="1"> 1 </mat-radio-button>
+                  <mat-radio-button value="2"> 2 </mat-radio-button>
+                  <mat-radio-button value="3"> 3 </mat-radio-button>
                 </mat-radio-group>
               </div>
             </div>
@@ -63,20 +57,16 @@
                   class="d-flex flex-column flex-md-row justify-content-md-start"
                   [(ngModel)]="nbWashrooms"
                 >
-                  <mat-radio-button value="1">
-                    1
-                  </mat-radio-button>
-                  <mat-radio-button value="2">
-                    2
-                  </mat-radio-button>
-                  <mat-radio-button value="3">
-                    3
-                  </mat-radio-button>
+                  <mat-radio-button value="1"> 1 </mat-radio-button>
+                  <mat-radio-button value="2"> 2 </mat-radio-button>
+                  <mat-radio-button value="3"> 3 </mat-radio-button>
                 </mat-radio-group>
               </div>
             </div>
             <div class="row mt-2">
-              <div class="col-sm mt-2">💎 Qualitée globale*</div>
+              <div class="col-sm mt-2">
+                💎 Qualitée de la finition intérieure
+              </div>
               <div class="col-sm">
                 <select class="form-control" [(ngModel)]="quality">
                   <option value="1">1 - À démolir</option>
@@ -104,9 +94,7 @@
                   class="d-flex flex-column flex-md-row justify-content-md-start"
                   [(ngModel)]="type"
                 >
-                  <mat-radio-button value="condo">
-                    Condo 🏢
-                  </mat-radio-button>
+                  <mat-radio-button value="condo"> Condo 🏢 </mat-radio-button>
                   <mat-radio-button value="house" disabled>
                     Maison 🏠
                   </mat-radio-button>
@@ -122,12 +110,8 @@
                   class="d-flex flex-column flex-md-row justify-content-md-start"
                   [(ngModel)]="indivise"
                 >
-                  <mat-radio-button value="0">
-                    Divise
-                  </mat-radio-button>
-                  <mat-radio-button value="1">
-                    Indivise
-                  </mat-radio-button>
+                  <mat-radio-button value="0"> Divise </mat-radio-button>
+                  <mat-radio-button value="1"> Indivise </mat-radio-button>
                 </mat-radio-group>
               </div>
             </div>
@@ -209,9 +193,7 @@
   </div>
 </div>
 <div *ngWormhole="'#saviezVous'">
-  <p class="special heading">
-    A Rosemont, ces éléments valent en moyenne:
-  </p>
+  <p class="special heading">A Rosemont, ces éléments valent en moyenne:</p>
   <div class="row white">
     <div *ngFor="let item of leSaviezVous" class="col-md">
       <img
