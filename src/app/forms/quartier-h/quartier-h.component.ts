@@ -8,6 +8,7 @@ declare var $: any;
   styleUrls: ["./quartier-h.component.scss"],
 })
 export class QuartierHComponent implements OnInit {
+  // variables
   popoverContent: string = "Unobstructed water view";
   popoverContent1: string = "Practicaly unlivable";
   popoverContent2: string = "Old carpet, Old wallpaper, Old vinyl";
@@ -24,89 +25,107 @@ export class QuartierHComponent implements OnInit {
   popoverContent9: string =
     "Designer's kitchen, luxury appliances, very high quality flooring and tiles";
   popoverContent10: string = "Incredible layout with incredible products";
+  popoverContent12: string =
+    "A terrace is a balcony that is over 5 foot wide, and at least 35 sq/foot";
+
+  type: string;
   livingArea: number;
-  lotArea: number;
   quality: string;
   nbWashrooms: string;
-  type: string;
-  detached: boolean;
-  highway: boolean;
-  waterfront: boolean;
   nbBedrooms: string;
-  garage: boolean;
-  estimate: number;
   level: string;
+  studio: boolean;
+
+  alley: boolean;
+
+  indivise: string;
+  garage: boolean;
+  rooftop: boolean;
+  terrasse: boolean;
+  noisySt: boolean;
+
+  loft: boolean;
+  estimate: string;
 
   formatter;
+  localStr: string;
+
   color: ThemePalette = "primary";
+
+  leSaviezVous: any[] = [
+    { icon: "rooftop", price: 75105, desc: "Terrasse sur le toit" },
+    { icon: "garage", price: 33327, desc: "Garage" },
+    { icon: "bathtub", price: 40454, desc: "Salle de bain" },
+  ];
+
   constructor() {}
 
   ngOnInit() {
-    this.clearForm();
-    this.formatter = new Intl.NumberFormat("en-CA", {
+    this.formatter = new Intl.NumberFormat("fr-CA", {
       style: "currency",
       currency: "CAD",
     });
+
+    this.clearForm();
+
+    this.leSaviezVous.forEach((item) => {
+      item.price = this.formatter.format(item.price);
+    });
   }
 
-  // LivingArea	 $1,683.87
-  //  Lot Area	 $206.01
-  //  3 bath	 $61,740.04
-  //  Highway	 $(69,084.67)
-  // Waterfront	 $591,890.78
-  //  Quality	 $49,216.07
-  //  Dorval	 $(55,010.90)
-  //  Saint-Pierre	 $(82,916.52)
-  //  Detached	 $35,672.35
-
-  getQuality(option: number) {
-    switch (option) {
-      case 1:
-        return 49240;
-      case 2:
-        return 2 * 49240;
-      case 3:
-        return 3 * 49240;
-      case 4:
-        return 4 * 49240;
-      case 5:
-        return 5 * 49240;
-      case 6:
-        return 6 * 49240;
-      case 7:
-        return 7 * 49240;
-      case 8:
-        return 8 * 49240;
-      case 9:
-        return 9 * 49240;
-      case 10:
-        return 10 * 49240;
-
-      default:
-        break;
-    }
-  }
-  getBathroooms(option: number) {
-    switch (option) {
-      case 1:
-        return 0;
-      case 2:
-        return 0;
-      case 3:
-        return 66758;
-
-      default:
-        break;
-    }
-  }
   getBedrooms(option: number) {
     switch (option) {
       case 1:
         return 0;
       case 2:
-        return 16562.17;
+        return 17591;
       case 3:
-        return 39848.3;
+        return 2 * 40498;
+
+      default:
+        break;
+    }
+  }
+
+  info(event) {
+    console.log(event.clientX / window.innerWidth);
+  }
+  getQuality(option: number) {
+    switch (option) {
+      case 1:
+        return 29052;
+      case 2:
+        return 2 * 29052;
+      case 3:
+        return 3 * 29052;
+      case 4:
+        return 4 * 29052;
+      case 5:
+        return 5 * 29052;
+      case 6:
+        return 6 * 29052;
+      case 7:
+        return 7 * 29052;
+      case 8:
+        return 8 * 29052;
+      case 9:
+        return 9 * 29052;
+      case 10:
+        return 10 * 29052;
+
+      default:
+        break;
+    }
+  }
+  getLevel(option: string) {
+    switch (option) {
+      case "above":
+        return 0;
+      case "half":
+        return 1 * -13793;
+
+      case "basement":
+        return 1 * -27587;
 
       default:
         break;
@@ -116,25 +135,22 @@ export class QuartierHComponent implements OnInit {
   computeEstimate() {
     this.estimate = this.formatter.format(
       Math.round(
-        (this.livingArea * 1626.57) / 10.764 -
-          55010 +
-          (this.lotArea * 202.1) / 10.764 +
-          this.getBathroooms(Number(this.nbWashrooms)) +
+        (this.livingArea * 2005) / 10.764 +
           this.getQuality(Number(this.quality)) +
-          Number(this.detached) * 36545 +
-          Number(this.garage) * 19983 +
-          Number(this.highway) * -72645 +
-          Number(this.waterfront) * 604258
+          Number(this.nbWashrooms) * 40454 +
+          this.getBedrooms(Number(this.nbBedrooms)) +
+          this.getLevel(this.level) +
+          Number(this.rooftop) * 75105 +
+          Number(this.terrasse) * 28262 +
+          Number(this.alley) * 12752 +
+          Number(this.noisySt) * -25742 +
+          Number(this.indivise) * -41777 +
+          Number(this.garage) * 33327 +
+          Number(this.loft) * 36459 +
+          Number(this.studio) * -14202 +
+          4369
       )
     );
-  }
-
-  showResult() {
-    this.computeEstimate();
-    $("#collapseResult").collapse("show");
-    setTimeout(() => {
-      window.scrollTo(0, document.body.scrollHeight);
-    }, 100);
   }
 
   checkForm() {
@@ -147,17 +163,34 @@ export class QuartierHComponent implements OnInit {
     }
   }
 
+  showResult() {
+    this.computeEstimate();
+    $("#collapseExample").collapse("show");
+    setTimeout(() => {
+      window.scrollTo(0, document.body.scrollHeight);
+    }, 500);
+  }
+
   clearForm() {
-    this.level = "above";
-    this.livingArea = null;
-    this.lotArea = null;
-    this.quality = "1";
+    $("#collapseExample").collapse("hide");
+    // reset all itputs
     this.type = "condo";
-    this.detached = false;
-    this.highway = false;
-    this.nbWashrooms = "1";
-    this.waterfront = false;
+    this.livingArea = null;
+    this.quality = "1";
     this.nbBedrooms = "1";
+    this.nbWashrooms = "1";
+    this.level = "above";
+
+    this.rooftop = false;
+    this.terrasse = false;
+    this.studio = false;
+
+    this.alley = false;
+    this.indivise = "0";
+    this.garage = false;
+    this.noisySt = false;
+
+    this.loft = false;
   }
   getTotal() {
     if (this.checkForm()) this.showResult();

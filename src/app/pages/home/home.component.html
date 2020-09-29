@@ -76,6 +76,13 @@
           [routerLink]="['/vieux']"
           >Vieux-Montreal 🆕
         </a>
+        <a
+          mat-menu-item
+          class="nav-link"
+          (click)="getTitle()"
+          [routerLink]="['/homa']"
+          >Hochelaga-Maisoneuve 🆕
+        </a>
       </mat-menu>
       <router-outlet></router-outlet>
     </div>
@@ -142,7 +149,7 @@
       <div class="col-md-8 demo-img">
         <img
           class="border-thick"
-          src="./assets/images/homaconstruction.jpg"
+          src="./assets/images/ahuntsicconstruction2.jpg"
           alt=""
         />
       </div>
@@ -156,13 +163,12 @@
             <li>Petite-Patrie</li>
             <li>Petite-Italie</li>
             <li>Villeray</li>
-            <li>Vieux-Montreal</li>
+            <li>Vieux-Montreal 🆕</li>
+            <li>Hochelaga-Maisoneuve 🆕</li>
           </ul>
 
           <p>Bientot Disponibles</p>
           <ul>
-            <li>Hochelaga-Maisoneuve - Octobre</li>
-
             <li>Ahuntsic - Novembre</li>
             <li>Le Village - Novembre</li>
 

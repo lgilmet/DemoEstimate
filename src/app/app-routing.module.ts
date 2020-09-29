@@ -57,6 +57,11 @@ const routes: Routes = [
         component: QuartierGComponent,
         data: { title: "Vieux-Montreal" },
       },
+      {
+        path: "homa",
+        component: QuartierHComponent,
+        data: { title: "Hochelaga-Maisoneuve" },
+      },
     ],
   },
   { path: "a-propos", component: AboutComponent },
