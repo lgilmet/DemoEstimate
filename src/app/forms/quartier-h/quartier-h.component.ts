@@ -35,6 +35,7 @@ export class QuartierHComponent implements OnInit {
   nbBedrooms: string;
   level: string;
   studio: boolean;
+  sun: boolean;
 
   alley: boolean;
 
@@ -78,9 +79,9 @@ export class QuartierHComponent implements OnInit {
       case 1:
         return 0;
       case 2:
-        return 17591;
+        return 17499;
       case 3:
-        return 2 * 40498;
+        return 2 * 40280;
 
       default:
         break;
@@ -93,25 +94,25 @@ export class QuartierHComponent implements OnInit {
   getQuality(option: number) {
     switch (option) {
       case 1:
-        return 29052;
+        return 28873;
       case 2:
-        return 2 * 29052;
+        return 2 * 28873;
       case 3:
-        return 3 * 29052;
+        return 3 * 28873;
       case 4:
-        return 4 * 29052;
+        return 4 * 28873;
       case 5:
-        return 5 * 29052;
+        return 5 * 28873;
       case 6:
-        return 6 * 29052;
+        return 6 * 28873;
       case 7:
-        return 7 * 29052;
+        return 7 * 28873;
       case 8:
-        return 8 * 29052;
+        return 8 * 28873;
       case 9:
-        return 9 * 29052;
+        return 9 * 28873;
       case 10:
-        return 10 * 29052;
+        return 10 * 28873;
 
       default:
         break;
@@ -125,7 +126,7 @@ export class QuartierHComponent implements OnInit {
         return 1 * -13793;
 
       case "basement":
-        return 1 * -27587;
+        return 1 * -27443;
 
       default:
         break;
@@ -135,19 +136,20 @@ export class QuartierHComponent implements OnInit {
   computeEstimate() {
     this.estimate = this.formatter.format(
       Math.round(
-        (this.livingArea * 2005) / 10.764 +
+        (this.livingArea * 1993) / 10.764 +
           this.getQuality(Number(this.quality)) +
-          Number(this.nbWashrooms) * 40454 +
+          Number(this.nbWashrooms) * 40225 +
           this.getBedrooms(Number(this.nbBedrooms)) +
           this.getLevel(this.level) +
-          Number(this.rooftop) * 75105 +
-          Number(this.terrasse) * 28262 +
+          Number(this.rooftop) * 74592 +
+          Number(this.terrasse) * 28059 +
           Number(this.alley) * 12752 +
           Number(this.noisySt) * -25742 +
           Number(this.indivise) * -41777 +
-          Number(this.garage) * 33327 +
-          Number(this.loft) * 36459 +
-          Number(this.studio) * -14202 +
+          Number(this.garage) * 33111 +
+          Number(this.loft) * 36224 +
+          Number(this.studio) * -14112 +
+          Number(this.sun) * 11260 +
           4369
       )
     );
@@ -184,6 +186,7 @@ export class QuartierHComponent implements OnInit {
     this.rooftop = false;
     this.terrasse = false;
     this.studio = false;
+    this.sun = false;
 
     this.alley = false;
     this.indivise = "0";
