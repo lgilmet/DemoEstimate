@@ -80,9 +80,9 @@ export class QuartierCComponent implements OnInit {
       case 1:
         return 0;
       case 2:
-        return 18404;
+        return 18424;
       case 3:
-        return 9728;
+        return 10081;
 
       default:
         break;
@@ -95,25 +95,25 @@ export class QuartierCComponent implements OnInit {
   getQuality(option: number) {
     switch (option) {
       case 1:
-        return 28432;
+        return 28221;
       case 2:
-        return 2 * 28432;
+        return 2 * 28221;
       case 3:
-        return 3 * 28432;
+        return 3 * 28221;
       case 4:
-        return 4 * 28432;
+        return 4 * 28221;
       case 5:
-        return 5 * 28432;
+        return 5 * 28221;
       case 6:
-        return 6 * 28432;
+        return 6 * 28221;
       case 7:
-        return 7 * 28432;
+        return 7 * 28221;
       case 8:
-        return 8 * 28432;
+        return 8 * 28221;
       case 9:
-        return 9 * 28432;
+        return 9 * 28221;
       case 10:
-        return 10 * 28432;
+        return 10 * 28221;
 
       default:
         break;
@@ -124,9 +124,9 @@ export class QuartierCComponent implements OnInit {
       case "above":
         return 0;
       case "half":
-        return 0.5 * -66008;
+        return 0.5 * -33168;
       case "basement":
-        return 1 * -66008;
+        return 1 * -66168;
 
       default:
         break;
@@ -136,19 +136,19 @@ export class QuartierCComponent implements OnInit {
   computeEstimate() {
     this.estimate = this.formatter.format(
       Math.round(
-        (this.livingArea * 2955.23) / 10.764 -
+        (this.livingArea * 2948.23) / 10.764 -
           36381 +
           this.getQuality(Number(this.quality)) +
-          Number(this.nbWashrooms) * 26451.99 +
           this.getBedrooms(Number(this.nbBedrooms)) +
           this.getLevel(this.level) +
-          Number(this.eastPapineau) * -25497 +
-          Number(this.rooftop) * 106627 +
+          Number(this.eastPapineau) * -25821 +
+          Number(this.rooftop) * 106943 +
           Number(this.terrasse) * 39414 +
-          Number(this.house) * 126163 +
+          Number(this.house) * 126528 +
           Number(this.noisySt) * -25120.7 +
-          Number(this.indivise) * -15435 +
-          Number(this.garage) * 52992.52
+          Number(this.indivise) * -14676 +
+          Number(this.garage) * 53399.52 +
+          3064
       )
     );
   }
