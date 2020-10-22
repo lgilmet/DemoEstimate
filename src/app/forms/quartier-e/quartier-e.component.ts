@@ -175,7 +175,7 @@ export class QuartierEComponent implements OnInit {
     // reset all itputs
     this.type = "condo";
     this.livingArea = null;
-    this.quality = "1";
+    this.quality = "5";
     this.nbBedrooms = "1";
     this.nbWashrooms = "1";
     this.level = "above";

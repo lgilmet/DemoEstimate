@@ -62,6 +62,16 @@ const routes: Routes = [
         component: QuartierHComponent,
         data: { title: "Hochelaga-Maisoneuve" },
       },
+      {
+        path: "ahuntsic",
+        component: QuartierIComponent,
+        data: { title: "Ahuntsic" },
+      },
+      {
+        path: "cartierville",
+        component: QuartierJComponent,
+        data: { title: "Cartierville" },
+      },
     ],
   },
   { path: "a-propos", component: AboutComponent },

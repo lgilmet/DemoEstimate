@@ -8,145 +8,199 @@ declare var $: any;
   styleUrls: ["./quartier-j.component.scss"],
 })
 export class QuartierJComponent implements OnInit {
-  popoverContent: string = "Unobstructed water view";
-  popoverContent1: string = "Practicaly unlivable";
-  popoverContent2: string = "Old carpet, Old wallpaper, Old vinyl";
-  popoverContent3: string = "Parquet flooring, old melamine, basic faucets";
-  popoverContent4: string =
-    "Wood floor, melamine cabinets, melamine countertops";
-  popoverContent5: string = "Wood floor, melamine cabinets, stone countertops";
-  popoverContent6: string =
-    "Wood floor, thermoformed or wood cabinets, kitchen island";
-  popoverContent7: string =
-    "Custom kitchen with island, open shower, high quality windows";
-  popoverContent8: string =
-    "Custom kitchen, high quality tiles, wall toilets, designer faucets";
-  popoverContent9: string =
-    "Designer's kitchen, luxury appliances, very high quality flooring and tiles";
-  popoverContent10: string = "Incredible layout with incredible products";
-  livingArea: number;
-  quality: string;
-  years: number[];
-  currentYear: number;
-  constructionYear: number;
-  type: string;
-  detached: boolean;
-  waterfront: boolean;
-  traintrack: boolean;
-  powder: boolean;
-  nbWashrooms: string;
-  estimate: number;
+   // variables
+  //Intercept	-2378253.352
+  //Année 	1275.400181
+  //Sdb	21232.68844
+  //Sup.habitable	1475.794652
+  //Sup.terrain	276.0104132
+  //Garage	18327.65699
+  //Creusée	26177.63779
+  //Saragay	-160062.7324
+  //Nouveau-Bordeaux	-100421.1537
+  //Est Papineau	-116987.776
+  //Cartierville Est	-132930.7121
+ // Cartierville Ouest	-92810.17244
+  //Nord Chabanel	-58277.59265
+ // Quality	56175.69328
+ // Boulevard	-63188.62998
+ // Waterfront	489087.4202
+ // Split	-17977.85804
+  //Park	44315.42596
+ // Ahuntsic Core	104474.6879
+  
 
-  formatter;
-  color: ThemePalette = "primary";
-  constructor() {}
+ popoverContent: string = "Unobstructed water view";
+ years: number[];
+ currentYear: number;
+ constructionYear: number;
+ type: string;
+ livingArea: number;
+ lotArea: number;
+ quality: string;
+ nbWashrooms: string;
+ nbGarage: string;
+ 
+ parc: boolean;
+ core: boolean;
+ saragay: boolean;
+ cartierOuest: boolean;
+ eastPapineau: boolean;
 
-  ngOnInit() {
-    this.clearForm();
-    this.formatter = new Intl.NumberFormat("en-CA", {
-      style: "currency",
-      currency: "CAD",
-    });
-    this.years = [];
-    this.currentYear = new Date().getFullYear();
-    this.constructionYear = this.currentYear;
-    for (let i = 0; i < 85; i++) this.years.push(this.currentYear - i);
-  }
-  getBathroooms(option: number) {
-    switch (option) {
-      case 1:
-        return 0;
-      case 2:
-        return 39433;
-      case 3:
-        return 163300;
+ alley: boolean;
 
-      default:
-        break;
-    }
-  }
-  // LivingArea	$1,488.46 input
-  // LotArea	$583.36 input
-  // Age	$72.04 select
-  // Type House radio
-  // Quality 	$38,557.15 slider
-  // Detached	$185,424.30 boolean
-  // Face Parc	$66,507.37 boolean
-  // Bad Street	-$121,472.00 boolean
-  getQuality(option: number) {
-    switch (option) {
-      case 1:
-        return 33048;
-      case 2:
-        return 2 * 33048;
-      case 3:
-        return 3 * 33048;
-      case 4:
-        return 4 * 33048;
-      case 5:
-        return 5 * 33048;
-      case 6:
-        return 6 * 33048;
-      case 7:
-        return 7 * 33048;
-      case 8:
-        return 8 * 33048;
-      case 9:
-        return 9 * 33048;
-      case 10:
-        return 10 * 33048;
+ indivise: string;
+ garage: boolean;
+ waterfront: boolean;
+ piscine: boolean;
+ noisySt: boolean;
 
-      default:
-        break;
-    }
-  }
+ split: boolean;
+ estimate: string;
 
-  computeEstimate() {
-    this.estimate = this.formatter.format(
-      Math.round(
-        (this.livingArea * 791.66) / 10.764 +
-          this.constructionYear * 75.69 +
-          this.getBathroooms(Number(this.nbWashrooms)) +
-          this.getQuality(Number(this.quality)) +
-          Number(this.detached) * 35121 +
-          Number(this.waterfront) * 245412 +
-          Number(this.powder) * 18757 +
-          Number(this.traintrack) * -74744
-      )
-    );
-  }
+ formatter;
+ localStr: string;
 
-  showResult() {
-    this.computeEstimate();
-    $("#collapseResult").collapse("show");
-    setTimeout(() => {
-      window.scrollTo(0, document.body.scrollHeight);
-    }, 500);
-  }
+ color: ThemePalette = "primary";
 
-  checkForm() {
-    if (this.livingArea == null) {
-      document.getElementById("areaInput").classList.add("border-danger");
-      return false;
-    } else {
-      document.getElementById("areaInput").classList.remove("border-danger");
-      return true;
-    }
-  }
+ leSaviezVous: any[] = [
+   { icon: "piscine", price: 26177, desc: "Piscine" },
+   { icon: "garage", price: 18327, desc: "Garage" },
+   { icon: "bathtub", price: 21232, desc: "Salle de bain" },
+ ];
 
-  clearForm() {
-    this.livingArea = null;
-    this.quality = "1";
-    this.type = "house";
-    this.detached = false;
-    this.waterfront = false;
-    this.traintrack = false;
-    this.powder = false;
-    this.nbWashrooms = "1";
-  }
-  e;
-  getTotal() {
-    if (this.checkForm()) this.showResult();
-    else window.scrollTo(0, 0);
-  }
+ constructor() {}
+
+ ngOnInit() {
+   this.formatter = new Intl.NumberFormat("fr-CA", {
+     style: "currency",
+     currency: "CAD",
+   });
+   this.years = [];
+   this.currentYear = new Date().getFullYear();
+   this.constructionYear = this.currentYear;
+   for (let i = 0; i < 85; i++) this.years.push(this.currentYear - i);
+ 
+
+   this.clearForm();
+
+   this.leSaviezVous.forEach((item) => {
+     item.price = this.formatter.format(item.price);
+   });
+ }
+
+ 
+
+ info(event) {
+   console.log(event.clientX / window.innerWidth);
+ }
+ getQuality(option: number) {
+   switch (option) {
+     case 1:
+       return 56175.69;
+     case 2:
+       return 2 * 56175.69;
+     case 3:
+       return 3 * 56175.69;
+     case 4:
+       return 4 * 56175.69;
+     case 5:
+       return 5 * 56175.69;
+     case 6:
+       return 6 * 56175.69;
+     case 7:
+       return 7 * 56175.69;
+     case 8:
+       return 8 * 56175.69;
+     case 9:
+       return 10 * 56175.69;
+     case 10:
+       return 12 * 56175.69;
+
+     default:
+       break;
+   }
+ }
+ 
+ getGarage(option: number) {
+   switch (option) {
+     case 0:
+       return 0;
+     case 1:
+       return 18327;
+
+     case 2:
+       return 18327 * 2;
+     default:
+       break;
+   }
+ }
+
+ computeEstimate() {
+   this.estimate = this.formatter.format(
+     Math.round(
+       (this.livingArea * 1475.79) / 10.764 +
+       (this.lotArea * 276.01) / 10.764 +
+         this.getQuality(Number(this.quality)) +
+         Number(this.nbWashrooms) * 21232.68 +
+         this.getGarage(Number(this.nbGarage)) +
+         Number(this.piscine) * 26197 +
+         Number(this.waterfront) * 489089 +
+                  Number(this.parc) * 44315 +
+         Number(this.split) * -17977 +
+         Number(this.cartierOuest) * 40100 +
+         Number(this.saragay) * -27132 +
+                  Number(this.noisySt) * -63188 +
+         this.constructionYear * 1275.4 +
+         -132930+
+                   
+         -2378253.35
+     )
+   );
+ }
+
+ checkForm() {
+   if (this.livingArea == null) {
+     document.getElementById("areaInput").classList.add("border-danger");
+     return false;
+   } else {
+     document.getElementById("areaInput").classList.remove("border-danger");
+     return true;
+   }
+ }
+
+ showResult() {
+   this.computeEstimate();
+   $("#collapseExample").collapse("show");
+   setTimeout(() => {
+     window.scrollTo(0, document.body.scrollHeight);
+   }, 500);
+ }
+
+ clearForm() {
+   $("#collapseExample").collapse("hide");
+   // reset all itputs
+   this.type = "house";
+   this.livingArea = null;
+   this.lotArea = null;
+   this.quality = "5";
+   this.nbGarage = "0";
+   this.nbWashrooms = "1";
+   this.parc = false;;
+
+   this.piscine = false;
+   this.waterfront = false;
+   ;
+   this.cartierOuest = false;
+   this.saragay = false;
+   
+           this.garage = false;
+   this.noisySt = false;
+
+   this.split = false;
+ }
+ getTotal() {
+   if (this.checkForm()) this.showResult();
+   else window.scrollTo(0, 0);
+ }
 }

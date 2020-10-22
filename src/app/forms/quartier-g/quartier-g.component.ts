@@ -199,7 +199,7 @@ export class QuartierGComponent implements OnInit {
     // reset all itputs
     this.type = "condo";
     this.livingArea = null;
-    this.quality = "1";
+    this.quality = "5";
     this.nbBedrooms = "1";
     this.nbWashrooms = "0";
     this.nbGarage = "0";
