@@ -165,7 +165,7 @@ export class QuartierGComponent implements OnInit {
           this.getBedrooms(Number(this.nbBedrooms)) +
           this.getGarage(Number(this.nbGarage)) +
           Number(this.mcgill) * 54943 +
-          Number(this.terrasse) * -25135 +
+          Number(this.terrasse) * 25135 +
           Number(this.themens) * -70496 +
           Number(this.viger) * -60243 +
           Number(this.eastBonsecour) * -48525 +
