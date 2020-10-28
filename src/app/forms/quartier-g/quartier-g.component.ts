@@ -169,8 +169,7 @@ export class QuartierGComponent implements OnInit {
           Number(this.themens) * -70496 +
           Number(this.viger) * -60243 +
           Number(this.eastBonsecour) * -48525 +
-          Number(this.terrasse) * 25135 +
-          Number(this.waterview) * 110778 +
+                    Number(this.waterview) * 110778 +
           32165
       )
     );
