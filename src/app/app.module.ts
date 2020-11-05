@@ -32,6 +32,8 @@ import { OldHomeComponent } from "./pages/old-home/old-home.component";
 import { QuartierLComponent } from "./forms/quartier-l/quartier-l.component";
 import { AboutComponent } from "./pages/about/about.component";
 import { NgWormholeModule } from "ng-wormhole";
+import { MComponentComponent } from './mcomponent/mcomponent.component';
+import { QuartierMComponent } from './forms/quartier-m/quartier-m.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +54,8 @@ import { NgWormholeModule } from "ng-wormhole";
     OldHomeComponent,
     QuartierLComponent,
     AboutComponent,
+    MComponentComponent,
+    QuartierMComponent,
   ],
   imports: [
     FormsModule,

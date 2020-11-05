@@ -1,194 +1,207 @@
-<div class="container">
-  <div class="card my-3">
-    <div class="card-header">
-      <h2>
-        Montreal / <span style="white-space: nowrap;">Notre-Dame-de-Grace</span>
-      </h2>
-    </div>
-    <div class="card-body">
-      <!-- living area -->
-      <div class="input-group">
-        <div class="input-group-prepend">
-          <span class="input-group-text">Living area</span>
-        </div>
-        <input
-          id="areaInput"
-          type="number"
-          [(ngModel)]="livingArea"
-          class="form-control border"
-          placeholder="Area in square foot"
-        />
-        <div class="input-group-append">
-          <span class="input-group-text">m2</span>
-        </div>
-      </div>
+<div class="form">
+  <div class="">
+    <div class="">
+      <!-- <div class="card-header">
+        <h2>
+          <span style="white-space: nowrap;">Petite-Bourgogne</span>
+        </h2>
+      </div> -->
+      <!--living  area -->
 
-      <!-- lot area -->
-      <div class="input-group mt-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text">Lot area</span>
-        </div>
-        <input
-          id="areaInput2"
-          type="number"
-          [(ngModel)]="lotArea"
-          class="form-control border"
-          placeholder="Area in square meters"
-        />
-        <div class="input-group-append">
-          <span class="input-group-text">sq/f</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Year -->
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">
-        <div class="row mt-3">
-          <div class="col-sm">Type</div>
-          <div class="col-sm">
-            <mat-radio-group [(ngModel)]="type"
-              ><mat-radio-button value="condo" disabled>Condo</mat-radio-button>
-              <mat-radio-button value="house"
-                >House</mat-radio-button
-              ></mat-radio-group
-            >
+      <div class="card-body">
+        <label>Caractéristiques de base</label>
+        <div class="row mb-4">
+          <div class="input-group col-lg-6">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="area-label"
+                >📐 Sup. habitable
+              </span>
+            </div>
+            <input
+              id="areaInput"
+              [(ngModel)]="livingArea"
+              type="number"
+              placeholder="exemple : 758"
+              class="form-control border"
+              aria-describedby="area-label"
+            />
+            <div class="input-group-append">
+              <span class="input-group-text" id="area-label">pi²</span>
+              <div class="input-group-prepend"></div>
+            </div>
           </div>
+          <div class="col-lg-6 pt-3 pt-lg-1"></div>
         </div>
-      </li>
-      <!-- quality -->
-      <li class="list-group-item">
         <div class="row">
-          <div class="col-sm">Overall Interior Quality</div>
-          <div class="col-sm">
-            <mat-radio-group
-              class="d-flex flex-column flex-column justify-content-md-start"
-              [(ngModel)]="quality"
-            >
-              <mat-radio-button value="1">
-                1 - To be Demolished<mat-icon
-                  class="info-text ml-2"
-                  style="font-size: 1.2em;"
-                  matTooltip="{{ popoverContent1 }}"
-                  >info</mat-icon
+          <div class="col-lg-6">
+            <div class="row mt-2">
+              <div class="col-sm">
+                <label>🛏️ Nombre de chambres</label>
+              </div>
+              <div class="col-sm pl-5 pl-sm-1">
+                <mat-radio-group
+                  class="d-flex flex-column flex-md-row justify-content-md-start"
+                  [(ngModel)]="nbBedrooms"
                 >
-              </mat-radio-button>
-              <mat-radio-button value="2">
-                2 - Very Low Quality<mat-icon
-                  class="info-text ml-2"
-                  style="font-size: 1.2em;"
-                  matTooltip="{{ popoverContent2 }}"
-                  >info</mat-icon
+                  <mat-radio-button value="1"> 1 </mat-radio-button>
+                  <mat-radio-button value="2"> 2 </mat-radio-button>
+                  <mat-radio-button value="3"> 3 </mat-radio-button>
+                </mat-radio-group>
+              </div>
+            </div>
+            <div class="row mt-2">
+              <div class="col-sm">
+                <label>🚿 Salle de bains complètes</label>
+              </div>
+              <div class="col-sm pl-5 pl-sm-1">
+                <mat-radio-group
+                  class="d-flex flex-column flex-md-row justify-content-md-start"
+                  [(ngModel)]="nbWashrooms"
                 >
-              </mat-radio-button>
-              <mat-radio-button value="3">
-                3 - Low Quality<mat-icon
-                  class="info-text ml-2"
-                  style="font-size: 1.2em;"
-                  matTooltip="{{ popoverContent3 }}"
-                  >info</mat-icon
+                  <mat-radio-button value="1"> 1 </mat-radio-button>
+                  <mat-radio-button value="2"> 2 </mat-radio-button>
+                  <mat-radio-button value="3"> 3 </mat-radio-button>
+                </mat-radio-group>
+              </div>
+            </div>
+            <div class="row mt-2">
+              <div class="col-sm mt-2">
+                💎 Qualitée de la finition intérieure
+              </div>
+              <div class="col-sm">
+                <select class="form-control" [(ngModel)]="quality">
+                  <option value="1">1 - À démolir</option>
+                  <option value="2">2 - Réparations requises</option>
+                  <option value="3">3 - Viellot</option>
+                  <option value="4">4 - Entrée de gamme</option>
+                  <option value="5">5 - Décent</option>
+                  <option value="6">6 - Medium gamme</option>
+                  <option value="7">7 - Haut de gamme</option>
+                  <option value="8">8 - Designer</option>
+                  <option value="9">9 - Luxueux</option>
+                  <option value="10">10 - Produit d'architecture</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="row mt-2">
+              <div class="col-sm">
+                <label>Type</label>
+              </div>
+              <div class="col-sm pl-4 pl-sm-1">
+                <mat-radio-group
+                  class="d-flex flex-column flex-md-row justify-content-md-start"
+                  [(ngModel)]="type"
                 >
-              </mat-radio-button>
-              <mat-radio-button value="4">
-                4 - Under Average<mat-icon
-                  class="info-text ml-2"
-                  style="font-size: 1.2em;"
-                  matTooltip="{{ popoverContent4 }}"
-                  >info</mat-icon
+                  <mat-radio-button value="condo"> Condo 🏢 </mat-radio-button>
+                  <mat-radio-button value="house" disabled>
+                    Maison 🏠
+                  </mat-radio-button>
+                </mat-radio-group>
+              </div>
+            </div>
+            <div class="row mt-2">
+              <div class="col-sm">
+                <label>Division</label>
+              </div>
+              <div class="col-sm pl-4 pl-sm-1">
+                <mat-radio-group
+                  class="d-flex flex-column flex-md-row justify-content-md-start"
+                  [(ngModel)]="indivise"
                 >
-              </mat-radio-button>
-              <mat-radio-button value="5">
-                5 - Average<mat-icon
-                  class="info-text ml-2"
-                  style="font-size: 1.2em;"
-                  matTooltip="{{ popoverContent5 }}"
-                  >info</mat-icon
-                >
-              </mat-radio-button>
-              <mat-radio-button value="6">
-                6 - Average upgraded<mat-icon
-                  class="info-text ml-2"
-                  style="font-size: 1.2em;"
-                  matTooltip="{{ popoverContent6 }}"
-                  >info</mat-icon
-                >
-              </mat-radio-button>
-              <mat-radio-button value="7">
-                7 - High Quality<mat-icon
-                  class="info-text ml-2"
-                  style="font-size: 1.2em;"
-                  matTooltip="{{ popoverContent7 }}"
-                  >info</mat-icon
-                >
-              </mat-radio-button>
-              <mat-radio-button value="8">
-                8 - Very High Quality<mat-icon
-                  class="info-text ml-2"
-                  style="font-size: 1.2em;"
-                  matTooltip="{{ popoverContent8 }}"
-                  >info</mat-icon
-                >
-              </mat-radio-button>
-              <mat-radio-button value="9">
-                9 - Luxury<mat-icon
-                  class="info-text ml-2"
-                  style="font-size: 1.2em;"
-                  matTooltip="{{ popoverContent9 }}"
-                  >info</mat-icon
-                >
-              </mat-radio-button>
-              <mat-radio-button value="10">
-                10 - Architect<mat-icon
-                  class="info-text ml-2"
-                  style="font-size: 1.2em;"
-                  matTooltip="{{ popoverContent10 }}"
-                  >info</mat-icon
-                >
-              </mat-radio-button>
-            </mat-radio-group>
+                  <mat-radio-button value="0"> Divise </mat-radio-button>
+                  <mat-radio-button value="1"> Indivise </mat-radio-button>
+                </mat-radio-group>
+              </div>
+            </div>
+            <div class="row mt-2">
+              <div class="col-sm mt-2">Étage</div>
+              <div class="col-sm">
+                <select class="form-control" [(ngModel)]="level">
+                  <option value="rdc">Rez-de-chaussée</option>
+                  <option value="basement">Demi sous-sol/Rez-de-jardin</option>
+                  <option value="above">2ième ou +</option>
+                </select>
+              </div>
+            </div>
           </div>
         </div>
-      </li>
-      <!-- features -->
-      <li class="list-group-item">
-        <div class="row">
-          <div class="col-sm">
-            Unique Features that add or remove value in Notre-Dame-de-Grace :
-          </div>
-          <div class="col-sm pl-5 pl-sm-1 d-flex flex-column">
-            <mat-checkbox [(ngModel)]="pool">Has an Inground Pool</mat-checkbox>
-            <mat-checkbox [(ngModel)]="noyard"
-              >Does not have a backyard</mat-checkbox
-            ><mat-checkbox [(ngModel)]="powder">Has a powder room</mat-checkbox>
-            <mat-checkbox [(ngModel)]="east15"
-              >Is east of Highway 15</mat-checkbox
-            >
-            <mat-checkbox [(ngModel)]="nsherbrooke"
-              >Is North of Sherbrooke</mat-checkbox
-            >
-            <mat-checkbox [(ngModel)]="wcavendish"
-              >Is east of Cavendish</mat-checkbox
-            >
-            <mat-checkbox [(ngModel)]="monkland"
-              >Is in the Monkland Village</mat-checkbox
-            >
-          </div>
-        </div>
-      </li>
-    </ul>
-
-    <div class="card-body d-flex justify-content-between">
-      <button mat-raised-button (click)="clearForm()">Clear</button>
-      <button mat-raised-button [color]="color" (click)="getTotal()">
-        Get Estimate
-      </button>
-    </div>
-
-    <div class="card-footer collapse" id="collapseResult">
-      <div class="d-flex justify-content-between mt-3">
-        <p class="">Your estimate:</p>
-        <h3>CAD {{ estimate }}</h3>
       </div>
+      <hr />
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <label>Espace extérieur</label>
+          <div class="">
+            <div class="items-flex-list">
+              <mat-checkbox [(ngModel)]="terrasse"
+                >Terrasse ou cour intérieur
+              </mat-checkbox>
+              <mat-checkbox [(ngModel)]="rooftop"
+                >Terrasse sur le toit ( privée )</mat-checkbox
+              >
+               </div>
+          </div>
+        </li>
+      </ul>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <label>Perks</label>
+          <div class="">
+            <div class="items-flex-list">
+              
+              <mat-checkbox [(ngModel)]="park">Devant un parc </mat-checkbox>
+              <mat-checkbox [(ngModel)]="nbPowder"
+                >A une salle d'eau</mat-checkbox
+              >
+              <mat-checkbox [(ngModel)]="loft">Loft industriel</mat-checkbox>
+
+              <mat-checkbox [(ngModel)]="noisySt"
+                >Rue passante / bruyante</mat-checkbox
+              ><mat-checkbox [(ngModel)]="waterfront"
+              >Vue sur l'eau</mat-checkbox
+            >
+
+                        <mat-checkbox [(ngModel)]="garage">Garage </mat-checkbox>
+            </div>
+          </div>
+        </li>
+      </ul>
+      
+      <!-- submit -->
+      <div class="card-body d-flex justify-content-between">
+        <button class="btn btn-outline-secondary" (click)="clearForm()">
+          Effacer
+        </button>
+        <button class="btn yellow btn-outline-dark" (click)="getTotal()">
+          Calculer 💸
+        </button>
+      </div>
+
+      <div class="card-footer collapse bg-light" id="collapseExample">
+        <div class="mt-3">
+          <!-- <p class="">Your estimate:</p> -->
+          <h3 class="special heading text-right">CAD {{ estimate }}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngWormhole="'#saviezVous'">
+  <p class="special heading">
+    Dans la Petite-Bourgogne, ces éléments valent en moyenne:
+  </p>
+  <div class="row white">
+    <div *ngFor="let item of leSaviezVous" class="col-md">
+      <img
+        class="svg-icon medium"
+        src="./assets/icons/{{ item.icon }}.svg"
+        alt=""
+      />
+      <h2 class="special heading">{{ item.price }}</h2>
+      <p>{{ item.desc }}</p>
     </div>
   </div>
 </div>

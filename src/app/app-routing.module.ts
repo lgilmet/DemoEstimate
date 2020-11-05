@@ -14,6 +14,7 @@ import { QuartierJComponent } from "./forms/quartier-j/quartier-j.component";
 import { QuartierKComponent } from "./forms/quartier-k/quartier-k.component";
 import { PaymentComponent } from "./forms/payment/payment.component";
 import { QuartierLComponent } from "./forms/quartier-l/quartier-l.component";
+import { QuartierMComponent } from "./forms/quartier-m/quartier-m.component";
 import { AboutComponent } from "./pages/about/about.component";
 
 const routes: Routes = [
@@ -71,6 +72,21 @@ const routes: Routes = [
         path: "cartierville",
         component: QuartierJComponent,
         data: { title: "Cartierville" },
+      },
+      {
+        path: "bourgogne",
+        component: QuartierKComponent,
+        data: { title: "Petite-Bourgogne" },
+      },
+      {
+        path: "stHenri",
+        component: QuartierLComponent,
+        data: { title: "Saint-Henri" },
+      },
+      {
+        path: "psc",
+        component: QuartierMComponent,
+        data: { title: "Pointe-Saint-Charles" },
       },
     ],
   },

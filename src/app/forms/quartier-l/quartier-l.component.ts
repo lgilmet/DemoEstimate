@@ -33,20 +33,22 @@ export class QuartierLComponent implements OnInit {
   quality: string;
   nbWashrooms: string;
   nbBedrooms: string;
+  nbPowder: boolean;
   level: string;
+  waterfront: boolean;
 
-  alley: boolean;
-  eastPapineau: boolean;
+  
   indivise: string;
   garage: boolean;
   rooftop: boolean;
   terrasse: boolean;
-  railway: boolean;
+  
   noisySt: boolean;
-  secondPrkg: boolean;
+  
+  park: boolean;
 
-  heritageBldg: boolean;
-  luxuryBldg: boolean;
+  imperials: boolean;
+  loft: boolean;
   estimate: string;
 
   formatter;
@@ -54,15 +56,25 @@ export class QuartierLComponent implements OnInit {
 
   color: ThemePalette = "primary";
 
+  leSaviezVous: any[] = [
+    { icon: "rooftop", price: 66841, desc: "Terrasse sur le toit" },
+    { icon: "garage", price: 38803, desc: "Garage" },
+    { icon: "bathtub", price: 34580, desc: "Salle de bain" },
+  ];
+
   constructor() {}
 
   ngOnInit() {
-    this.formatter = new Intl.NumberFormat("en-CA", {
+    this.formatter = new Intl.NumberFormat("fr-CA", {
       style: "currency",
       currency: "CAD",
     });
 
     this.clearForm();
+
+    this.leSaviezVous.forEach((item) => {
+      item.price = this.formatter.format(item.price);
+    });
   }
 
   getBedrooms(option: number) {
@@ -70,9 +82,9 @@ export class QuartierLComponent implements OnInit {
       case 1:
         return 0;
       case 2:
-        return 36027;
+        return 35679;
       case 3:
-        return 103314;
+        return 2 * 36457;
 
       default:
         break;
@@ -85,25 +97,25 @@ export class QuartierLComponent implements OnInit {
   getQuality(option: number) {
     switch (option) {
       case 1:
-        return 38039;
+        return 41163;
       case 2:
-        return 2 * 38039;
+        return 2 * 41163;
       case 3:
-        return 3 * 38039;
+        return 3 * 41163;
       case 4:
-        return 4 * 38039;
+        return 4 * 41163;
       case 5:
-        return 5 * 38039;
+        return 5 * 41163;
       case 6:
-        return 6 * 38039;
+        return 6 * 41163;
       case 7:
-        return 7 * 38039;
+        return 7 * 41163;
       case 8:
-        return 8 * 38039;
+        return 8 * 41163;
       case 9:
-        return 9 * 38039;
+        return 9 * 50163;
       case 10:
-        return 10 * 38039;
+        return 10 * 60000;
 
       default:
         break;
@@ -113,10 +125,11 @@ export class QuartierLComponent implements OnInit {
     switch (option) {
       case "above":
         return 0;
-      case "half":
-        return 0.5 * -14971;
+      
       case "basement":
-        return 1 * -44197;
+        return 1 * -43052;
+      case "rdc":
+        return 1 * -8129;
 
       default:
         break;
@@ -126,22 +139,26 @@ export class QuartierLComponent implements OnInit {
   computeEstimate() {
     this.estimate = this.formatter.format(
       Math.round(
-        (this.livingArea * 2437.23) / 10.764 +
-          33571 +
+        (this.livingArea * 3395.37) / 10.764 +
           this.getQuality(Number(this.quality)) +
-          Number(this.nbWashrooms) * 26451.99 +
+          Number(this.nbWashrooms) * 34580 +
           this.getBedrooms(Number(this.nbBedrooms)) +
           this.getLevel(this.level) +
-          Number(this.eastPapineau) * -61706.8 +
-          Number(this.rooftop) * 76508.33 +
-          Number(this.terrasse) * 43978.43 +
-          Number(this.railway) * -99782.3 +
-          Number(this.alley) * 23921.77 +
-          Number(this.heritageBldg) * 72036 +
-          Number(this.noisySt) * -28724.7 +
-          Number(this.luxuryBldg) * 70861 +
-          Number(this.indivise) * -30463.97 +
-          Number(this.garage) * 22064.52
+          
+          Number(this.rooftop) * 66841 +
+          Number(this.terrasse) * 21336 +
+          Number(this.waterfront) * 128378 +
+          
+          Number(this.imperials) * -37186 +
+          Number(this.noisySt) * -43106 +
+          Number(this.nbPowder) * 6621 +
+          Number(this.indivise) * -34497 +
+          Number(this.garage) * 38803 +
+          
+          Number(this.park) * 35829 +
+          Number(this.loft) * 46830 +
+          -46726 +
+          -15769
       )
     );
   }
@@ -169,20 +186,23 @@ export class QuartierLComponent implements OnInit {
     // reset all itputs
     this.type = "condo";
     this.livingArea = null;
-    this.quality = "1";
+    this.quality = "5";
     this.nbBedrooms = "1";
     this.nbWashrooms = "1";
     this.level = "above";
-    this.eastPapineau = false;
+    
     this.rooftop = false;
+    this.waterfront = false;
     this.terrasse = false;
-    this.railway = false;
-    this.alley = false;
+    
     this.indivise = "0";
     this.garage = false;
     this.noisySt = false;
-    this.heritageBldg = false;
-    this.luxuryBldg = false;
+    this.imperials = false;
+    this.nbPowder = false;
+    
+    this.park = false;
+    this.loft = false;
   }
   getTotal() {
     if (this.checkForm()) this.showResult();

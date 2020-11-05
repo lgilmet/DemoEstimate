@@ -100,6 +100,27 @@
           [routerLink]="['/cartierville']"
           >Cartierville 🆕
         </a>
+        <a
+          mat-menu-item
+          class="nav-link"
+          (click)="getTitle()"
+          [routerLink]="['/bourgogne']"
+          >Petite-Bourgogne 🆕
+        </a>
+        <a
+          mat-menu-item
+          class="nav-link"
+          (click)="getTitle()"
+          [routerLink]="['/stHenri']"
+          >Saint-Henri 🆕
+        </a>
+        <a
+          mat-menu-item
+          class="nav-link"
+          (click)="getTitle()"
+          [routerLink]="['/psc']"
+          >Pointe-Saint-Charles 🆕
+        </a>
       </mat-menu>
       <router-outlet></router-outlet>
     </div>
