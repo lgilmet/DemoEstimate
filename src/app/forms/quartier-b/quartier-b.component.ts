@@ -90,19 +90,7 @@ export class QuartierBComponent implements OnInit {
         break;
     }
   }
-  getWashrooms(option: number) {
-    switch (option) {
-      case 1:
-        return 0;
-      case 2:
-        return 26451.99;
-      case 3:
-        return 26451.99 * 2;
-
-      default:
-        break;
-    }
-  }
+  
 
   info(event) {
     console.log(event.clientX / window.innerWidth);
@@ -196,7 +184,7 @@ export class QuartierBComponent implements OnInit {
     this.livingArea = null;
     this.quality = "5";
     this.nbBedrooms = "1";
-    this.nbWashrooms = "1";
+    this.nbWashrooms = "0";
     this.level = "above";
     this.eastPapineau = false;
     this.rooftop = false;

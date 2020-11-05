@@ -175,7 +175,7 @@ export class QuartierDComponent implements OnInit {
     this.livingArea = null;
     this.quality = "5";
     this.nbBedrooms = "1";
-    this.nbWashrooms = "1";
+    this.nbWashrooms = "0";
     this.level = "above";
     this.eastPapineau = false;
     this.rooftop = false;

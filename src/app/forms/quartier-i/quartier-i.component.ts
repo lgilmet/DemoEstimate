@@ -186,7 +186,7 @@ export class QuartierIComponent implements OnInit {
     this.lotArea = null;
     this.quality = "5";
     this.nbGarage = "0";
-    this.nbWashrooms = "1";
+    this.nbWashrooms = "0";
     this.parc = false;;
 
     this.piscine = false;
