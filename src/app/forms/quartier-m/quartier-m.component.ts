@@ -42,7 +42,7 @@ garage: boolean;
 pscSud: boolean;
 rooftop: boolean;
 terrasse: boolean;
-
+bordure: boolean;
 noisySt: boolean;
 
 park: boolean;
@@ -148,7 +148,7 @@ computeEstimate() {
           Number(this.rooftop) * 70693 +
           Number(this.terrasse) * 23366 +
           Number(this.waterfront) * 122720 +
-          
+          Number(this.bordure) * 16526 +
           
           Number(this.noisySt) * -40866 +
           
@@ -191,7 +191,7 @@ clearForm() {
   this.nbBedrooms = "1";
   this.nbWashrooms = "1";
   this.level = "above";
-  
+  this.bordure = false;
   this.rooftop = false;
   this.pscSud = false;
   this.waterfront = false;
