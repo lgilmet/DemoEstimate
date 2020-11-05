@@ -162,10 +162,27 @@
               <mat-checkbox [(ngModel)]="noisySt"
                 >Rue passante / bruyante</mat-checkbox
               ><mat-checkbox [(ngModel)]="waterfront"
-              >Vue sur l'eau</mat-checkbox
-            >
+              >Vue sur le Canal</mat-checkbox
+            ><mat-checkbox [(ngModel)]="bordure"
+            >En bordure du Canal</mat-checkbox
+          >
 
                         <mat-checkbox [(ngModel)]="garage">Garage </mat-checkbox>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <label>Sous-Quartier</label>
+          <div class="">
+            <div class="items-flex-list">
+              <mat-checkbox [(ngModel)]="stHenriSud"
+                >Saint-Henri Sud</mat-checkbox
+              ><mat-checkbox [(ngModel)]="ouestAgnes"
+              >Ouest rue Agnes</mat-checkbox
+            >
+              
             </div>
           </div>
         </li>

@@ -57,9 +57,9 @@ localStr: string;
 color: ThemePalette = "primary";
 
 leSaviezVous: any[] = [
-  { icon: "rooftop", price: 66841, desc: "Terrasse sur le toit" },
-  { icon: "garage", price: 38803, desc: "Garage" },
-  { icon: "bathtub", price: 34580, desc: "Salle de bain" },
+  { icon: "rooftop", price: 70693, desc: "Terrasse sur le toit" },
+  { icon: "garage", price: 35523, desc: "Garage" },
+  { icon: "bathtub", price: 40299, desc: "Salle de bain" },
 ];
 
 constructor() {}
@@ -82,9 +82,9 @@ getBedrooms(option: number) {
     case 1:
       return 0;
     case 2:
-      return 35679;
+      return 35504;
     case 3:
-      return 2 * 36457;
+      return 2 * 33941;
 
     default:
       break;
@@ -97,25 +97,25 @@ info(event) {
 getQuality(option: number) {
   switch (option) {
     case 1:
-      return 41163;
+      return 41968;
     case 2:
-      return 2 * 41163;
+      return 2 * 41968;
     case 3:
-      return 3 * 41163;
+      return 3 * 41968;
     case 4:
-      return 4 * 41163;
+      return 4 * 41968;
     case 5:
-      return 5 * 41163;
+      return 5 * 41968;
     case 6:
-      return 6 * 41163;
+      return 6 * 41968;
     case 7:
-      return 7 * 41163;
+      return 7 * 41968;
     case 8:
-      return 8 * 41163;
+      return 8 * 41968;
     case 9:
-      return 9 * 50163;
+      return 9 * 51968;
     case 10:
-      return 10 * 60000;
+      return 10 * 55968;
 
     default:
       break;
@@ -127,9 +127,9 @@ getLevel(option: string) {
       return 0;
     
     case "basement":
-      return 1 * -43052;
+      return 1 * -39147;
     case "rdc":
-      return 1 * -8129;
+      return 1 * -7672;
 
     default:
       break;
@@ -139,27 +139,27 @@ getLevel(option: string) {
 computeEstimate() {
   this.estimate = this.formatter.format(
     Math.round(
-      (this.livingArea * 3395.37) / 10.764 +
-        this.getQuality(Number(this.quality)) +
-        Number(this.nbWashrooms) * 34580 +
-        this.getBedrooms(Number(this.nbBedrooms)) +
-        this.getLevel(this.level) +
-        
-        Number(this.rooftop) * 66841 +
-        Number(this.terrasse) * 21336 +
-        Number(this.waterfront) * 128378 +
-        
-       
-        Number(this.noisySt) * -43106 +
-        Number(this.nbPowder) * 6621 +
-        Number(this.indivise) * -34497 +
-        Number(this.garage) * 38803 +
-        Number(this.pscSud) * -23645 +
-        
-        Number(this.park) * 35829 +
-        Number(this.loft) * 46830 +
-        -71754 +
-        -15769
+      (this.livingArea * 3507.37) / 10.764 +
+          this.getQuality(Number(this.quality)) +
+          Number(this.nbWashrooms) * 40288 +
+          this.getBedrooms(Number(this.nbBedrooms)) +
+          this.getLevel(this.level) +
+          
+          Number(this.rooftop) * 70693 +
+          Number(this.terrasse) * 23366 +
+          Number(this.waterfront) * 122720 +
+          
+          
+          Number(this.noisySt) * -40866 +
+          
+          Number(this.indivise) * -40898 +
+          Number(this.garage) * 35523 +
+          Number(this.pscSud) * -18008 +
+          
+          Number(this.park) * 38449 +
+          Number(this.loft) * 38095 +
+          -71954 +
+          -65368
     )
   );
 }
