@@ -39,6 +39,7 @@ waterfront: boolean;
 
 indivise: string;
 garage: boolean;
+alle: boolean;
 pscSud: boolean;
 rooftop: boolean;
 terrasse: boolean;
@@ -82,9 +83,9 @@ getBedrooms(option: number) {
     case 1:
       return 0;
     case 2:
-      return 35504;
+      return 35564;
     case 3:
-      return 2 * 33941;
+      return 2 * 35623;
 
     default:
       break;
@@ -97,25 +98,25 @@ info(event) {
 getQuality(option: number) {
   switch (option) {
     case 1:
-      return 41968;
+      return 42823;
     case 2:
-      return 2 * 41968;
+      return 2 * 42823;
     case 3:
-      return 3 * 41968;
+      return 3 * 42823;
     case 4:
-      return 4 * 41968;
+      return 4 * 42823;
     case 5:
-      return 5 * 41968;
+      return 5 * 42823;
     case 6:
-      return 6 * 41968;
+      return 6 * 42823;
     case 7:
-      return 7 * 41968;
+      return 7 * 42823;
     case 8:
-      return 8 * 41968;
+      return 8 * 42823;
     case 9:
-      return 9 * 51968;
+      return 9 * 47823;
     case 10:
-      return 10 * 55968;
+      return 10 * 50823;
 
     default:
       break;
@@ -127,9 +128,9 @@ getLevel(option: string) {
       return 0;
     
     case "basement":
-      return 1 * -39147;
+      return 1 * -39398;
     case "rdc":
-      return 1 * -7672;
+      return 1 * -6522;
 
     default:
       break;
@@ -139,27 +140,28 @@ getLevel(option: string) {
 computeEstimate() {
   this.estimate = this.formatter.format(
     Math.round(
-      (this.livingArea * 3507.37) / 10.764 +
+      (this.livingArea * 3483.37) / 10.764 +
           this.getQuality(Number(this.quality)) +
-          Number(this.nbWashrooms) * 40288 +
+          Number(this.nbWashrooms) * 42511 +
           this.getBedrooms(Number(this.nbBedrooms)) +
           this.getLevel(this.level) +
           
-          Number(this.rooftop) * 70693 +
-          Number(this.terrasse) * 23366 +
-          Number(this.waterfront) * 122720 +
-          Number(this.bordure) * 16526 +
+          Number(this.rooftop) * 71363 +
+          Number(this.terrasse) * 22456 +
+          Number(this.waterfront) * 120048 +
+          Number(this.bordure) * 16675 +
           
-          Number(this.noisySt) * -40866 +
+          Number(this.noisySt) * -41767 +
           
-          Number(this.indivise) * -40898 +
-          Number(this.garage) * 35523 +
-          Number(this.pscSud) * -18008 +
+          Number(this.indivise) * -42025 +
+          Number(this.garage) * 37952 +
+          Number(this.alle) * 8699 +
+          Number(this.pscSud) * -15413 +
           
-          Number(this.park) * 38449 +
-          Number(this.loft) * 38095 +
-          -71954 +
-          -65368
+          Number(this.park) * 39348 +
+          Number(this.loft) * 39802 +
+          -73929 +
+          -27869
     )
   );
 }
@@ -195,6 +197,7 @@ clearForm() {
   this.rooftop = false;
   this.pscSud = false;
   this.waterfront = false;
+  this.alle = false;
   this.terrasse = false;
   
   this.indivise = "0";
