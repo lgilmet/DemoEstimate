@@ -203,6 +203,7 @@ export class QuartierLComponent implements OnInit {
     this.bordure = false;
     this.waterfront = false;
     this.terrasse = false;
+    this.alle = false;
     this.stHenriSud = false;
     
     this.indivise = "0";
