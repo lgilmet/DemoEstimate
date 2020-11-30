@@ -191,7 +191,7 @@ clearForm() {
   this.livingArea = null;
   this.quality = "5";
   this.nbBedrooms = "1";
-  this.nbWashrooms = "1";
+  this.nbWashrooms = "0";
   this.level = "above";
   this.bordure = false;
   this.rooftop = false;
