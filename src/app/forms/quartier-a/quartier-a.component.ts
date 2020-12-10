@@ -88,7 +88,7 @@ export class QuartierAComponent implements OnInit {
       case 2:
         return 30357;
       case 3:
-        return 2 * 58926;
+        return 58926;
 
       default:
         break;
