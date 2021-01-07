@@ -193,6 +193,14 @@ export class QuartierGComponent implements OnInit {
     }, 500);
   }
 
+  showError() {
+    $("#errorMessage").collapse("show");
+  }
+
+  hideError() {
+    $("#errorMessage").collapse("hide");
+  }
+
   clearForm() {
     $("#collapseExample").collapse("hide");
     // reset all itputs
@@ -213,7 +221,9 @@ export class QuartierGComponent implements OnInit {
     this.garage = false;
   }
   getTotal() {
+    this.hideError();
+
     if (this.checkForm()) this.showResult();
-    else window.scrollTo(0, 0);
+    else this.showError();
   }
 }
